@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import Link from "next/link";
 import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
 
-export const ProjectsComponent = () => {
+const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
     const { isLoading, projectsData } = useGetProjects();
 

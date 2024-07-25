@@ -2,7 +2,7 @@
 import CircularProgress from "@mui/material/CircularProgress";
 import TextBlock from "./TextBlockComponent";
 
-export const GlobalLoader = () => {
+const GlobalLoader = () => {
 
     return (
         <div className="relative z-[10] flex items-center w-full min-h-screen justify-center bg-bg-transparent-black-main">

@@ -12,7 +12,7 @@ type CardComponentProps = {
     imgHeight?: number;
 };
 
-export const CardComponent = ({
+const CardComponent = ({
     img,
     text,
     className,

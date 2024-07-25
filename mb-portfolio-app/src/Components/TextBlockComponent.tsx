@@ -8,7 +8,7 @@ type TextBlockProps = {
     children?: React.ReactNode;
 };
 
-export const TextBlock = ({ title, content, url, className, children }: TextBlockProps) => {
+const TextBlock = ({ title, content, url, className, children }: TextBlockProps) => {
     const hasUrlAndTitle = !!(url && title);
 
     return (
