@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 import NavBar from "@PortfolioApp/Components/NavBar";
 import Footer from "@PortfolioApp/Components/FooterComponent";
+import Image from "next/image";
+import bgImage from "../../public/portfolio-background.webp";
 
 export const metadata: Metadata = {
     title: "Portfolio app",
@@ -16,7 +18,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
-                <div className="fixed top-0 backdrop-blur-[5px] left-0 w-full bg-cover bg-no-repeat min-h-[100%] bg-fixed bg-center bg-main-bg-image"></div>
+                <Image
+                    src={bgImage}
+                    alt="bg image missing"
+                    className="min-h-dvh h-[100%] fixed top-0 left-0 z-[0] w-full object-cover backdrop-blur-[5px] "
+                />
                 <NavBar />
                 {children}
                 <Footer />

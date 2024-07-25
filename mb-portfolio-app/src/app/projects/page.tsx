@@ -17,8 +17,8 @@ const ProjectsComponent = () => {
             {isLoading ? (
                 <GlobalLoader />
             ) : (
-                <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[2rem]">
-                    <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main">
+                <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem] bg-bg-transparent-black-main">
+                    <div className="flex flex-col items-center gap-1 max-w- w-full">
                         <h1 className="text-4xl px-5 py-8 text-welcome-text-color">My projects</h1>
                         <TextBlock
                             title={"and most of the technologies I currently use"}
@@ -47,7 +47,11 @@ const ProjectsComponent = () => {
                             rounded-lg 
                             backdrop-blur-sm
                             shadow-box-shadow-secondary 
-                            bg-bg-transparent-black-secondary`}
+                            bg-transparent
+                            ${!isMobile ? "hover:bg-bg-transparent-black-main" : ""}
+                            ${!isMobile ? "hover:translate-x-1" : ""}
+                            transition-all
+                            `}
                             >
                                 <CardComponent
                                     img={img}
@@ -60,13 +64,13 @@ const ProjectsComponent = () => {
                                     title={title}
                                     content={content}
                                     url={url}
-                                    className="flex flex-col gap-4 items-center text-block text-tech-text-color p-2 w-80"
+                                    className={`flex flex-col gap-4 items-center text-block text-colorDark p-2 w-80 ${!isMobile ? "contrast-0 hover:contrast-100" : ""} transition-all`}
                                 >
                                     <Link
                                         href={url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hover:text-colorDark"
+                                        className="hover:text-tech-text-color"
                                     >
                                         <Button
                                             variant="outlined"

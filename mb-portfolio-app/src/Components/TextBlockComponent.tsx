@@ -18,7 +18,7 @@ const TextBlock = ({ title, content, url, className, children }: TextBlockProps)
                     href={url}
                     target="_blank"
                     rel="noopenner noreferrer"
-                    className="transition-all text-decoration: underline hover:text-colorDark"
+                    className="transition-all text-decoration: underline hover:text-tech-text-color"
                 >
                     <p className="text-xl font-bold mb-2">{title}</p>
                 </Link>

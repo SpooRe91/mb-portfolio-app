@@ -30,14 +30,18 @@ const useGetProjects = () => {
 
         dataFetch();
 
-        if (isLoading) {
-            const intervalId = setInterval(() => {
+        const intervalId = setInterval(() => {
+            if (isLoading || !projectsData.length) {
                 console.log("ℹ %cRefetching projects data...", "color: orange");
-                dataFetch;
-            }, 7500);
-            return () => clearInterval(intervalId);
-        }
-    }, [isLoading]);
+                dataFetch();
+            } else {
+                clearInterval(intervalId);
+            }
+        }, 7500);
+
+        // Clean up interval on component unmount
+        return () => clearInterval(intervalId);
+    }, [isLoading, projectsData.length]);
 
     return { projectsData, isLoading };
 };
