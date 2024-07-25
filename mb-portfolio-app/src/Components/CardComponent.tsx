@@ -18,14 +18,14 @@ const CardComponent = ({
     className,
     imgClassName,
     textClassName,
-    imgWidth = 350,
+    imgWidth = 250,
     imgHeight = 250,
 }: CardComponentProps) => {
     return (
         <div
             className={`flex flex-col items-center text-center bg-gunmetal rounded-xl overflow-hidden ${
                 img && "shadow-image-container-box-shadow"
-            } ${className}`}
+            } ${img && className}`}
         >
             {img && (
                 <div
@@ -38,7 +38,7 @@ const CardComponent = ({
                         layout="fill"
                         objectFit="cover"
                         objectPosition="center"
-                        priority
+                        loading="lazy"
                     />
                 </div>
             )}
