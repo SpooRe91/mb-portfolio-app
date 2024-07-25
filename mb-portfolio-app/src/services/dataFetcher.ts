@@ -1,4 +1,3 @@
-"use client";
 import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/constants";
 import axios, { AxiosError } from "axios";
 
