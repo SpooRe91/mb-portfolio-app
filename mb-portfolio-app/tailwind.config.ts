@@ -16,6 +16,7 @@ const config: Config = {
             },
             colors: {
                 navBarActive: "#edf1ec",
+                navBarInactive: "#61bea5",
                 greenHover: "#98f090",
                 rawUmber: "#94654B",
                 kobicha: "#6A3B23",
@@ -43,13 +44,13 @@ const config: Config = {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                "main-bg-image": "url(../../../public/portfolio-background.webp)",
             },
             height: {
                 "350px": "350px",
             },
             dropShadow: {
                 navDropShadow: "0px 0px 20px #e7c9af",
+                logoShadow: "2px 1px 1px #966348",
             },
         },
     },

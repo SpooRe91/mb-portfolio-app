@@ -19,19 +19,21 @@ const NavBar = () => {
             <div
                 className={`flex ${!isMobile ? `flex-row` : "flex-col items-center"} justify-between items-center`}
             >
-                <div
-                    className={`mx-3 text-welcome-text-color ${!isMobile ? "text-2xl" : "text-lg mb-4"} font-bold`}
-                >
-                    M.B. Portfolio
-                </div>
+                <Link href={"/"}>
+                    <h1
+                        className={`rounded-[8px] backdrop-blur-[5px] shadow-box-shadow-main py-[0.2rem] px-[0.4rem] ${!isMobile ? "hover:text-colorLight active:text-colorMediumLight" : ""} text-navBarInactive font-bold tracking-wide transition-all duration-300 ease-in-out ${!isMobile ? "text-2xl" : "text-lg mb-4"}`}
+                    >
+                        M.B. Portfolio
+                    </h1>
+                </Link>
                 <ul
-                    className={`flex flex-wrap ${!isMobile ? "flex-row" : "flex-col items-center"} gap-4 text-lg text-welcome-text-color`}
+                    className={`flex flex-wrap ${!isMobile ? "flex-row" : "flex-col items-center"} gap-4 text-lg text-navBarInactive`}
                 >
                     <li>
                         <Link
                             href="/"
                             passHref
-                            className={`hover:text-rawUmber transition-all ${active === "/" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
+                            className={`hover:text-colorLight transition-all ${active === "/" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
                             Home
                         </Link>
@@ -40,7 +42,7 @@ const NavBar = () => {
                         <Link
                             href="/projects"
                             passHref
-                            className={`hover:text-rawUmber transition-all ${active === "/projects" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
+                            className={`hover:text-colorLight transition-all ${active === "/projects" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
                             Projects
                         </Link>
@@ -49,7 +51,7 @@ const NavBar = () => {
                         <Link
                             href="/about"
                             passHref
-                            className={`hover:text-rawUmber transition-all ${active === "/about" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
+                            className={`hover:text-colorLight transition-all ${active === "/about" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
                             About
                         </Link>

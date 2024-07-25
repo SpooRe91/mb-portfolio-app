@@ -37,7 +37,7 @@ const useGetProjects = () => {
             } else {
                 clearInterval(intervalId);
             }
-        }, 7500);
+        }, 5000);
 
         // Clean up interval on component unmount
         return () => clearInterval(intervalId);

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('./ResetCSS.css');
+@import url("./ResetCSS.css");
 :root {
     --foreground-rgb: 0, 0, 0;
     --background-start-rgb: 214, 219, 220;
@@ -24,6 +24,12 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(172, 184, 151, 1) 0%,
+        rgba(125, 119, 87, 1) 50%,
+        rgba(37, 39, 40, 1) 100%
+    );
 }
 
 @layer utilities {

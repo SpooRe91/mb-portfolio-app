@@ -1,8 +1,6 @@
 "use client";
+import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/constants";
 import axios, { AxiosError } from "axios";
-
-const utilKey = process.env.NEXT_PUBLIC_UTIL_KEY;
-const BASE_URL = "https://mb-multi-tool-api.vercel.app/personal/portfolio";
 
 type ProjectType = {
     img: string;
@@ -13,14 +11,14 @@ type ProjectType = {
 };
 
 export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
-    if (!utilKey) {
+    if (!UTIL_KEY) {
         throw new Error("NEXT_PUBLIC_UTIL_KEY is not defined in the environment variables.");
     }
 
     try {
         const res = await axios.get<ProjectType[]>(BASE_URL, {
             headers: {
-                "x-util-key": utilKey,
+                "x-util-key": UTIL_KEY,
             },
         });
         if (!res.data) {

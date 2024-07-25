@@ -29,7 +29,7 @@ const Footer = () => {
 
     return (
         <section
-            className={`flex flex-col fixed bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"} shadow-box-shadow-secondary`}
+            className={`flex flex-col absolute bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"} shadow-box-shadow-secondary`}
         >
             <h1 className={`${!isMobile ? "text-3xl" : "text-sm"} font-bold mb-4`}>Contact Me</h1>
             <p className={`${!isMobile ? "text-lg" : "text-sm"} text-center`}>

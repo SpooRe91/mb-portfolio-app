@@ -7,6 +7,7 @@ import GlobalLoader from "@PortfolioApp/Components/GlobalLoader";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
+import { TECHS_USED } from "../constants";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
@@ -17,16 +18,15 @@ const ProjectsComponent = () => {
             {isLoading ? (
                 <GlobalLoader />
             ) : (
-                <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem] bg-bg-transparent-black-main">
-                    <div className="flex flex-col items-center gap-1 max-w- w-full">
-                        <h1 className="text-4xl px-5 py-8 text-welcome-text-color">My projects</h1>
+                <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem]">
+                    <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main">
+                        <h1 className="text-4xl px-5 py-8 text-colorMediumDark">My projects</h1>
                         <TextBlock
                             title={"and most of the technologies I currently use"}
-                            content={
-                                "JavaScript, TypeScript, React, Redux, HTML5, CSS3, SASS, Vite, NPM, Mocha, Chai, RTL, Vitest, Cypress, MongoDB, PostgreSQL, Node.js, Express.js, Firebase, Git"
-                            }
                             className="flex flex-col gap-4 items-center text-center justify-cetetext-block p-2 text-tech-text-color"
-                        />
+                        >
+                            <p className="max-w-[450px] py-[1rem] px-[0.75rem]">{TECHS_USED}</p>
+                        </TextBlock>
                     </div>
                     {projectsData.map(
                         (
