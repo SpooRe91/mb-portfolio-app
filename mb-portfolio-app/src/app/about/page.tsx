@@ -11,8 +11,8 @@ const About = () => {
                 <p className={`${!isMobile ? "text-lg" : "text-sm"} text-left`}>
                     Hello, I am Martin Bogdanov, a Web Developer mainly working on Front-end development,
                     however a Full-stack development is also something I enjoy. I use my skills in JavaScript
-                    and TypeScript, along with a robust selection of technologies that includes React,
-                    JavaScript, TypeScript, SASS, GraphQL, NodeJS, REST API, MongoDB and more.
+                    and TypeScript, along with a robust selection of technologies that includes React, SASS,
+                    GraphQL, NodeJS, Express, REST API, MongoDB and more.
                 </p>
                 <p className={`${!isMobile ? "text-lg" : "text-sm"} text-left`}>
                     My journey in web development is driven by a commitment to critical thinking, dedication,

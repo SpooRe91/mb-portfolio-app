@@ -1,5 +1,4 @@
 import Image from "next/legacy/image";
-import Link from "next/link";
 import React from "react";
 
 type CardComponentProps = {
@@ -38,7 +37,8 @@ const CardComponent = ({
                         layout="fill"
                         objectFit="cover"
                         objectPosition="center"
-                        loading="lazy"
+                        loading={!img.includes("android") ? "lazy" : "eager"}
+                        priority={img.includes("android") ? true : false}
                     />
                 </div>
             )}
