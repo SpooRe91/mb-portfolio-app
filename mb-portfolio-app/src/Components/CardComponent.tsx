@@ -32,21 +32,14 @@ const CardComponent = ({
                     className={`relative w-full shadow-image-container-box-shadow ${imgClassName}`}
                     style={{ maxWidth: `${imgWidth}px`, height: `${imgHeight}px` }}
                 >
-                    <Link
-                        className="flex w-full h-full relative transition-all hover:shadow-image-container-box-shadow"
-                        href={img}
-                        target="_blank"
-                        rel="noopenner"
-                    >
-                        <Image
-                            src={img}
-                            alt="Card image"
-                            layout="fill"
-                            objectFit="cover"
-                            objectPosition="center"
-                            priority
-                        />
-                    </Link>
+                    <Image
+                        src={img}
+                        alt="Card image"
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="center"
+                        priority
+                    />
                 </div>
             )}
             <div className={`px-1 py-2 ${img && "backdrop-blur-sm"} ${textClassName}`}>

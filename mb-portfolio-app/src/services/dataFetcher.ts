@@ -2,7 +2,7 @@
 import axios, { AxiosError } from "axios";
 
 const utilKey = process.env.NEXT_PUBLIC_UTIL_KEY;
-const BASE_URL = "https://mb-cook-server.vercel.app/personal/portfolio";
+const BASE_URL = "https://mb-multi-tool-api.vercel.app/personal/portfolio";
 
 type ProjectType = {
     img: string;
