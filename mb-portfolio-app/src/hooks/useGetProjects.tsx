@@ -21,11 +21,10 @@ const useGetProjects = () => {
                 const result = await fetchPortfolioData();
                 if (result) {
                     setProjectsData(result);
+                    setIsLoading(false);
                 }
             } catch (error) {
                 console.error("Error fetching data:", error);
-            } finally {
-                setIsLoading(false);
             }
         };
 
