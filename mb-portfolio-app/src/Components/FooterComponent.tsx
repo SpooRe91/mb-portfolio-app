@@ -32,13 +32,13 @@ const Footer = () => {
             className={`flex flex-col fixed bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"} shadow-box-shadow-secondary`}
         >
             <h1 className={`${!isMobile ? "text-3xl" : "text-sm"} font-bold mb-4`}>Contact Me</h1>
-            <p className={`${!isMobile ? "text-lg" : "text-sm"} mb-4 text-center`}>
+            <p className={`${!isMobile ? "text-lg" : "text-sm"} text-center`}>
                 I am happy to connect! You can send me an email or find me on my other social media platforms:
             </p>
             {!isMobile ? (
                 <div
                     onClick={() => handleCopyEmail()}
-                    className="flex flex-row gap-3 p-4 relative items-center my-3 hover:cursor-pointer hover:text-greenHover transition-colors"
+                    className="flex flex-row gap-3 p-[0.5rem] relative items-center my-3 hover:cursor-pointer hover:text-greenHover transition-colors"
                 >
                     <div className="flex flex-row items-center">
                         <Email className="mr-2" /> <p>m.bogdanov9110@gmail.com</p>

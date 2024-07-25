@@ -42,7 +42,7 @@ const CardComponent = ({
                     />
                 </div>
             )}
-            <div className={`px-1 py-2 ${img && "backdrop-blur-sm"} ${textClassName}`}>
+            <div className={`px-1 py-2 ${textClassName}`}>
                 <p className="text-base leading-relaxed rounded-lg">{text}</p>
             </div>
         </div>

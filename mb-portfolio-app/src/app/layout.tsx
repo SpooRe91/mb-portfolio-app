@@ -21,7 +21,7 @@ export default function RootLayout({
                 <Image
                     src={bgImage}
                     alt="bg image missing"
-                    className="min-h-dvh h-[100%] fixed top-0 left-0 z-[0] w-full object-cover backdrop-blur-[5px] "
+                    className="min-h-dvh h-[100%] fixed top-0 left-0 z-[0] w-full object-cover"
                 />
                 <NavBar />
                 {children}

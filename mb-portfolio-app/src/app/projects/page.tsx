@@ -45,11 +45,10 @@ const ProjectsComponent = () => {
                             px-4 
                             py-6 
                             rounded-lg 
-                            backdrop-blur-sm
                             shadow-box-shadow-secondary 
-                            bg-transparent
-                            ${!isMobile ? "hover:bg-bg-transparent-black-main" : ""}
+                            bg-bg-transparent-black-main
                             ${!isMobile ? "hover:translate-x-1" : ""}
+                            ${!isMobile ? "hover:text-colorDark" : ""}
                             transition-all
                             `}
                             >

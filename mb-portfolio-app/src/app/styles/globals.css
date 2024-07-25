@@ -19,7 +19,6 @@
 
 body {
     color: rgb(var(--foreground-rgb));
-    backdrop-filter: blur(5px);
     padding-bottom: 250px;
     position: relative;
     min-height: 100vh;
