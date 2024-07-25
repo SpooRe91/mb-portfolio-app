@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "./styles/globals.css";
 import NavBar from "@PortfolioApp/Components/NavBar";
 import Footer from "@PortfolioApp/Components/FooterComponent";
 

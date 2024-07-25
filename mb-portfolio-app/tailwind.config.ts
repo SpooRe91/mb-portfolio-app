@@ -43,7 +43,7 @@ const config: Config = {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-                "main-bg-image": "url(../../public/portfolio-background.webp)",
+                "main-bg-image": "url(../../../public/portfolio-background.webp)",
             },
             height: {
                 "350px": "350px",
