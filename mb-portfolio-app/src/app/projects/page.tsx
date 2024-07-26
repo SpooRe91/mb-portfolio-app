@@ -17,7 +17,7 @@ const ProjectsComponent = () => {
         <GlobalLoader />
     ) : (
         <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem]">
-            <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main">
+            <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
                 <h1 className="text-4xl px-5 py-8 text-colorMediumDark">My projects</h1>
                 <TextBlock
                     title={"and most of the technologies I currently use"}
@@ -26,14 +26,15 @@ const ProjectsComponent = () => {
                     <p className="max-w-[450px] py-[1rem] px-[0.75rem]">{TECHS_USED}</p>
                 </TextBlock>
             </div>
-            {projectsData.map(
-                (
-                    { url, img, title, text, content },
-                    i //index is stable in this case, the data is static
-                ) => (
-                    <div
-                        key={i}
-                        className={`flex 
+            <div className="w-full flex flex-col items-center gap-[3rem]">
+                {projectsData.map(
+                    (
+                        { url, img, title, text, content },
+                        i //index is stable in this case, the data is static
+                    ) => (
+                        <div
+                            key={i}
+                            className={`flex 
                             flex-wrap 
                             ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"} 
                             gap-8 
@@ -43,44 +44,45 @@ const ProjectsComponent = () => {
                             px-4 
                             py-6 
                             rounded-lg 
-                            shadow-box-shadow-secondary 
+                            shadow-box-shadow-dark 
                             bg-bg-transparent-black-main
-                            ${!isMobile ? "hover:text-colorDark" : ""}
+                            ${!isMobile ? "hover:text-colorMedLightBlue" : ""}
                             ${isMobile ? "mx-[5rem]" : ""}
                             transition-all
                             `}
-                    >
-                        <CardComponent
-                            img={img}
-                            imgWidth={350}
-                            text={text}
-                            className={"w-[250px] h-[250px]"}
-                            textClassName="w-full"
-                        />
-                        <TextBlock
-                            title={title}
-                            content={content}
-                            url={url}
-                            className={`flex flex-col gap-4 items-center text-block text-colorDark p-2 w-80 ${!isMobile ? "contrast-0 hover:contrast-100" : ""} transition-all`}
                         >
-                            <Link
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="hover:text-tech-text-color"
+                            <CardComponent
+                                img={img}
+                                imgWidth={350}
+                                text={text}
+                                className={"w-[250px] h-[250px]"}
+                                textClassName="w-full"
+                            />
+                            <TextBlock
+                                title={title}
+                                content={content}
+                                url={url}
+                                className={`flex flex-col gap-4 items-center text-block text-colorMedLightBlue p-2 w-80 ${!isMobile ? "contrast-0 hover:contrast-100" : ""} transition-all`}
                             >
-                                <Button
-                                    variant="outlined"
-                                    size={!isMobile ? "medium" : "small"}
-                                    color="inherit"
+                                <Link
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-colorDark hover:text-tech-text-color"
                                 >
-                                    View project
-                                </Button>
-                            </Link>
-                        </TextBlock>
-                    </div>
-                )
-            )}
+                                    <Button
+                                        variant="outlined"
+                                        size={!isMobile ? "medium" : "small"}
+                                        color="inherit"
+                                    >
+                                        View project
+                                    </Button>
+                                </Link>
+                            </TextBlock>
+                        </div>
+                    )
+                )}
+            </div>
         </section>
     );
 };

@@ -37,8 +37,7 @@ const CardComponent = ({
                         layout="fill"
                         objectFit="cover"
                         objectPosition="center"
-                        loading={!img.includes("android") ? "lazy" : "eager"}
-                        priority={img.includes("android") ? true : false}
+                        priority
                     />
                 </div>
             )}

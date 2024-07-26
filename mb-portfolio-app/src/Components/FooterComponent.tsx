@@ -29,7 +29,7 @@ const Footer = () => {
 
     return (
         <section
-            className={`z-[10] flex flex-col absolute bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"} shadow-box-shadow-secondary`}
+            className={`z-[10] shadow-box-shadow-dark flex flex-col absolute bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"}`}
         >
             <h1 className={`${!isMobile ? "text-3xl" : "text-sm"} font-bold mb-4`}>Contact Me</h1>
             <p className={`${!isMobile ? "text-lg" : "text-sm"} text-center`}>
@@ -51,9 +51,9 @@ const Footer = () => {
                 <div className="flex flex-row justify-center my-3">
                     <Link
                         href="mailto:m.bogdanov9110@gmail.com"
-                        className="text-colorMediumLight mb-4 flex items-center"
+                        className="text-colorMediumLight mb-4 flex items-center gap-1"
                     >
-                        <Email /> e-mail me
+                        <Email /> <p>e-mail me</p>
                     </Link>
                 </div>
             )}
@@ -62,17 +62,17 @@ const Footer = () => {
                     href="https://github.com/SpooRe91"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-colorMediumLight transition-colors hover:text-rawUmber flex items-center"
+                    className="text-colorMediumLight transition-colors hover:text-rawUmber flex items-center gap-1"
                 >
-                    <GitHub /> GitHub
+                    <GitHub /> <p> GitHub</p>
                 </Link>
                 <Link
                     href="https://www.linkedin.com/in/mbogdanov9110/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-colorMediumLight transition-colors hover:text-rawUmber flex items-center"
+                    className="text-colorMediumLight transition-colors hover:text-rawUmber flex items-center gap-1"
                 >
-                    <LinkedIn /> LinkedIn
+                    <LinkedIn /> <p>LinkedIn</p>
                 </Link>
             </div>
         </section>

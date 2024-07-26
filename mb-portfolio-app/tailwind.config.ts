@@ -27,6 +27,7 @@ const config: Config = {
                 colorMediumDark: "#9DBC98",
                 colorMediumLight: "#EBD9B4",
                 colorLight: "#F9EFDB",
+                colorMedLightBlue: "#61bea5",
                 "bg-transparent-black-main": "#000000b8",
                 "bg-transparent-black-secondary": "#000000b3",
                 "welcome-text-color": "#d3ba94",
@@ -37,6 +38,7 @@ const config: Config = {
                 "box-shadow-main": "0px 8px 20px -4px #968676",
                 "box-shadow-secondary": "0px 6px 20px -4px #a08571",
                 "image-container-box-shadow": "0px 0px 20px -5px #bcb9b3",
+                "box-shadow-dark": "1px 1px 20px #131310",
             },
             fontFamily: {
                 sans: ["Titillium Web", "PT Sans", "sans-serif"],

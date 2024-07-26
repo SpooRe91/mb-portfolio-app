@@ -15,7 +15,7 @@ const NavBar = () => {
     }, [path]);
 
     return (
-        <div className="sticky w-full py-[1.75rem] px-[1.5rem] mb-[1rem] bg-bg-transparent-black-main shadow-lg top-0 left-0 z-[20]">
+        <div className="sticky w-full py-[1.75rem] px-[1.5rem] mb-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] shadow-box-shadow-dark">
             <div
                 className={`flex ${!isMobile ? `flex-row` : "flex-col items-center"} justify-between items-center`}
             >

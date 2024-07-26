@@ -75,12 +75,7 @@ a {
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
-  scrollbar-width: 1px;
-}
-
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 1px;
+  scrollbar-width: 0px;
 }
 
 *::-webkit-scrollbar-track {

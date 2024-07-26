@@ -5,8 +5,8 @@ const About = () => {
     const { isMobile } = useGetViewWidth();
 
     return (
-        <section className="z-[10] relative flex flex-col items-center backdrop-blur-[5px] text-about-text-color p-6 shadow-box-shadow-secondary pb-[20rem]">
-            <div className="flex flex-wrap gap-5 flex-col align-middle items-center max-w-4xl bg-bg-transparent-black-main p-[1.25rem] rounded-[5px]">
+        <section className="z-[10] relative flex flex-col items-center backdrop-blur-[5px] text-about-text-color p-6 pb-[20rem]">
+            <div className="flex flex-wrap gap-5 flex-col align-middle items-center max-w-4xl bg-bg-transparent-black-main p-[1.25rem] rounded-[5px] shadow-box-shadow-dark">
                 <h1 className="text-3xl font-bold mb-4">About Me</h1>
                 <p className={`${!isMobile ? "text-lg" : "text-sm"} text-left`}>
                     Hello, I am Martin Bogdanov, a Web Developer mainly working on Front-end development,

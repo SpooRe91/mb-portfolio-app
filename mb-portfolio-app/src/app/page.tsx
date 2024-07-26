@@ -5,7 +5,7 @@ const HomePage = () => {
     const { isMobile } = useGetViewWidth();
     return (
         <div
-            className={`flex flex-col items-center max-w-4xl ${!isMobile ? "my-[10rem] gap-[2rem] mx-[auto]" : "gap-[0.5rem] mx-6"} rounded-[8px] h-full relative bg-bg-transparent-black-secondary`}
+            className={`flex flex-col items-center max-w-4xl ${!isMobile ? "my-[10rem] gap-[2rem] mx-[auto]" : "gap-[0.5rem] mx-6"} rounded-[8px] h-full relative bg-bg-transparent-black-secondary shadow-box-shadow-dark`}
         >
             <h1
                 className={`w-full text-center ${!isMobile ? "text-4xl px-5 py-8" : "text-lg px-3 py-5"}  text-tech-text-color`}
