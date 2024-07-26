@@ -16,7 +16,7 @@ const HomePage = () => {
                 className={`max-w-[40rem] text-center ${!isMobile ? "text-[1.2rem] px-5 py-8" : "text-[0.9rem] px-4 py-5  [word-spacing:-1.5px]"} text-colorMediumDark `}
             >
                 Here you can find information about my projects, myself and my contact information. Should you
-                have any remarks, questions, suggestions or and offer, please do not hesitate to reach me.
+                have any remarks, questions, suggestions or an offer, please do not hesitate to reach me.
             </p>
         </div>
     );
