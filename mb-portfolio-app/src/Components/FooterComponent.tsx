@@ -6,11 +6,11 @@ import { useState } from "react";
 
 const Footer = () => {
     const { isMobile } = useGetViewWidth();
-    const [isTextCopied, setIsTextCopied] = useState<boolean>(false);
+    const [isEmailCopied, setIsEmailCopied] = useState<boolean>(false);
 
     const removeCopiedText = () => {
         const timeout = setTimeout(() => {
-            setIsTextCopied(() => false);
+            setIsEmailCopied(() => false);
             clearTimeout(timeout);
         }, 1500);
     };
@@ -22,7 +22,7 @@ const Footer = () => {
         } catch (error) {
             console.error(`We ran into an error while attempting to copy: ${error}`);
         } finally {
-            setIsTextCopied(true);
+            setIsEmailCopied(true);
             removeCopiedText();
         }
     };
@@ -38,13 +38,13 @@ const Footer = () => {
             {!isMobile ? (
                 <div
                     onClick={() => handleCopyEmail()}
-                    className="flex flex-row gap-3 p-[0.5rem] relative items-center my-3 hover:cursor-pointer hover:text-greenHover transition-colors"
+                    className="flex flex-row p-[1.2rem] relative items-center my-1 hover:cursor-pointer hover:text-greenHover transition-colors"
                 >
                     <div className="flex flex-row items-center">
                         <Email className="mr-2" /> <p>m.bogdanov9110@gmail.com</p>
                     </div>
-                    <div className="absolute top-0 font-bold text-green-500 mb-6">
-                        {isTextCopied && <p>Email copied!</p>}
+                    <div className="absolute top-0 font-bold text-green-500">
+                        {isEmailCopied && <p>Email copied!</p>}
                     </div>
                 </div>
             ) : (
@@ -53,7 +53,7 @@ const Footer = () => {
                         href="mailto:m.bogdanov9110@gmail.com"
                         className="text-colorMediumLight mb-4 flex items-center gap-1"
                     >
-                        <Email className="mr-2"/> <p>e-mail me</p>
+                        <Email className="mr-2" /> <p>e-mail me</p>
                     </Link>
                 </div>
             )}
