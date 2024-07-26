@@ -31,8 +31,8 @@ const Footer = () => {
         <section
             className={`z-[10] shadow-box-shadow-dark flex flex-col absolute bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"}`}
         >
-            <h1 className={`${!isMobile ? "text-3xl" : "text-sm"} font-bold mb-4`}>Contact Me</h1>
-            <p className={`${!isMobile ? "text-lg" : "text-sm"} text-center`}>
+            <h1 className="md:text-3xl sm:text-sm font-bold mb-4">Contact Me</h1>
+            <p className="md:text-lg sm:text-sm text-center">
                 I am happy to connect! You can send me an email or find me on my other social media platforms:
             </p>
             {!isMobile ? (
@@ -53,7 +53,7 @@ const Footer = () => {
                         href="mailto:m.bogdanov9110@gmail.com"
                         className="text-colorMediumLight mb-4 flex items-center gap-1"
                     >
-                        <Email /> <p>e-mail me</p>
+                        <Email className="mr-2"/> <p>e-mail me</p>
                     </Link>
                 </div>
             )}

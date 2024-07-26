@@ -2,13 +2,10 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
 
 const NavBar = () => {
     const path = usePathname();
     const [active, setActive] = useState("");
-
-    const { isMobile } = useGetViewWidth();
 
     useEffect(() => {
         setActive(path);
@@ -16,18 +13,14 @@ const NavBar = () => {
 
     return (
         <div className="sticky w-full py-[1.75rem] px-[1.5rem] mb-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] shadow-box-shadow-dark">
-            <div
-                className={`flex ${!isMobile ? `flex-row` : "flex-col items-center"} justify-between items-center`}
-            >
+            <div className="flex md:flex-row sm:flex-col items-center justify-between">
                 <Link href={"/"}>
-                    <h1
-                        className={`rounded-[8px] backdrop-blur-[5px] shadow-box-shadow-main py-[0.2rem] px-[0.4rem] ${!isMobile ? "hover:text-colorLight active:text-colorMediumLight" : ""} text-navBarInactive font-bold tracking-wide transition-all duration-300 ease-in-out ${!isMobile ? "text-2xl" : "text-lg mb-4"}`}
-                    >
+                    <h1 className="rounded-[8px] backdrop-blur-[5px] shadow-box-shadow-logo py-[0.2rem] px-[0.4rem] md:hover:text-colorLight text-navBarInactive font-bold tracking-wide transition-all duration-300 ease-in-out md:text-2xl sm:text-lg">
                         M.B. Portfolio
                     </h1>
                 </Link>
                 <ul
-                    className={`flex flex-wrap ${!isMobile ? "flex-row" : "flex-col items-center"} gap-4 text-lg text-navBarInactive`}
+                    className={`flex flex-wrap md:flex-row sm:flex-col sm:items-center gap-4 text-lg text-navBarInactive`}
                 >
                     <li>
                         <Link

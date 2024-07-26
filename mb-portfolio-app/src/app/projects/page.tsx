@@ -26,7 +26,7 @@ const ProjectsComponent = () => {
                     <p className="max-w-[450px] py-[1rem] px-[0.75rem]">{TECHS_USED}</p>
                 </TextBlock>
             </div>
-            <div className="w-full flex flex-col items-center gap-[3rem]">
+            <div className="grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl mx-auto">
                 {projectsData.map(
                     (
                         { url, img, title, text, content },
@@ -41,13 +41,14 @@ const ProjectsComponent = () => {
                             justify-center 
                             max-w-screen-lg 
                             w-full 
+                            md:min-h-[635px]
                             px-4 
                             py-6 
                             rounded-lg 
                             shadow-box-shadow-dark 
                             bg-bg-transparent-black-main
-                            ${!isMobile ? "hover:text-colorMedLightBlue" : ""}
-                            ${isMobile ? "mx-[5rem]" : ""}
+                            md:hover:text-colorMedLightBlue
+                            md:mx-[5rem]
                             transition-all
                             `}
                         >
@@ -62,7 +63,7 @@ const ProjectsComponent = () => {
                                 title={title}
                                 content={content}
                                 url={url}
-                                className={`flex flex-col gap-4 items-center text-block text-colorMedLightBlue p-2 w-80 ${!isMobile ? "contrast-0 hover:contrast-100" : ""} transition-all`}
+                                className={`flex flex-col gap-4 items-center text-block text-colorMedLightBlue p-2 w-80 md:contrast-0 hover:contrast-100 transition-all`}
                             >
                                 <Link
                                     href={url}

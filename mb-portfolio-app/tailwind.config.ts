@@ -39,6 +39,7 @@ const config: Config = {
                 "box-shadow-secondary": "0px 6px 20px -4px #a08571",
                 "image-container-box-shadow": "0px 0px 20px -5px #bcb9b3",
                 "box-shadow-dark": "1px 1px 20px #131310",
+                "box-shadow-logo": "1px 7px 30px #343737",
             },
             fontFamily: {
                 sans: ["Titillium Web", "PT Sans", "sans-serif"],
