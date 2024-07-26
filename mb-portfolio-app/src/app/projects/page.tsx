@@ -1,13 +1,13 @@
 "use client";
-import CardComponent from "../../Components/CardComponent";
-import TextBlock from "../../Components/TextBlockComponent";
+import CardComponent from "../../Components/Card/CardComponent";
+import TextBlock from "../../Components/TextBlock/TextBlockComponent";
 
 import useGetProjects from "@PortfolioApp/hooks/useGetProjects";
 import Button from "@mui/material/Button";
 import Link from "next/link";
 import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
 import { TECHS_USED } from "../constants";
-import GlobalLoader from "./../../Components/GlobalLoader";
+import GlobalLoader from "@PortfolioApp/Components/Loader/GlobalLoader";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();

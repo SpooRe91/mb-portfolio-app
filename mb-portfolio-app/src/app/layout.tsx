@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
-import NavBar from "@PortfolioApp/Components/NavBar";
-import Footer from "@PortfolioApp/Components/FooterComponent";
+import NavBar from "@PortfolioApp/Components/NavBar/NavBar";
+import Footer from "@PortfolioApp/Components/Footer/FooterComponent";
 
 export const metadata: Metadata = {
     title: "M.B. Portfolio app",

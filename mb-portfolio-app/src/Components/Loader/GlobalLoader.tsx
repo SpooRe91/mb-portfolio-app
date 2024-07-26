@@ -1,6 +1,7 @@
 "use client";
 import CircularProgress from "@mui/material/CircularProgress";
-import TextBlock from "./TextBlockComponent";
+import TextBlock from "../TextBlock/TextBlockComponent";
+
 
 const GlobalLoader = () => {
     return (

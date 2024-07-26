@@ -1,5 +1,4 @@
 "use client";
-
 import { fetchPortfolioData } from "@PortfolioApp/services/dataFetcher";
 import { useEffect, useState } from "react";
 
@@ -39,7 +38,6 @@ const useGetProjects = () => {
             }
         }, 5000);
 
-        // Clean up interval on component unmount
         return () => clearInterval(intervalId);
     }, [isLoading, projectsData.length]);
 
