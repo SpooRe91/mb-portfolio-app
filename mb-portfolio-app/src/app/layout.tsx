@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./styles/globals.css";
 import NavBar from "@PortfolioApp/Components/NavBar/NavBar";
 import Footer from "@PortfolioApp/Components/Footer/FooterComponent";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
     title: "M.B. Portfolio app",
@@ -16,6 +17,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
+                <Analytics />
                 <NavBar />
                 {children}
                 <Footer />
