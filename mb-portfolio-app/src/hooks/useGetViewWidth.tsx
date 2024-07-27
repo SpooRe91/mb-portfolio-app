@@ -2,8 +2,14 @@
 import { useEffect, useState } from "react";
 
 const mobileThreshold = 768;
-
-const useGetViewWidth = () => {
+/**
+ * Hook to determine if the view width is considered mobile.
+ * Adds an eventListener to the window object and listens for width changes.
+ * Whenever the window is resized, the useEffect is recalled and a new value is returned.
+ * @type { isMobile: boolean }
+ * @returns isMobile - Object with a boolean indicating if the view width is mobile.
+ */
+const useGetViewWidth = (): { isMobile: boolean } => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
 

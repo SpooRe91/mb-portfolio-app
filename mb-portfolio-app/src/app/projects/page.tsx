@@ -8,24 +8,33 @@ import Link from "next/link";
 import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
 import { TECHS_USED } from "../constants";
 import GlobalLoader from "@PortfolioApp/Components/Loader/GlobalLoader";
+import NotificationComponent from "@PortfolioApp/Components/Notification/NotificationComponent";
+import ServerDown from "@PortfolioApp/Components/ServerDown/ServerDown";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
-    const { isLoading, projectsData } = useGetProjects();
+    const { isLoading, projectsData, message, handleSetMessage } = useGetProjects();
 
     return isLoading ? (
-        <GlobalLoader />
+        <GlobalLoader loadingText={"Fetching projects data, please wait..."} />
     ) : (
         <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem]">
-            <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
-                <h1 className="text-4xl px-5 py-8 text-colorMediumDark">My projects</h1>
-                <TextBlock
-                    title={"and most of the technologies I currently use"}
-                    className="flex flex-col gap-4 items-center text-center justify-cetetext-block p-2 text-tech-text-color"
-                >
-                    <p className="max-w-[450px] py-[1rem] px-[0.75rem]">{TECHS_USED}</p>
-                </TextBlock>
-            </div>
+            {(message.error || message.notification) && (
+                <NotificationComponent {...message} handleSetMessage={handleSetMessage} />
+            )}
+            {!!projectsData.length ? (
+                <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
+                    <h1 className="text-4xl px-5 py-8 text-colorMediumDark">My projects</h1>
+                    <TextBlock
+                        title={"and most of the technologies I currently use"}
+                        className="flex flex-col gap-4 items-center text-center justify-cetetext-block p-2 text-tech-text-color"
+                    >
+                        <p className="max-w-[450px] py-[1rem] px-[0.75rem]">{TECHS_USED}</p>
+                    </TextBlock>
+                </div>
+            ) : (
+                <ServerDown />
+            )}
             <div className="grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl mx-auto">
                 {projectsData.map(
                     (

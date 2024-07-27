@@ -27,11 +27,9 @@ export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
         return res.data;
     } catch (error) {
         if (error instanceof AxiosError) {
-            console.log(error);
-            console.error(`Axios error: ${error.response?.data?.message || error.message}`);
+            throw `Axios error: ${error.response?.data?.message || error.message}`;
         } else {
-            console.error(`Unexpected error: ${error}`);
+            throw `Unexpected error: ${error}`;
         }
-        return null;
     }
 };
