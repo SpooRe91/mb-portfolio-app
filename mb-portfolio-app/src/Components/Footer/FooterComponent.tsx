@@ -15,17 +15,17 @@ const Footer = () => {
         }, 1500);
     };
 
-    const handleCopyEmail = async () => {
-        try {
-            await navigator.clipboard.writeText("m.bogdanov9110@gmail.com");
-            return;
-        } catch (error) {
-            console.error(`We ran into an error while attempting to copy: ${error}`);
-        } finally {
-            setIsEmailCopied(true);
-            removeCopiedText();
-        }
-    };
+    // const handleCopyEmail = async () => {
+    //     try {
+    //         await navigator.clipboard.writeText("m.bogdanov9110@gmail.com");
+    //         return;
+    //     } catch (error) {
+    //         console.error(`We ran into an error while attempting to copy: ${error}`);
+    //     } finally {
+    //         setIsEmailCopied(true);
+    //         removeCopiedText();
+    //     }
+    // };
 
     return (
         <section
@@ -33,30 +33,9 @@ const Footer = () => {
         >
             <h1 className="md:text-3xl sm:text-sm font-bold mb-4">Contact Me</h1>
             <p className="md:text-lg sm:text-sm text-center">
-                I am happy to connect! You can send me an email or find me on my other social media platforms:
+                I am happy to connect! You can find me on my social media platforms:
             </p>
-            {!isMobile ? (
-                <div
-                    onClick={() => handleCopyEmail()}
-                    className="flex flex-row p-[1.2rem] relative items-center my-1 hover:cursor-pointer hover:text-greenHover transition-colors"
-                >
-                    <div className="flex flex-row items-center">
-                        <Email className="mr-2" /> <p>m.bogdanov9110@gmail.com</p>
-                    </div>
-                    <div className="absolute top-0 font-bold text-green-500">
-                        {isEmailCopied && <p>Email copied!</p>}
-                    </div>
-                </div>
-            ) : (
-                <div className="flex flex-row justify-center my-3">
-                    <Link
-                        href="mailto:m.bogdanov9110@gmail.com"
-                        className="text-colorMediumLight mb-4 flex items-center gap-1"
-                    >
-                        <Email className="mr-2" /> <p>e-mail me</p>
-                    </Link>
-                </div>
-            )}
+
             <div className="flex space-x-4">
                 <Link
                     href="https://github.com/SpooRe91"
