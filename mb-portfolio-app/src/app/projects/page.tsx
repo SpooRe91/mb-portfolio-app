@@ -16,7 +16,7 @@ const ProjectsComponent = () => {
     const { isLoading, projectsData, message, handleClearMessage } = useGetProjects();
 
     return isLoading ? (
-        <GlobalLoader loadingText={"Fetching projects data, please wait..."} />
+        <GlobalLoader mainClassName="min-h-screen" loadingText={"Fetching projects data, please wait..."} />
     ) : (
         <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem]">
             {(message.error || message.notification) && (

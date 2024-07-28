@@ -114,7 +114,8 @@ const ContactForm = () => {
                     <GlobalLoader
                         loadingText="Preparing the mail pigeon, this may take a little..."
                         mainClassName="min-h-[365px] p-[1rem] min-w-full rounded-[8px]"
-                        secondaryClassName="md:min-h-full"
+                        secondaryClassName="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:h-[340px] sm:h-[360px]"
+                        textClassName="text-colorMedLightBlue"
                     />
                 </div>
             )}

@@ -12,10 +12,10 @@ type LoadingProps = {
 const GlobalLoader = ({ loadingText, mainClassName, secondaryClassName, textClassName }: LoadingProps) => {
     return (
         <div
-            className={`relative z-[10] flex items-center w-full min-h-screen justify-center bg-bg-transparent-black-main ${mainClassName}`}
+            className={`relative z-[10] flex items-center w-full justify-center bg-bg-transparent-black-main ${mainClassName}`}
         >
             <div
-                className={`w-full h-[100px] flex flex-col text- gap-4 items-center justify-center bg-bg-transparent-black-main sm:h-full sm:p-[1rem] rounded-[8px] ${secondaryClassName}`}
+                className={`w-full flex flex-col gap-4 items-center justify-center bg-bg-transparent-black-main sm:p-[1rem] rounded-[8px] ${secondaryClassName}`}
             >
                 <CircularProgress color="inherit" className="text-colorMediumDark" />
                 <TextBlock
