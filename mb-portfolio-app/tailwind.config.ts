@@ -30,6 +30,7 @@ const config: Config = {
                 colorMedLightBlue: "#61bea5",
                 "bg-transparent-black-main": "#000000b8",
                 "bg-transparent-black-secondary": "#000000b3",
+                "bg-transparent-black-tretriary": "#00000029",
                 "welcome-text-color": "#d3ba94",
                 "tech-text-color": "#c8e7ee",
                 "about-text-color": "#DAD3BE",

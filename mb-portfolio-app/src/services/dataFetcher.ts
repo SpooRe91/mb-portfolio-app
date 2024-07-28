@@ -15,7 +15,7 @@ export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
     }
 
     try {
-        const res = await axios.get<ProjectType[]>(BASE_URL, {
+        const res = await axios.get<ProjectType[]>(`${BASE_URL}/portfolio`, {
             headers: {
                 "x-util-key": UTIL_KEY,
             },
@@ -26,10 +26,9 @@ export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
         }
         return res.data;
     } catch (error) {
-        if (error instanceof AxiosError) {
+        if (axios.isAxiosError(error)) {
             throw `Axios error: ${error.response?.data?.message || error.message}`;
-        } else {
-            throw `Unexpected error: ${error}`;
         }
+        throw `Unexpected error: ${error}`;
     }
 };

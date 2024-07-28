@@ -19,7 +19,7 @@ type UseGetProjectsResult = {
     isLoading: boolean;
     projectsData: ProjectType[];
     message: NotificationProps;
-    handleSetMessage: () => void;
+    handleClearMessage: () => void;
 };
 const MAX_FETCH_COUNT = 5;
 /**
@@ -35,7 +35,7 @@ const MAX_FETCH_COUNT = 5;
  * - `isLoading` - A boolean indicating if data is currently being fetched.
  * - `projectsData` - An array of project objects retrieved from the API. Each project includes properties like `img`, `title`, `url`, `text`, and `content`.
  * - `message` - A string containing an error message if an error occurs during data fetching, or `null` if no error is present.
- * - `handleSetMessage` - A function which will clear the message whatever it is, it should be passed to the component receiving the message.
+ * - `handleClearMessage` - A function which will clear the message whatever it is, it should be passed to the component receiving the message.
  */
 const useGetProjects = (): UseGetProjectsResult => {
     const [projectsData, setProjectsData] = useState<ProjectType[]>([]);
@@ -96,11 +96,11 @@ const useGetProjects = (): UseGetProjectsResult => {
         };
     }, [dataFetch, isLoading, projectsData.length]);
 
-    const handleSetMessage = useCallback(() => {
+    const handleClearMessage = useCallback(() => {
         setMessage({ error: "", notification: "" });
     }, []);
 
-    return { projectsData, isLoading, message, handleSetMessage };
+    return { projectsData, isLoading, message, handleClearMessage };
 };
 
 export default useGetProjects;

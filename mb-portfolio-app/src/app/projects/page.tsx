@@ -13,14 +13,14 @@ import ServerDown from "@PortfolioApp/Components/ServerDown/ServerDown";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
-    const { isLoading, projectsData, message, handleSetMessage } = useGetProjects();
+    const { isLoading, projectsData, message, handleClearMessage } = useGetProjects();
 
     return isLoading ? (
         <GlobalLoader loadingText={"Fetching projects data, please wait..."} />
     ) : (
         <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem]">
             {(message.error || message.notification) && (
-                <NotificationComponent {...message} handleSetMessage={handleSetMessage} />
+                <NotificationComponent {...message} handleClearMessage={handleClearMessage} />
             )}
             {!!projectsData.length ? (
                 <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
