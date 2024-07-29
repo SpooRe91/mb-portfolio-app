@@ -166,8 +166,8 @@ const ContactForm = () => {
                         onChange={handleChange}
                         onBlur={handleFormCheck}
                         className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
+                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                         required
-                        pattern="^[a-zA-Z0-9.]+@[a-zA-Z]+.[a-zA-Z]+$"
                     />
                     {formError.email && <p className="text-red-600">{formError.email}</p>}
                 </div>
