@@ -59,7 +59,7 @@ const useGetProjects = (): UseGetProjectsResult => {
             if (result) {
                 setProjectsData(result);
                 setIsLoading(false);
-                setMessage({ notification: "Fetched data successfully" });
+                setMessage({ notification: "Projects fetched, enoy!" });
                 refetchCountRef.current = 0;
                 if (intervalIdRef.current) {
                     clearInterval(intervalIdRef.current);

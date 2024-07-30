@@ -1,5 +1,5 @@
-import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/constants";
-import axios, { AxiosError } from "axios";
+import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/utils/constants";
+import axios from "axios";
 
 type ProjectType = {
     img: string;

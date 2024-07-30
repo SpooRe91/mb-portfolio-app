@@ -1,6 +1,6 @@
 const About = () => {
     return (
-        <section className="z-[10] relative flex flex-col items-center backdrop-blur-[5px] text-about-text-color p-6 pb-[20rem]">
+        <section className="z-[10] relative flex flex-col items-center backdrop-blur-[5px] text-about-text-color p-6 md:min-h-screen-h-md sm:min-h-screen-h-sm">
             <div className="flex flex-wrap gap-5 flex-col align-middle items-center max-w-4xl bg-bg-transparent-black-main p-[1.25rem] rounded-[5px] shadow-box-shadow-dark">
                 <h1 className="text-3xl font-bold mb-4">About Me</h1>
                 <p className={`text-left md:text-lg sm:text-sm`}>

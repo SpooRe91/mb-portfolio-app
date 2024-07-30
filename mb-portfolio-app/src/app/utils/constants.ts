@@ -5,3 +5,4 @@ export const TECHS_USED =
 export const FORBIDDEN_PATTERNS = [/<script.*?>.*?<\/script>/gi, /javascript:/gi, /<.*?>/g, /\/|\\/g, /:/g];
 export const MAX_RETRIES = 3;
 export const RETRY_DELAY = 1000;
+export const PATHS = ["/", "/projects", "/about", "/contactMe"];

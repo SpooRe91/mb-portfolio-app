@@ -1,4 +1,4 @@
-import { BASE_URL, MAX_RETRIES, RETRY_DELAY } from "@PortfolioApp/app/constants";
+import { BASE_URL, MAX_RETRIES, RETRY_DELAY } from "@PortfolioApp/app/utils/constants";
 import axios from "axios";
 
 type FormFieldTypes = {

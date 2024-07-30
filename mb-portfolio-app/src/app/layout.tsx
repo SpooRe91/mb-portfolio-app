@@ -3,6 +3,8 @@ import "./styles/globals.css";
 import NavBar from "@PortfolioApp/Components/NavBar/NavBar";
 import Footer from "@PortfolioApp/Components/Footer/FooterComponent";
 import { Analytics } from "@vercel/analytics/react";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
     title: "M.B. Portfolio app",
@@ -19,7 +21,7 @@ export default function RootLayout({
             <body>
                 <Analytics />
                 <NavBar />
-                {children}
+                <Suspense fallback={<Loading />}>{children}</Suspense>
                 <Footer />
             </body>
         </html>

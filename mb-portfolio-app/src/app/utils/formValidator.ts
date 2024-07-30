@@ -1,4 +1,4 @@
-import { FORBIDDEN_PATTERNS } from "../constants";
+import { FORBIDDEN_PATTERNS } from "./constants";
 
 export const formValidator = (value: string) => {
     let isInvalid = false;

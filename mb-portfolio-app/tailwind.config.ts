@@ -14,6 +14,32 @@ const config: Config = {
                 lg: "976px",
                 xl: "1440px",
             },
+            keyframes: {
+                "slide-out-fade-out": {
+                    "0%": {
+                        opacity: "1",
+                        transform: "translateX(0)",
+                    },
+                    "100%": {
+                        opacity: "0",
+                        transform: "translateX(100%)",
+                    },
+                },
+                "slide-in-fade-in": {
+                    "0%": {
+                        opacity: "0",
+                        transform: "translateX(100%)",
+                    },
+                    "100%": {
+                        opacity: "1",
+                        transform: "translateX(0)",
+                    },
+                },
+            },
+            animation: {
+                "slide-out-fade-out": "slide-out-fade-out 0.25s ease-out forwards",
+                "slide-in-fade-in": "slide-in-fade-in 0.25s ease-in forwards",
+            },
             colors: {
                 navBarActive: "#edf1ec",
                 navBarInactive: "#61bea5",
@@ -51,6 +77,10 @@ const config: Config = {
             },
             height: {
                 "350px": "350px",
+            },
+            minHeight: {
+                "screen-h-md": "calc(100vh - (168px + 94.38px))",
+                "screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
             },
             dropShadow: {
                 navDropShadow: "0px 0px 20px #e7c9af",

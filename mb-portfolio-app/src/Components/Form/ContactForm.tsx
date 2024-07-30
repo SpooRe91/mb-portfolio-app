@@ -1,113 +1,31 @@
 "use client";
-import { useCallback, useMemo, useState } from "react";
-import NotificationComponent from "../Notification/NotificationComponent";
-import { sendFormData } from "@PortfolioApp/services/contactFormService";
 import GlobalLoader from "../Loader/GlobalLoader";
-import { formValidator } from "@PortfolioApp/app/utils/formValidator";
-import DOMPurify from "dompurify";
-
-type FormFieldErrorTypes = {
-    firstName: string;
-    lastName: string;
-    email: string;
-    message: string;
-};
-
-type SendStatus = {
-    error: string;
-    notification: string;
-};
+import useContactForm from "@PortfolioApp/hooks/useContactForm";
+import NotificationComponent from "../Notification/NotificationComponent";
 
 const ContactForm = () => {
-    const [status, setStatus] = useState<SendStatus>({ error: "", notification: "" });
-    const [isLoading, setIsloading] = useState<boolean>(false);
-    const [formData, setFormData] = useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
-    });
-    const [formError, setFormError] = useState<FormFieldErrorTypes>({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
-    });
-
-    const isFormDisalbed = useMemo(
-        () => !!Object.values(formError).find((el) => el.length) || isLoading,
-        [formError, isLoading]
-    );
-
-    const handleClearMessage = useCallback(() => {
-        setStatus({ error: "", notification: "" });
-    }, []);
-
-    const handleFormCheck = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        const isInvalid = formValidator(value);
-
-        const sanitizedValue = DOMPurify.sanitize(value);
-
-        if (isInvalid) {
-            setFormError({
-                ...formError,
-                [name]: `Invalid entry! Please amend!`,
-            });
-            console.log(formError);
-        } else {
-            setFormError({
-                ...formError,
-                [name]: "",
-            });
-        }
-
-        setFormData({
-            ...formData,
-            [name]: sanitizedValue,
-        });
-    };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
-
-        setFormError({
-            ...formError,
-            [name]: "",
-        });
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (isFormDisalbed) {
-            return;
-        }
-
-        try {
-            setIsloading(true);
-            const res = await sendFormData(formData);
-
-            if (!res) {
-                return;
-            }
-            setStatus({ ...status, notification: "E-mail sent successfully!" });
-            setFormData({ firstName: "", lastName: "", email: "", message: "" });
-        } catch (error) {
-            setStatus({ ...status, error: error as string });
-        } finally {
-            setIsloading(false);
-        }
-    };
+    const {
+        status,
+        isLoading,
+        formData,
+        formError,
+        isFormDisalbed,
+        handleClearMessage,
+        handleFormCheck,
+        handleChange,
+        handleSubmit,
+    } = useContactForm();
 
     return (
-        <div className="max-w-[600px] mx-auto w-full sm:pb-[12rem] md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
+        <div className="md:max-w-[600px] sm:max-w-[500px] mx-auto w-full sm:pb-[12rem] md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
             {(status.error || status.notification) && (
-                <NotificationComponent {...status} handleClearMessage={handleClearMessage} />
+                <NotificationComponent
+                    {...status}
+                    mainClassName="absolute md:top-[-4rem] md:right-0 md:mr-[1rem]"
+                    secondaryClassname="md:text-[1rem] sm:text-[0.8rem]"
+                    handleClearMessage={handleClearMessage}
+                    hasAnimation={true}
+                />
             )}
             {isLoading && (
                 <div className="absolute left-0 top-0 w-full p-[1rem 0.8rem] min-h-full">
@@ -129,7 +47,7 @@ const ContactForm = () => {
                             type="text"
                             id="firstName"
                             name="firstName"
-                            value={formData.firstName}
+                            value={formData?.firstName}
                             onChange={handleChange}
                             onBlur={handleFormCheck}
                             className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
@@ -145,7 +63,7 @@ const ContactForm = () => {
                             type="text"
                             id="lastName"
                             name="lastName"
-                            value={formData.lastName}
+                            value={formData?.lastName}
                             onChange={handleChange}
                             onBlur={handleFormCheck}
                             className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
@@ -162,7 +80,7 @@ const ContactForm = () => {
                         type="email"
                         id="email"
                         name="email"
-                        value={formData.email}
+                        value={formData?.email}
                         onChange={handleChange}
                         onBlur={handleFormCheck}
                         className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
@@ -178,7 +96,7 @@ const ContactForm = () => {
                     <textarea
                         id="message"
                         name="message"
-                        value={formData.message}
+                        value={formData?.message}
                         onChange={handleChange}
                         onBlur={handleFormCheck}
                         className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"

@@ -1,7 +1,7 @@
 const HomePage = () => {
     return (
         <div
-            className={`flex flex-col items-center max-w-4xl md:my-[10rem] md:gap-[2rem] md:mx-[auto] sm:gap-[0.5rem] sm:mx-6 rounded-[8px] h-full relative bg-bg-transparent-black-secondary shadow-box-shadow-dark`}
+            className={`md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center max-w-4xl sm:gap-[0.5rem] md:mx-auto rounded-[8px] h-full relative`}
         >
             <h1
                 className={`w-full text-center md:text-4xl md:px-5 md:py-8 sm:text-lg sm:px-3 sm:py-5 text-tech-text-color`}

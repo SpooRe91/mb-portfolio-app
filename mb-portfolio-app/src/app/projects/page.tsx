@@ -1,35 +1,46 @@
 "use client";
+import Link from "next/link";
+import { TECHS_USED } from "../utils/constants";
+import Button from "@mui/material/Button";
+import useGetProjects from "@PortfolioApp/hooks/useGetProjects";
+import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
 import CardComponent from "../../Components/Card/CardComponent";
 import TextBlock from "../../Components/TextBlock/TextBlockComponent";
-
-import useGetProjects from "@PortfolioApp/hooks/useGetProjects";
-import Button from "@mui/material/Button";
-import Link from "next/link";
-import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
-import { TECHS_USED } from "../constants";
-import GlobalLoader from "@PortfolioApp/Components/Loader/GlobalLoader";
-import NotificationComponent from "@PortfolioApp/Components/Notification/NotificationComponent";
 import ServerDown from "@PortfolioApp/Components/ServerDown/ServerDown";
+import LocalLoader from "@PortfolioApp/Components/Loader/LocalLoader";
+import NotificationComponent from "@PortfolioApp/Components/Notification/NotificationComponent";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
     const { isLoading, projectsData, message, handleClearMessage } = useGetProjects();
 
-    return isLoading ? (
-        <GlobalLoader mainClassName="min-h-screen" loadingText={"Fetching projects data, please wait..."} />
-    ) : (
-        <section className="flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem]">
+    return (
+        <section className=" flex flex-col items-center gap-24 w-full backdrop-blur-sm rounded-lg pb-[20rem] mt-[1rem]">
+            {isLoading && (
+                <LocalLoader
+                    mainClassName="md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center"
+                    loadingText={"Fetching my projects, please wait..."}
+                />
+            )}
             {(message.error || message.notification) && (
-                <NotificationComponent {...message} handleClearMessage={handleClearMessage} />
+                <NotificationComponent
+                    {...message}
+                    handleClearMessage={handleClearMessage}
+                    mainClassName="z-[99] flex justify-end w-full absolute top-[1rem] right-[1rem]"
+                    hasAnimation={true}
+                />
             )}
             {!!projectsData.length ? (
-                <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
+                <div className="flex md:flex-row md:justify-around sm:flex-col sm:items-center sm:px-3 w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
                     <h1 className="text-4xl px-5 py-8 text-colorMediumDark">My projects</h1>
                     <TextBlock
-                        title={"and most of the technologies I currently use"}
-                        className="flex flex-col gap-4 items-center text-center justify-cetetext-block p-2 text-tech-text-color"
+                        title={"most of the technologies I currently use:"}
+                        titleClassName="mb-0"
+                        className="flex flex-col items-center text-center justify-cetetext-block p-2 text-tech-text-color"
                     >
-                        <p className="max-w-[450px] py-[1rem] px-[0.75rem]">{TECHS_USED}</p>
+                        <p className="max-w-[450px] py-[0.75rem] px-[0.5rem] text-colorMediumDark">
+                            {TECHS_USED}
+                        </p>
                     </TextBlock>
                 </div>
             ) : (
