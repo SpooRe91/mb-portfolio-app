@@ -60,6 +60,7 @@ const config: Config = {
                 "welcome-text-color": "#d3ba94",
                 "tech-text-color": "#c8e7ee",
                 "about-text-color": "#DAD3BE",
+                "input-field-bg": "#63888957",
             },
             boxShadow: {
                 "box-shadow-main": "0px 8px 20px -4px #968676",

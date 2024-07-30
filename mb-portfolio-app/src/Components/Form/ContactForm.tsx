@@ -40,9 +40,11 @@ const ContactForm = () => {
                 </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-4 sm:p-[1rem]">
-                <section className="w-full flex md:flex-row md:gap-[3rem] sm:flex-col">
+                <section className="w-full flex md:flex-row md:gap-[3rem] sm:flex-col text-colorMediumDark">
                     <div className="md:w-full ">
-                        <label htmlFor="firstName" className="block text-colorDark">{keyToText("FORM.FIRST_NAME_LABEL")}</label>
+                        <label htmlFor="firstName" className="block text-colorDark">
+                            {keyToText("FORM.FIRST_NAME_LABEL")}
+                        </label>
                         <input
                             type="text"
                             id="firstName"
@@ -50,13 +52,15 @@ const ContactForm = () => {
                             value={formData?.firstName}
                             onChange={handleChange}
                             onBlur={handleFormCheck}
-                            className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
+                            className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
                             required
                         />
                         {formError.firstName && <p className="text-red-600">{formError.firstName}</p>}
                     </div>
                     <div className="w-full sm:w-max-[550px]">
-                        <label htmlFor="lastName" className="block text-colorDark">{keyToText("FORM.LAST_NAME_LABEL")}</label>
+                        <label htmlFor="lastName" className="block text-colorDark">
+                            {keyToText("FORM.LAST_NAME_LABEL")}
+                        </label>
                         <input
                             type="text"
                             id="lastName"
@@ -64,14 +68,16 @@ const ContactForm = () => {
                             value={formData?.lastName}
                             onChange={handleChange}
                             onBlur={handleFormCheck}
-                            className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
+                            className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
                             required
                         />
                         {formError.lastName && <p className="text-red-600">{formError.lastName}</p>}
                     </div>
                 </section>
                 <div>
-                    <label htmlFor="email" className="block text-colorDark">{keyToText("FORM.EMAIL_LABEL")}</label>
+                    <label htmlFor="email" className="block text-colorDark">
+                        {keyToText("FORM.EMAIL_LABEL")}
+                    </label>
                     <input
                         type="email"
                         id="email"
@@ -79,21 +85,23 @@ const ContactForm = () => {
                         value={formData?.email}
                         onChange={handleChange}
                         onBlur={handleFormCheck}
-                        className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
+                        className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
                         pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                         required
                     />
                     {formError.email && <p className="text-red-600">{formError.email}</p>}
                 </div>
                 <div>
-                    <label htmlFor="message" className="block text-colorDark">{keyToText("FORM.MESSAGE_LABEL")}</label>
+                    <label htmlFor="message" className="block text-colorDark">
+                        {keyToText("FORM.MESSAGE_LABEL")}
+                    </label>
                     <textarea
                         id="message"
                         name="message"
                         value={formData?.message}
                         onChange={handleChange}
                         onBlur={handleFormCheck}
-                        className="mt-1 p-2 w-full border border-colorMediumDark rounded-md text-black"
+                        className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
                         required
                     />
                     {formError.message && <p className="text-red-600">{formError.message}</p>}
