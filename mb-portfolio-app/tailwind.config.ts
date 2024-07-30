@@ -82,6 +82,10 @@ const config: Config = {
                 "screen-h-md": "calc(100vh - (168px + 94.38px))",
                 "screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
             },
+            maxHeight: {
+                "max-screen-h-md": "calc(100vh - (168px + 94.38px))",
+                "max-screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
+            },
             dropShadow: {
                 navDropShadow: "0px 0px 20px #e7c9af",
                 logoShadow: "2px 1px 1px #966348",

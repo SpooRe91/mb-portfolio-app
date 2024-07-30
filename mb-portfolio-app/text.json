@@ -40,5 +40,10 @@
     "SERVER_ERROR": {
         "HEADER": "SORRY, SEEMS THE SERVER IS HAVING A BAD DAY",
         "SECONDARY_TEXT": "Please try again later!"
+    },
+    "NOT_FOUND": {
+        "404": "404",
+        "NOT_FOUND_TEXT": "Are you lost?",
+        "BACK_TO_HOME": "Go Back Home"
     }
 }
