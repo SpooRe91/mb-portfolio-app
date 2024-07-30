@@ -1,0 +1,44 @@
+{
+    "HOME": {
+        "WELCOME_MAIN": "Welcome to my portfolio",
+        "SECONDARY_TEXT": "Here you can find information about my projects, myself and my contact information. Should you have any remarks, questions, suggestions or an offer, please do not hesitate to reach me."
+    },
+    "PROJECTS": {
+        "LOCAL_LOADING_TEXT": "Fetching my projects, please wait...",
+        "MY_PROJECTS": "My projects",
+        "TECHS_I_USE": "most of the technologies I currently use:"
+    },
+    "ABOUT": {
+        "HEADER": "About Me",
+        "FIRST_PARAGRAPH": "Hello, I am Martin Bogdanov, a Web Developer mainly working on Front-end development, however a Full-stack development is also something I enjoy. I use my skills in JavaScript and TypeScript, along with a robust selection of technologies that includes React, SASS, GraphQL, NodeJS, Express, REST API, MongoDB and more.",
+        "SECOND_PARAGRAPH": "My journey in web development is driven by a commitment to critical thinking, dedication, and problem-solving, all of which allow me to tackle challenges and deliver successful outcomes. I am always enthusiastic about learning new technologies and advancing my career as a Front-end or Full-stack developer. Let us connect and explore opportunities to collaborate!"
+    },
+    "CONTACT": {
+        "HEADER": "Contact me",
+        "SEND_EMAIL_TEXT": "You can send me an e-mail via the form below.",
+        "SEND_EMAIL_AFFIRMATION": "And I will make sure to look into it as soon as possible!"
+    },
+    "NAVIGATION": {
+        "LOGO_TEXT": "M.B. Portfolio",
+        "HOME_TEXT": "Home",
+        "PROJECTS_TEXT": "Projects",
+        "ABOUT_TEXT": "About",
+        "CONTACT_TEXT": "Contact"
+    },
+    "FOOTER": {
+        "HEADER": "Socials",
+        "SECONDARY_TEXT": "I am happy to connect! You can find me on my social media platforms:",
+        "SOCIAL_GITHUB": "GitHub",
+        "SOCIAL_LINKEDIN": "LinkedIn"
+    },
+    "FORM": {
+        "FIRST_NAME_LABEL": "First Name",
+        "LAST_NAME_LABEL": "Last Name",
+        "EMAIL_LABEL": "Email",
+        "MESSAGE_LABEL": "Message"
+    },
+    "SERVER_ERROR": {
+        "HEADER": "SORRY, SEEMS THE SERVER IS HAVING A BAD DAY",
+        "SECONDARY_TEXT": "Please try again later!"
+    }
+}

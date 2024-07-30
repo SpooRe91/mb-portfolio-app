@@ -71,9 +71,6 @@ const useGetProjects = (): UseGetProjectsResult => {
                 `Error fetching data, retrying...${!!refetchCountRef.current ? refetchCountRef.current : ""}`,
                 err
             );
-            setMessage({
-                error: `Error fetching data, retrying...${!!refetchCountRef.current ? refetchCountRef.current : ""}`,
-            });
             refetchCountRef.current += 1;
         }
     }, []);

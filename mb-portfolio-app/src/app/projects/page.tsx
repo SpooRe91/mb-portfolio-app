@@ -9,9 +9,11 @@ import TextBlock from "../../Components/TextBlock/TextBlockComponent";
 import ServerDown from "@PortfolioApp/Components/ServerDown/ServerDown";
 import LocalLoader from "@PortfolioApp/Components/Loader/LocalLoader";
 import NotificationComponent from "@PortfolioApp/Components/Notification/NotificationComponent";
+import useExtractText from "@PortfolioApp/hooks/useExtractText";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
+    const { keyToText } = useExtractText();
     const { isLoading, projectsData, message, handleClearMessage } = useGetProjects();
 
     return (
@@ -19,12 +21,13 @@ const ProjectsComponent = () => {
             {isLoading && (
                 <LocalLoader
                     mainClassName="md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center"
-                    loadingText={"Fetching my projects, please wait..."}
+                    loadingText={keyToText("PROJECTS.LOCAL_LOADING_TEXT")}
                 />
             )}
             {(message.error || message.notification) && (
                 <NotificationComponent
-                    {...message}
+                    error={message?.error}
+                    notification={message?.notification}
                     handleClearMessage={handleClearMessage}
                     mainClassName="z-[99] flex justify-end w-full absolute top-[1rem] right-[1rem]"
                     hasAnimation={true}
@@ -32,9 +35,11 @@ const ProjectsComponent = () => {
             )}
             {!!projectsData.length ? (
                 <div className="flex md:flex-row md:justify-around sm:flex-col sm:items-center sm:px-3 w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
-                    <h1 className="text-4xl px-5 py-8 text-colorMediumDark">My projects</h1>
+                    <h1 className="text-4xl px-5 py-8 text-colorMediumDark">
+                        {keyToText("PROJECTS.MY_PROJECTS")}
+                    </h1>
                     <TextBlock
-                        title={"most of the technologies I currently use:"}
+                        title={keyToText("PROJECTS.TECHS_I_USE")}
                         titleClassName="mb-0"
                         className="flex flex-col items-center text-center justify-cetetext-block p-2 text-tech-text-color"
                     >

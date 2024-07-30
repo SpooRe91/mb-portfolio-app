@@ -2,9 +2,11 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import useExtractText from "@PortfolioApp/hooks/useExtractText";
 
 const NavBar = () => {
     const path = usePathname();
+    const { keyToText } = useExtractText();
     const [active, setActive] = useState("");
 
     useEffect(() => {
@@ -16,7 +18,7 @@ const NavBar = () => {
             <div className="flex md:flex-row sm:flex-col sm:gap-[0.75rem] items-center justify-between">
                 <Link href={"/"}>
                     <h1 className="rounded-[8px] backdrop-blur-[5px]  py-[0.2rem] px-[0.4rem] md:hover:text-colorLight md:hover:shadow-box-shadow-logo text-navBarInactive font-bold tracking-wide transition-all duration-300 ease-in-out md:text-2xl sm:text-lg">
-                        M.B. Portfolio
+                        {keyToText("NAVIGATION.LOGO_TEXT")}
                     </h1>
                 </Link>
                 <ul
@@ -28,7 +30,7 @@ const NavBar = () => {
                             passHref
                             className={`hover:text-colorLight transition-all ${active === "/" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
-                            Home
+                            {keyToText("NAVIGATION.HOME_TEXT")}
                         </Link>
                     </li>
                     <li>
@@ -37,7 +39,7 @@ const NavBar = () => {
                             passHref
                             className={`hover:text-colorLight transition-all ${active === "/projects" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
-                            Projects
+                            {keyToText("NAVIGATION.PROJECTS_TEXT")}
                         </Link>
                     </li>
                     <li>
@@ -46,7 +48,7 @@ const NavBar = () => {
                             passHref
                             className={`hover:text-colorLight transition-all ${active === "/about" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
-                            About
+                            {keyToText("NAVIGATION.ABOUT_TEXT")}
                         </Link>
                     </li>
                     <li>
@@ -55,7 +57,7 @@ const NavBar = () => {
                             passHref
                             className={`hover:text-colorLight transition-all ${active === "/contactMe" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
-                            Contact
+                            {keyToText("NAVIGATION.CONTACT_TEXT")}
                         </Link>
                     </li>
                 </ul>

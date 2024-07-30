@@ -2,6 +2,7 @@
 import GlobalLoader from "../Loader/GlobalLoader";
 import useContactForm from "@PortfolioApp/hooks/useContactForm";
 import NotificationComponent from "../Notification/NotificationComponent";
+import useExtractText from "@PortfolioApp/hooks/useExtractText";
 
 const ContactForm = () => {
     const {
@@ -15,6 +16,7 @@ const ContactForm = () => {
         handleChange,
         handleSubmit,
     } = useContactForm();
+    const { keyToText } = useExtractText();
 
     return (
         <div className="md:max-w-[600px] sm:max-w-[500px] mx-auto w-full sm:pb-[12rem] md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
@@ -40,9 +42,7 @@ const ContactForm = () => {
             <form onSubmit={handleSubmit} className="space-y-4 sm:p-[1rem]">
                 <section className="w-full flex md:flex-row md:gap-[3rem] sm:flex-col">
                     <div className="md:w-full ">
-                        <label htmlFor="firstName" className="block text-colorDark">
-                            First Name
-                        </label>
+                        <label htmlFor="firstName" className="block text-colorDark">{keyToText("FORM.FIRST_NAME_LABEL")}</label>
                         <input
                             type="text"
                             id="firstName"
@@ -56,9 +56,7 @@ const ContactForm = () => {
                         {formError.firstName && <p className="text-red-600">{formError.firstName}</p>}
                     </div>
                     <div className="w-full sm:w-max-[550px]">
-                        <label htmlFor="lastName" className="block text-colorDark">
-                            Last Name
-                        </label>
+                        <label htmlFor="lastName" className="block text-colorDark">{keyToText("FORM.LAST_NAME_LABEL")}</label>
                         <input
                             type="text"
                             id="lastName"
@@ -73,9 +71,7 @@ const ContactForm = () => {
                     </div>
                 </section>
                 <div>
-                    <label htmlFor="email" className="block text-colorDark">
-                        Email
-                    </label>
+                    <label htmlFor="email" className="block text-colorDark">{keyToText("FORM.EMAIL_LABEL")}</label>
                     <input
                         type="email"
                         id="email"
@@ -90,9 +86,7 @@ const ContactForm = () => {
                     {formError.email && <p className="text-red-600">{formError.email}</p>}
                 </div>
                 <div>
-                    <label htmlFor="message" className="block text-colorDark">
-                        Message
-                    </label>
+                    <label htmlFor="message" className="block text-colorDark">{keyToText("FORM.MESSAGE_LABEL")}</label>
                     <textarea
                         id="message"
                         name="message"
