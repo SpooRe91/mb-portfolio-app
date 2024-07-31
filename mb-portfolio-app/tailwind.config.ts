@@ -70,7 +70,7 @@ const config: Config = {
                 "box-shadow-logo": "1px 7px 30px #343737",
             },
             fontFamily: {
-                sans: ["Titillium Web", "PT Sans", "sans-serif"],
+                sans: ["JetBrains Mono", "Titillium Web", "PT Sans", "sans-serif"],
             },
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
