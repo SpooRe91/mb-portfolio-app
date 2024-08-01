@@ -11,18 +11,30 @@ type IconContainerProps = {
 };
 
 /**
- * A custom component which can accept the following props, to display images with or without a `Link` wrapper:
- * - `src: string(required)` - the `src` of the Image;
- * - `name: string(optional)` - the name of the Image, it will be applied to the `title` and `alt` of the `Image`;
- * - `extUrl: string(optional)` - the extUrl of the image if it is present, then the image will be wraped in `Link`;
- * - `containerClassName: string(optional)` - all the styles to be applied to the `<div>` element wrapper of the component;
- * - `imgClassname: string(optional)` - all the styles to be applied to the `<Image>` element;
- * - `linkClassName: string(optional)` - all the styles to be applied to the `<Link>` element;
- *
- * The `Image` component inside has `priority` attribute added, to ensure that the images load with such.
- * The `Link` has attributes: `target="_blank"` & `rel="noreferrer noopener"`
- *
- * NOTE: In order to wrap the`<Image>` element into a `<Link>` element, you must pass `extUrl` prop;
+ * A custom component that displays an image with optional `Link` wrapping.
+ * @param {string} [src] (required) - The source URL of the image. This is a required prop.
+ * @param {string} [name] - The name of the image. It is used for the `title` and `alt` attributes of the image.
+ * @param {string} [extUrl] - The external URL for wrapping the image in a `<Link>`. If provided, the image will be wrapped in a `Link` component.
+ * @param {string} [containerClassName] - CSS class names to be applied to the `<div>` wrapper element of the component.
+ * @param {string} [imgClassName] - CSS class names to be applied to the `<Image>` element.
+ * @param {string} [linkClassName] - CSS class names to be applied to the `<Link>` element.
+ *  
+ * @example
+ *  
+ *<div className={`${containerClassName}`}>
+ *          {extUrl ? (
+ *              <Link href={extUrl} target="_blank" rel="noreferrer noopener" className={`${linkClassName}`}>
+ *                  <Image title={name} src={src} alt={name || ""} className={`${imgClassname}`} priority />
+ *              </Link>
+ *          ) : (
+ *               <Image title={name} src={src} alt={name || ""} className={`${imgClassname}`} priority />
+ *          )}
+ *</div>
+ * 
+ * @note
+ * The `Image` component has the `priority` attribute added to ensure images load with high priority.
+ * The `Link` component has attributes `target="_blank"` and `rel="noreferrer noopener"`.
+ * To wrap the `<Image>` element in a `<Link>` element, provide the `extUrl` prop.
  */
 const IconsContainer = ({
     src,
