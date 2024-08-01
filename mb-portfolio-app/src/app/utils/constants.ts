@@ -1,7 +1,8 @@
 export const UTIL_KEY = process.env.NEXT_PUBLIC_UTIL_KEY;
 export const BASE_URL = "https://mb-multi-tool-api.vercel.app/personal";
 export const FORBIDDEN_PATTERNS = [/<script.*?>.*?<\/script>/gi, /javascript:/gi, /<.*?>/g, /\/|\\/g, /:/g];
-export const MAX_RETRIES = 3;
+export const LETERS_ONLY_REGEX = /^[A-Za-z]+$/;
+export const MAX_RETRIES = 4;
 export const RETRY_DELAY = 1000;
 export const PATHS = ["/", "/projects", "/about", "/contactMe"];
 export const ICON_NAMES_URLS = [

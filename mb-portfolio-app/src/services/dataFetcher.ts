@@ -1,13 +1,19 @@
 import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/utils/constants";
+import { extractAndReturnError } from "@PortfolioApp/app/utils/generalUtils";
 import axios from "axios";
+import { z } from "zod";
 
-type ProjectType = {
-    img: string;
-    title: string;
-    url: string;
-    text: string;
-    content: string;
-};
+const ProjectTypeSchema = z.object({
+    img: z.string(),
+    title: z.string(),
+    url: z.string().url(),
+    text: z.string(),
+    content: z.string(),
+});
+
+const ProjectTypeArraySchema = z.array(ProjectTypeSchema);
+
+type ProjectType = z.infer<typeof ProjectTypeSchema>;
 
 export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
     if (!UTIL_KEY) {
@@ -20,15 +26,20 @@ export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
                 "x-util-key": UTIL_KEY,
             },
         });
+
         if (!res.data) {
             console.error("No data returned from the API.");
             return null;
         }
-        return res.data;
-    } catch (error) {
-        if (axios.isAxiosError(error)) {
-            throw `Axios error: ${error.response?.data?.message || error.message}`;
+
+        const validationResult = ProjectTypeArraySchema.safeParse(res.data);
+        if (!validationResult.success) {
+            console.error("Validation error: ", validationResult.error.errors);
+            return null;
         }
-        throw `Unexpected error: ${error}`;
+
+        return validationResult.data;
+    } catch (error) {
+        throw extractAndReturnError(error);
     }
 };

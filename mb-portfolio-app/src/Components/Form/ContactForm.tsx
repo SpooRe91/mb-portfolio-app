@@ -10,7 +10,7 @@ const ContactForm = () => {
         isLoading,
         formData,
         formError,
-        isFormDisalbed,
+        isFormDisabled,
         handleClearMessage,
         handleFormCheck,
         handleChange,
@@ -106,11 +106,11 @@ const ContactForm = () => {
                     />
                     {formError.message && <p className="text-red-600">{formError.message}</p>}
                 </div>
-                {!isFormDisalbed && (
+                {!isFormDisabled && (
                     <button
                         type="submit"
                         className="w-full py-2 bg-colorMedLightBlue text-white rounded-md hover:bg-colorMediumDark"
-                        disabled={isFormDisalbed}
+                        disabled={isFormDisabled}
                     >
                         Send
                     </button>
