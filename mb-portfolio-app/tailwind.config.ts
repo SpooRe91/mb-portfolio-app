@@ -57,6 +57,7 @@ const config: Config = {
                 "bg-transparent-black-main": "#000000b8",
                 "bg-transparent-black-secondary": "#000000b3",
                 "bg-transparent-black-tretriary": "#00000029",
+                "bg-transparent-project-hover": "#1d2121",
                 "welcome-text-color": "#d3ba94",
                 "tech-text-color": "#c8e7ee",
                 "about-text-color": "#DAD3BE",
@@ -68,6 +69,7 @@ const config: Config = {
                 "image-container-box-shadow": "0px 0px 20px -5px #bcb9b3",
                 "box-shadow-dark": "1px 1px 20px #131310",
                 "box-shadow-logo": "1px 7px 30px #343737",
+                "box-shadow-project": "0px 2px 4px #343737",
             },
             fontFamily: {
                 sans: ["JetBrains Mono", "Titillium Web", "PT Sans", "sans-serif"],

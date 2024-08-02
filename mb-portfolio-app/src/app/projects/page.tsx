@@ -56,10 +56,10 @@ const ProjectsComponent = () => {
                                 px-4 
                                 py-6 
                                 rounded-lg 
-                                shadow-box-shadow-dark 
+                                shadow-box-shadow-project 
                                 bg-bg-transparent-black-tretiary
                                 md:hover:text-colorMedLightBlue
-                                md:hover:bg-bg-transparent-black-main
+                                md:hover:bg-bg-transparent-project-hover
                                 md:mx-[5rem]
                                 transition-all
                                 `}
