@@ -7,7 +7,7 @@ const Contact = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <div className="w-full p-8 md:min-h-screen-h-md sm:min-h-screen-h-sm flex md:flex-row sm:flex-col items-center">
+        <div className="w-full p-8 md:min-h-screen-h-md sm:min-h-screen-h-sm p-b-[11rem]flex md:flex-row sm:flex-col items-center">
             <div className="flex flex-col items-center">
                 <h1 className="md:text-4xl sm:text-xl font-bold text-colorDark mb-8">
                     {keyToText("CONTACT.HEADER")}
