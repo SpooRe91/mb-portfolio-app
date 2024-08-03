@@ -10,7 +10,7 @@ const Footer = () => {
 
     return (
         <section
-            className={`z-[10] shadow-box-shadow-dark flex flex-col absolute bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"}`}
+            className={`z-[10] shadow-box-shadow-border-top flex flex-col absolute bottom-0 left-0 m-auto border-t-[1px solid kobicha] mx-[auto] w-full mt-12 items-center bg-bg-transparent-black-secondary text-colorMediumDark py-8 px-4 ${!isMobile ? "mt-12 mx-auto" : "mt-5 mx-6"}`}
         >
             <h1 className="md:text-3xl sm:text-sm font-bold mb-4">{keyToText("FOOTER.HEADER")}</h1>
             <p className="md:text-lg sm:text-sm text-center">{keyToText("FOOTER.SECONDARY_TEXT")}</p>

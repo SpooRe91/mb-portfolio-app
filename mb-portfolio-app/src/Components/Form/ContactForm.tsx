@@ -39,7 +39,7 @@ const ContactForm = () => {
                     />
                 </div>
             )}
-            <form onSubmit={handleSubmit} className="space-y-4 sm:p-[1rem]">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:p-[1rem] shadow-box-shadow-border-bottom rounded-[8px]">
                 <section className="w-full flex md:flex-row md:gap-[3rem] sm:flex-col text-colorMediumDark">
                     <div className="md:w-full ">
                         <label htmlFor="firstName" className="block text-colorDark">

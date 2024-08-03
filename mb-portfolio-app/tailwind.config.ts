@@ -69,7 +69,8 @@ const config: Config = {
                 "image-container-box-shadow": "0px 0px 20px -5px #bcb9b3",
                 "box-shadow-dark": "1px 1px 20px #131310",
                 "box-shadow-logo": "1px 7px 30px #343737",
-                "box-shadow-project": "0px 2px 4px #343737",
+                "box-shadow-border-bottom": "0px 2px 4px #343737",
+                "box-shadow-border-top": "0px -2px 4px #343737",
             },
             fontFamily: {
                 sans: ["JetBrains Mono", "Titillium Web", "PT Sans", "sans-serif"],

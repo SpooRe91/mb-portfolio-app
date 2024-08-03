@@ -1,14 +1,12 @@
 "use client";
-import Link from "next/link";
-import Button from "@mui/material/Button";
 import useGetProjects from "@PortfolioApp/hooks/useGetProjects";
 import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
-import CardComponent from "../../Components/Card/CardComponent";
-import TextBlock from "../../Components/TextBlock/TextBlockComponent";
 import ServerDown from "@PortfolioApp/Components/ServerDown/ServerDown";
 import LocalLoader from "@PortfolioApp/Components/Loader/LocalLoader";
 import NotificationComponent from "@PortfolioApp/Components/Notification/NotificationComponent";
 import useExtractText from "@PortfolioApp/hooks/useExtractText";
+import { v4 as uuid } from "uuid";
+import ProjectCardComponent from "@PortfolioApp/Components/ProjectCard/ProjectCardComponent";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
@@ -40,59 +38,15 @@ const ProjectsComponent = () => {
                     </h1>
                 </div>
             )}
-            { !!projectsData.length && (
+            {!!projectsData.length && (
                 <div className="grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl mx-auto bg-bg-transparent-black-secondary">
-                    {projectsData.map(({ url, img, title, text, content }, i) => (
-                        <div
-                            key={i}
-                            className={`flex 
-                                flex-wrap 
-                                ${i % 2 === 0 ? "flex-row" : "flex-row-reverse"} 
-                                gap-8 
-                                justify-center 
-                                max-w-screen-lg 
-                                w-full 
-                                md:min-h-[635px]
-                                px-4 
-                                py-6 
-                                rounded-lg 
-                                shadow-box-shadow-project 
-                                bg-bg-transparent-black-tretiary
-                                md:hover:text-colorMedLightBlue
-                                md:hover:bg-bg-transparent-project-hover
-                                md:mx-[5rem]
-                                transition-all
-                                `}
-                        >
-                            <CardComponent
-                                img={img}
-                                imgWidth={350}
-                                text={text}
-                                className={"w-[250px] h-[250px]"}
-                                textClassName="w-full"
-                            />
-                            <TextBlock
-                                title={title}
-                                content={content}
-                                url={url}
-                                className={`flex flex-col gap-4 items-center text-block text-colorMedLightBlue p-2 w-80 md:contrast-0 hover:contrast-100 transition-all`}
-                            >
-                                <Link
-                                    href={url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-colorDark hover:text-tech-text-color"
-                                >
-                                    <Button
-                                        variant="outlined"
-                                        size={!isMobile ? "medium" : "small"}
-                                        color="inherit"
-                                    >
-                                        View project
-                                    </Button>
-                                </Link>
-                            </TextBlock>
-                        </div>
+                    {projectsData.map((projectElement, index) => (
+                        <ProjectCardComponent
+                            key={uuid()}
+                            {...projectElement}
+                            isMobile={isMobile}
+                            index={index}
+                        />
                     ))}
                 </div>
             )}
