@@ -1,5 +1,5 @@
 "use client";
-import useExtractText from "@PortfolioApp/hooks/useExtractText";
+import { useExtractText } from "@PortfolioApp/hooks";
 
 const HomePage = () => {
     const { keyToText } = useExtractText();

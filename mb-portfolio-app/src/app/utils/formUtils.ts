@@ -1,5 +1,5 @@
 import { FormFieldSchema, FormFieldTypes } from "../zod/Schemas";
-import { FORBIDDEN_PATTERNS } from "./constants";
+import { FORBIDDEN_PATTERNS } from "../constants/constants";
 
 /**
  * Validates a form input value against a list of forbidden patterns.

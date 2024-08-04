@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useMemo, useState } from "react";
-import { sendFormData } from "@PortfolioApp/services/contactFormService";
-import { fieldValidator, formValidator } from "@PortfolioApp/app/utils/formUtils";
+import { sendFormData } from "@PortfolioApp/services";
+import { fieldValidator, formValidator } from "@PortfolioApp/app/utils";
 import DOMPurify from "dompurify";
 import { FormFieldTypes } from "@PortfolioApp/app/zod/Schemas";
 
@@ -21,7 +21,7 @@ type SendStatus = {
  * Custom hook to manage contact form state and handle submission.
  * @returns {object} - The contact form state and handlers.
  */
-const useContactForm = () => {
+export const useContactForm = () => {
     const [status, setStatus] = useState<SendStatus>({ error: "", notification: "" });
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormFieldTypes>({

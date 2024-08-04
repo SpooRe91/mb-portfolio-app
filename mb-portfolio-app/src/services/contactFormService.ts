@@ -1,5 +1,5 @@
-import { BASE_URL, MAX_RETRIES, RETRY_DELAY } from "@PortfolioApp/app/utils/constants";
-import { extractAndReturnError } from "@PortfolioApp/app/utils/generalUtils";
+import { BASE_URL, MAX_RETRIES, RETRY_DELAY } from "@PortfolioApp/app/constants/constants";
+import { extractAndReturnError } from "@PortfolioApp/app/utils";
 import { FormFieldTypes } from "@PortfolioApp/app/zod/Schemas";
 import axios from "axios";
 

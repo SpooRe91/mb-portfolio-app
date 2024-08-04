@@ -11,7 +11,7 @@ type CardComponentProps = {
     imgHeight?: number;
 };
 
-const CardComponent = ({
+export const Card = ({
     img,
     text,
     className,
@@ -48,4 +48,4 @@ const CardComponent = ({
     );
 };
 
-export default CardComponent;
+export default Card;

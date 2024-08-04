@@ -42,7 +42,7 @@ type NotificationProps = {
     </Alert>
   </div>`
  */
-export const NotificationComponent = ({
+export const Notification = ({
     error,
     notification,
     handleClearMessage,
@@ -74,9 +74,7 @@ export const NotificationComponent = ({
     }, [handleClearMessage, hasAnimation]);
 
     return (
-        <div
-            className={`${mainClassName}`}
-        >
+        <div className={`${mainClassName}`}>
             <Alert
                 style={{ fontSize: "1rem" }}
                 severity={error ? "error" : "success"}
@@ -88,4 +86,4 @@ export const NotificationComponent = ({
     );
 };
 
-export default NotificationComponent;
+export default Notification;

@@ -1,5 +1,5 @@
-import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/utils/constants";
-import { extractAndReturnError } from "@PortfolioApp/app/utils/generalUtils";
+import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/constants/constants";
+import { extractAndReturnError } from "@PortfolioApp/app/utils";
 import axios from "axios";
 import { z } from "zod";
 

@@ -35,10 +35,37 @@ const config: Config = {
                         transform: "translateX(0)",
                     },
                 },
+                "sidebar-slide-in": {
+                    "0%": {
+                        opacity: "0",
+                        transform: "translateX(-100%)",
+                    },
+                    "100%": {
+                        opacity: "1",
+                        transform: "translateX(0)",
+                    },
+                },
+                "sidebar-slide-out": {
+                    "0%": {
+                        opacity: "1",
+                        transform: "translateX(0)",
+                    },
+                    "99%": {
+                        opacity: "0",
+                        transform: "translateX(-100%)",
+                    },
+                    "100%": {
+                        opacity: "1",
+                        transform: "translateX(-100%)",
+                        position: "absolute",
+                    },
+                },
             },
             animation: {
                 "slide-out-fade-out": "slide-out-fade-out 0.25s ease-out forwards",
                 "slide-in-fade-in": "slide-in-fade-in 0.25s ease-in forwards",
+                "sidebar-slide-in": "sidebar-slide-in 0.15s ease-in forwards",
+                "sidebar-slide-out": "sidebar-slide-out 0.15s ease-in forwards",
             },
             colors: {
                 navBarActive: "#edf1ec",

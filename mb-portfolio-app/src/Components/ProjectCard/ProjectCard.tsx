@@ -1,8 +1,7 @@
 import React from "react";
-import CardComponent from "../Card/CardComponent";
-import TextBlock from "../TextBlock/TextBlockComponent";
 import Link from "next/link";
 import { Button } from "@mui/material";
+import { Card, TextBlock } from "@PortfolioApp/Components";
 
 type ProjectCardProps = {
     img: string;
@@ -14,7 +13,7 @@ type ProjectCardProps = {
     isMobile: boolean;
 };
 
-const ProjectCardComponent = ({ url, img, title, text, content, index, isMobile }: ProjectCardProps) => {
+export const ProjectCard = ({ url, img, title, text, content, index, isMobile }: ProjectCardProps) => {
     return (
         <div
             className={`flex 
@@ -36,7 +35,7 @@ const ProjectCardComponent = ({ url, img, title, text, content, index, isMobile 
         transition-all
         `}
         >
-            <CardComponent
+            <Card
                 img={img}
                 imgWidth={350}
                 text={text}
@@ -64,4 +63,4 @@ const ProjectCardComponent = ({ url, img, title, text, content, index, isMobile 
     );
 };
 
-export default ProjectCardComponent;
+export default ProjectCard;

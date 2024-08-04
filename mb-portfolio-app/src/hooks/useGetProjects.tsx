@@ -1,5 +1,5 @@
 "use client";
-import { fetchPortfolioData } from "@PortfolioApp/services/dataFetcher";
+import { fetchPortfolioData } from "@PortfolioApp/services";
 import { useEffect, useState, useCallback, useRef } from "react";
 
 type ProjectType = {
@@ -37,7 +37,7 @@ const MAX_FETCH_COUNT = 5;
  * - `message` - A string containing an error message if an error occurs during data fetching, or `null` if no error is present.
  * - `handleClearMessage` - A function which will clear the message whatever it is, it should be passed to the component receiving the message.
  */
-const useGetProjects = (): UseGetProjectsResult => {
+export const useGetProjects = (): UseGetProjectsResult => {
     const [projectsData, setProjectsData] = useState<ProjectType[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [message, setMessage] = useState<NotificationProps>({ error: "", notification: "" });

@@ -1,6 +1,6 @@
 "use client";
 import CircularProgress from "@mui/material/CircularProgress";
-import TextBlock from "../TextBlock/TextBlockComponent";
+import { TextBlock } from "@PortfolioApp/Components";
 
 type LoadingProps = {
     loadingText?: string;
@@ -25,7 +25,7 @@ type LoadingProps = {
  *   />
 </div>`
  */
-const LocalLoader = ({ loadingText, mainClassName, textClassName }: LoadingProps) => {
+export const LocalLoader = ({ loadingText, mainClassName, textClassName }: LoadingProps) => {
     return (
         <div className={`${mainClassName}`}>
             <CircularProgress color="inherit" className="text-colorMediumDark" />

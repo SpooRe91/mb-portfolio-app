@@ -1,6 +1,6 @@
 "use client";
 import CircularProgress from "@mui/material/CircularProgress";
-import TextBlock from "../TextBlock/TextBlockComponent";
+import { TextBlock } from "@PortfolioApp/Components";
 
 type LoadingProps = {
     loadingText?: string;
@@ -9,7 +9,12 @@ type LoadingProps = {
     textClassName?: string;
 };
 
-const GlobalLoader = ({ loadingText, mainClassName, secondaryClassName, textClassName }: LoadingProps) => {
+export const GlobalLoader = ({
+    loadingText,
+    mainClassName,
+    secondaryClassName,
+    textClassName,
+}: LoadingProps) => {
     return (
         <div
             className={`relative z-[10] flex items-center w-full justify-center bg-bg-transparent-black-main ${mainClassName}`}

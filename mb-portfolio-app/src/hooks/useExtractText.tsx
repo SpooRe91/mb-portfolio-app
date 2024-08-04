@@ -6,7 +6,7 @@ interface JsonObject {
 }
 interface JsonArray extends Array<JsonValue> {}
 
-const useExtractText = () => {
+export const useExtractText = () => {
     const keyToText = (key: string): string | undefined => {
         const keys = key.split(".");
 

@@ -10,7 +10,7 @@ type TextBlockProps = {
     children?: React.ReactNode;
 };
 
-const TextBlock = ({
+export const TextBlock = ({
     title,
     content,
     url,

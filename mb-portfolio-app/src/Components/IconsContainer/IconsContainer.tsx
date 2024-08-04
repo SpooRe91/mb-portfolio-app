@@ -18,9 +18,9 @@ type IconContainerProps = {
  * @param {string} [containerClassName] - CSS class names to be applied to the `<div>` wrapper element of the component.
  * @param {string} [imgClassName] - CSS class names to be applied to the `<Image>` element.
  * @param {string} [linkClassName] - CSS class names to be applied to the `<Link>` element.
- *  
+ *
  * @example
- *  
+ *
  *<div className={`${containerClassName}`}>
  *          {extUrl ? (
  *              <Link href={extUrl} target="_blank" rel="noreferrer noopener" className={`${linkClassName}`}>
@@ -30,13 +30,13 @@ type IconContainerProps = {
  *               <Image title={name} src={src} alt={name || ""} className={`${imgClassname}`} priority />
  *          )}
  *</div>
- * 
+ *
  * @note
  * The `Image` component has the `priority` attribute added to ensure images load with high priority.
  * The `Link` component has attributes `target="_blank"` and `rel="noreferrer noopener"`.
  * To wrap the `<Image>` element in a `<Link>` element, provide the `extUrl` prop.
  */
-const IconsContainer = ({
+export const IconsContainer = ({
     src,
     name,
     extUrl,

@@ -1,7 +1,6 @@
 "use client";
-import ContactForm from "@PortfolioApp/Components/Form/ContactForm";
-import TextBlock from "@PortfolioApp/Components/TextBlock/TextBlockComponent";
-import useExtractText from "@PortfolioApp/hooks/useExtractText";
+import { TextBlock, ContactForm } from "@PortfolioApp/Components";
+import { useExtractText } from "@PortfolioApp/hooks";
 
 const Contact = () => {
     const { keyToText } = useExtractText();

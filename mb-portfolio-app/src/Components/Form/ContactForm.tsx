@@ -1,10 +1,9 @@
 "use client";
+import { useContactForm, useExtractText } from "@PortfolioApp/hooks";
 import GlobalLoader from "../Loader/GlobalLoader";
-import useContactForm from "@PortfolioApp/hooks/useContactForm";
-import NotificationComponent from "../Notification/NotificationComponent";
-import useExtractText from "@PortfolioApp/hooks/useExtractText";
+import Notification from "../Notification/Notification";
 
-const ContactForm = () => {
+export const ContactForm = () => {
     const {
         status,
         isLoading,
@@ -21,7 +20,7 @@ const ContactForm = () => {
     return (
         <div className="md:max-w-[600px] sm:max-w-[500px] mx-auto w-full sm:pb-[12rem] md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
             {(status.error || status.notification) && (
-                <NotificationComponent
+                <Notification
                     {...status}
                     mainClassName="absolute md:top-[-4rem] md:right-0 md:mr-[1rem]"
                     secondaryClassname="md:text-[1rem] sm:text-[0.8rem]"
@@ -39,7 +38,10 @@ const ContactForm = () => {
                     />
                 </div>
             )}
-            <form onSubmit={handleSubmit} className="space-y-4 sm:p-[1rem] shadow-box-shadow-border-bottom rounded-[8px]">
+            <form
+                onSubmit={handleSubmit}
+                className="space-y-4 sm:p-[1rem] shadow-box-shadow-border-bottom rounded-[8px]"
+            >
                 <section className="w-full flex md:flex-row md:gap-[3rem] sm:flex-col text-colorMediumDark">
                     <div className="md:w-full ">
                         <label htmlFor="firstName" className="block text-colorDark">

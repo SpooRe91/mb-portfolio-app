@@ -9,7 +9,7 @@ const mobileThreshold = 768;
  * @type { isMobile: boolean }
  * @returns isMobile - Object with a boolean indicating if the view width is mobile.
  */
-const useGetViewWidth = (): { isMobile: boolean } => {
+export const useGetViewWidth = (): { isMobile: boolean } => {
     const [windowWidth, setWindowWidth] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
 

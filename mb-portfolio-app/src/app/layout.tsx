@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./styles/globals.css";
 import NavBar from "@PortfolioApp/Components/NavBar/NavBar";
-import Footer from "@PortfolioApp/Components/Footer/FooterComponent";
+import Footer from "@PortfolioApp/Components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
 import Loading from "./loading";

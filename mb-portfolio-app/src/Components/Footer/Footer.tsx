@@ -1,10 +1,9 @@
 "use client";
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import useExtractText from "@PortfolioApp/hooks/useExtractText";
-import useGetViewWidth from "@PortfolioApp/hooks/useGetViewWidth";
+import { useGetViewWidth, useExtractText } from "@PortfolioApp/hooks";
 import Link from "next/link";
 
-const Footer = () => {
+export const Footer = () => {
     const { isMobile } = useGetViewWidth();
     const { keyToText } = useExtractText();
 

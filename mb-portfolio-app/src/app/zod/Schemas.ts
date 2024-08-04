@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { LETERS_ONLY_REGEX } from "../utils/constants";
+import { LETERS_ONLY_REGEX } from "../constants/constants";
 
 export const FormFieldSchema = z.object({
     firstName: z

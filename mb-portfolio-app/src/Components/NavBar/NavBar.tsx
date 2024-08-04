@@ -2,9 +2,9 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import useExtractText from "@PortfolioApp/hooks/useExtractText";
+import { useExtractText } from "@PortfolioApp/hooks";
 
-const NavBar = () => {
+export const NavBar = () => {
     const path = usePathname();
     const { keyToText } = useExtractText();
     const [active, setActive] = useState("");

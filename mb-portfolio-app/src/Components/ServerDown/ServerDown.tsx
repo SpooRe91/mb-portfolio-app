@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
-import TextBlock from "../TextBlock/TextBlockComponent";
-import useExtractText from "@PortfolioApp/hooks/useExtractText";
+import { TextBlock } from "@PortfolioApp/Components";
+import { useExtractText } from "@PortfolioApp/hooks";
 
-const ServerDown = () => {
+export const ServerDown = () => {
     const { keyToText } = useExtractText();
 
     return (
