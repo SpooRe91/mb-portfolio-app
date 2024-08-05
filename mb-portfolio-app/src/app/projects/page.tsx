@@ -34,7 +34,7 @@ const ProjectsComponent = () => {
                 </div>
             )}
             {!!projectsData.length && (
-                <div className="grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl mx-auto bg-bg-transparent-black-secondary">
+                <div className="grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl mx-auto bg-bg-transparent-black-secondary rounded-[8px]">
                     {projectsData.map((projectElement, index) => (
                         <ProjectCard key={uuid()} {...projectElement} isMobile={isMobile} index={index} />
                     ))}
