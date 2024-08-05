@@ -26,7 +26,7 @@ const About = () => {
     }, []);
 
     return (
-        <section className="relative min-h-screen md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center">
+        <section className="relative min-h-screen md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center mt-[2rem] sm:mx-[1rem]">
             <Image
                 src={aboutBG}
                 alt="BG IMAGE"

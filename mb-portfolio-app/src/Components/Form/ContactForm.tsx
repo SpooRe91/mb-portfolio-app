@@ -22,7 +22,7 @@ export const ContactForm = () => {
             {(status.error || status.notification) && (
                 <Notification
                     {...status}
-                    mainClassName="absolute md:top-[-4rem] md:right-0 md:mr-[1rem]"
+                    mainClassName="absolute md:top-[0] right-0"
                     secondaryClassname="md:text-[1rem] sm:text-[0.8rem]"
                     handleClearMessage={handleClearMessage}
                     hasAnimation={true}
