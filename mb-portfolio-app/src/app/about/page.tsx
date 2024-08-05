@@ -30,7 +30,7 @@ const About = () => {
             <Image
                 src={aboutBG}
                 alt="BG IMAGE"
-                className="w-full min-h-screen object-cover fixed z-[-1] brightness-[0.5]"
+                className="w-full min-h-bg-image-height object-cover fixed z-[-1] brightness-[0.5]"
                 priority
             />
             <div className="z-[10] relative flex flex-col items-center text-about-text-color sm:gap-[0.5rem]">

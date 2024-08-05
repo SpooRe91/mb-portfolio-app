@@ -15,7 +15,7 @@ const ProjectsComponent = () => {
             <Image
                 src={projectsBG}
                 alt="BG IMAGE"
-                className="w-full min-h-screen object-cover fixed z-[-1] brightness-[0.5]"
+                className="w-full min-h-bg-image-height object-cover fixed z-[-1] brightness-[0.5]"
                 priority
             />
             <div className="flex flex-col items-center gap-24 w-full rounded-lg pb-[20rem]">

@@ -11,11 +11,11 @@ const HomePage = () => {
             <Image
                 src={homeBG}
                 alt="BG IMAGE"
-                className="w-full min-h-screen object-cover fixed z-[-1] brightness-[0.25]"
+                className="w-full min-h-bg-image-height object-cover fixed z-[-1] brightness-[0.25]"
                 priority
             />
             <div
-                className={`animate-homePage-slide-in-top w-full flex flex-col items-center backdrop-blur-[5px] justify-center max-w-4xl sm:gap-[0.5rem] md:mx-auto rounded-[8px] h-full relative transition-all`}
+                className={`animate-homePage-slide-in-top w-full flex flex-col items-center md:backdrop-blur-[5px] justify-center max-w-4xl sm:gap-[0.5rem] md:mx-auto rounded-[8px] h-full relative transition-all`}
             >
                 <h1
                     className={`animate-homePage-fade-in w-full sm:font-extrabold md:font-normal text-center md:text-4xl md:px-5 md:py-8 sm:text-lg sm:px-3 sm:py-5 text-tech-text-color`}

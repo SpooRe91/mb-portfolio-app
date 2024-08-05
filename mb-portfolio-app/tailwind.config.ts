@@ -143,6 +143,7 @@ const config: Config = {
                 "screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
             },
             minHeight: {
+                "bg-image-height": "calc(100vh + 10rem)",
                 "screen-h-md": "calc(100vh - (168px + 94.38px))",
                 "screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
             },

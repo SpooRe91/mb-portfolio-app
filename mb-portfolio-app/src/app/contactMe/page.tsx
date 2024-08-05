@@ -12,7 +12,7 @@ const Contact = () => {
             <Image
                 src={contactBG}
                 alt="BG IMAGE"
-                className="w-full min-h-screen object-cover fixed z-[-1] brightness-[0.5]"
+                className="w-full min-h-bg-image-height object-cover fixed z-[-1] brightness-[0.5] mt-[7rem]"
                 priority
             />
             <div className="w-full p-8 flex md:flex-row sm:flex-col items-center">
