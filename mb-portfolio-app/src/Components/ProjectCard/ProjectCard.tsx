@@ -21,6 +21,7 @@ export const ProjectCard = ({ url, img, title, text, content, index, isMobile }:
         ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"} 
         gap-8 
         justify-center 
+            ${title.includes("Multi-tool") ? "content-center" : "content-start"}
         max-w-screen-lg 
         w-full 
         md:min-h-[635px]

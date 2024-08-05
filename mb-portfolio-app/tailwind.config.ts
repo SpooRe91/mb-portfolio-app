@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 const config: Config = {
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -60,12 +59,43 @@ const config: Config = {
                         position: "absolute",
                     },
                 },
+                "homePage-slide-in-top": {
+                    from: {
+                        transform: "translateY(-100%)",
+                    },
+                    to: {
+                        transform: "translateY(0)",
+                    },
+                },
+                "element-fade-in": {
+                    from: {
+                        opacity: "0",
+                    },
+                    to: {
+                        opacity: "1",
+                    },
+                },
+                "navBar-slide-in-top": {
+                    from: {
+                        transform: "translateY(-1000%)",
+                    },
+                    to: {
+                        transform: "translateY(0)",
+                    },
+                },
             },
             animation: {
                 "slide-out-fade-out": "slide-out-fade-out 0.25s ease-out forwards",
                 "slide-in-fade-in": "slide-in-fade-in 0.25s ease-in forwards",
                 "sidebar-slide-in": "sidebar-slide-in 0.15s ease-in forwards",
                 "sidebar-slide-out": "sidebar-slide-out 0.15s ease-in forwards",
+                "homePage-slide-in-top": "homePage-slide-in-top 0.5s ease-in forwards",
+                "homePage-fade-in": "element-fade-in 1.5s ease-in forwards",
+                "navBarItem-slide-in-top1": "navBar-slide-in-top 0.35s ease-in forwards",
+                "navBarItem-slide-in-top2": "navBar-slide-in-top 0.5s ease-in forwards",
+                "navBarItem-slide-in-top3": "navBar-slide-in-top 0.75s ease-in forwards",
+                "navBarItem-slide-in-top4": "navBar-slide-in-top 1s ease-in forwards",
+                "navBarLogo-fade-in": "element-fade-in 1.5s ease-in forwards",
             },
             colors: {
                 navBarActive: "#edf1ec",
@@ -81,6 +111,7 @@ const config: Config = {
                 colorMediumLight: "#EBD9B4",
                 colorLight: "#F9EFDB",
                 colorMedLightBlue: "#61bea5",
+                colorDarkMedBlue: "#93d9db",
                 "bg-transparent-black-main": "#000000b8",
                 "bg-transparent-black-secondary": "#000000b3",
                 "bg-transparent-black-tretriary": "#00000029",
@@ -108,6 +139,8 @@ const config: Config = {
             },
             height: {
                 "350px": "350px",
+                "screen-h-md": "calc(100vh - (168px + 94.38px))",
+                "screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
             },
             minHeight: {
                 "screen-h-md": "calc(100vh - (168px + 94.38px))",

@@ -18,7 +18,7 @@ export const ContactForm = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <div className="md:max-w-[600px] sm:max-w-[500px] mx-auto w-full sm:pb-[12rem] md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
+        <div className="md:max-w-[600px] sm:max-w-[500px] mx-auto w-full md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
             {(status.error || status.notification) && (
                 <Notification
                     {...status}

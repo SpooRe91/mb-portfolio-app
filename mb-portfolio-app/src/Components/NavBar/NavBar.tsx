@@ -16,7 +16,7 @@ export const NavBar = () => {
     return (
         <div className="sticky w-full md:py-[1.75rem] md:px-[1.5rem] sm:p-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] backdrop-blur-[5px] shadow-box-shadow-dark">
             <div className="flex md:flex-row sm:flex-col sm:gap-[0.75rem] items-center justify-between">
-                <Link href={"/"}>
+                <Link className="animate-navBarLogo-fade-in" href={"/"}>
                     <h1 className="rounded-[8px] backdrop-blur-[5px]  py-[0.2rem] px-[0.4rem] md:hover:text-colorLight md:hover:shadow-box-shadow-logo text-navBarInactive font-bold tracking-wide transition-all duration-300 ease-in-out md:text-2xl sm:text-lg">
                         {keyToText("NAVIGATION.LOGO_TEXT")}
                     </h1>
@@ -24,16 +24,16 @@ export const NavBar = () => {
                 <ul
                     className={`flex flex-wrap md:flex-row sm:flex-col sm:items-center gap-4 text-lg text-navBarInactive`}
                 >
-                    <li>
+                    <li className="animate-navBarItem-slide-in-top1">
                         <Link
                             href="/"
                             passHref
-                            className={`hover:text-colorLight transition-all ${active === "/" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
+                            className={` hover:text-colorLight transition-all ${active === "/" ? "text-navBarActive underline drop-shadow-navDropShadow" : ""}`}
                         >
                             {keyToText("NAVIGATION.HOME_TEXT")}
                         </Link>
                     </li>
-                    <li>
+                    <li className="animate-navBarItem-slide-in-top2">
                         <Link
                             href="/projects"
                             passHref
@@ -42,7 +42,7 @@ export const NavBar = () => {
                             {keyToText("NAVIGATION.PROJECTS_TEXT")}
                         </Link>
                     </li>
-                    <li>
+                    <li className="animate-navBarItem-slide-in-top3">
                         <Link
                             href="/about"
                             passHref
@@ -51,7 +51,7 @@ export const NavBar = () => {
                             {keyToText("NAVIGATION.ABOUT_TEXT")}
                         </Link>
                     </li>
-                    <li>
+                    <li className="animate-navBarItem-slide-in-top4">
                         <Link
                             href="/contactMe"
                             passHref

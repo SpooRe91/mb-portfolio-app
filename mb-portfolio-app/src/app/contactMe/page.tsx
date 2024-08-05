@@ -1,26 +1,36 @@
 "use client";
 import { TextBlock, ContactForm } from "@PortfolioApp/Components";
 import { useExtractText } from "@PortfolioApp/hooks";
+import { contactBG } from "../../../public/backgrounds";
+import Image from "next/image";
 
 const Contact = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <div className="w-full p-8 md:min-h-screen-h-md sm:min-h-screen-h-sm pb-[11rem] flex md:flex-row sm:flex-col items-center">
-            <div className="flex flex-col items-center">
-                <h1 className="md:text-4xl sm:text-xl font-bold text-colorDark mb-8">
-                    {keyToText("CONTACT.HEADER")}
-                </h1>
-                <TextBlock
-                    className="text-colorMediumDark p-[0.8rem] text-center"
-                    titleClassName="sm:text-base md-text-4xl"
-                    title={keyToText("CONTACT.SEND_EMAIL_TEXT")}
-                    content={keyToText("CONTACT.SEND_EMAIL_AFFIRMATION")}
-                    contentClassName="sm:text-base md-text-4xl"
-                />
+        <section className="relative min-h-screen md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col justify-center sm:pb-[12rem]">
+            <Image
+                src={contactBG}
+                alt="BG IMAGE"
+                className="w-full min-h-screen object-cover fixed z-[-1] brightness-[0.5]"
+                priority
+            />
+            <div className="w-full p-8 flex md:flex-row sm:flex-col items-center">
+                <div className="flex flex-col items-center">
+                    <h1 className="md:text-4xl sm:text-xl font-bold text-colorDarkMedBlue mb-8">
+                        {keyToText("CONTACT.HEADER")}
+                    </h1>
+                    <TextBlock
+                        className="text-colorMediumDark p-[0.8rem] text-center"
+                        titleClassName="sm:text-base md-text-4xl"
+                        title={keyToText("CONTACT.SEND_EMAIL_TEXT")}
+                        content={keyToText("CONTACT.SEND_EMAIL_AFFIRMATION")}
+                        contentClassName="sm:text-base md-text-4xl"
+                    />
+                </div>
+                <ContactForm />
             </div>
-            <ContactForm />
-        </div>
+        </section>
     );
 };
 
