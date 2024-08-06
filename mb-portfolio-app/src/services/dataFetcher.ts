@@ -15,7 +15,7 @@ const ProjectTypeArraySchema = z.array(ProjectTypeSchema);
 
 type ProjectType = z.infer<typeof ProjectTypeSchema>;
 
-export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
+export const fetchPortfolioData = async (signal: AbortSignal): Promise<ProjectType[] | null> => {
     if (!UTIL_KEY) {
         throw new Error("NEXT_PUBLIC_UTIL_KEY is not defined in the environment variables.");
     }
@@ -25,6 +25,7 @@ export const fetchPortfolioData = async (): Promise<ProjectType[] | null> => {
             headers: {
                 "x-util-key": UTIL_KEY,
             },
+            signal,
         });
 
         if (!res.data) {

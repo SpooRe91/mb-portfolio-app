@@ -44,7 +44,7 @@ export const useGetProjects = (): UseGetProjectsResult => {
     const refetchCountRef = useRef<number>(0);
     const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
 
-    const dataFetch = useCallback(async () => {
+    const dataFetch = useCallback(async (signal: AbortSignal) => {
         if (refetchCountRef.current >= MAX_FETCH_COUNT) {
             setMessage({ error: "Maximum refetch attempts reached. Please try again later." });
             setIsLoading(false);
@@ -55,7 +55,7 @@ export const useGetProjects = (): UseGetProjectsResult => {
         }
 
         try {
-            const result = await fetchPortfolioData();
+            const result = await fetchPortfolioData(signal);
             if (result) {
                 setProjectsData(result);
                 setIsLoading(false);
@@ -76,11 +76,13 @@ export const useGetProjects = (): UseGetProjectsResult => {
     }, []);
 
     useEffect(() => {
-        dataFetch();
+        const controller = new AbortController();
+        const signal = controller.signal;
+        dataFetch(signal);
 
         intervalIdRef.current = setInterval(() => {
             if (isLoading || !projectsData.length) {
-                dataFetch();
+                dataFetch(signal);
             } else {
                 clearInterval(intervalIdRef.current as NodeJS.Timeout);
             }
@@ -89,7 +91,10 @@ export const useGetProjects = (): UseGetProjectsResult => {
         return () => {
             if (intervalIdRef.current) {
                 clearInterval(intervalIdRef.current);
+                controller.abort();
             }
+            console.log("UNMOUNTED");
+            controller.abort();
         };
     }, [dataFetch, isLoading, projectsData.length]);
 
