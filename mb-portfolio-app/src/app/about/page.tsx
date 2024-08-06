@@ -53,8 +53,8 @@ const About = () => {
                                     src={src}
                                     name={name}
                                     extUrl={extUrl}
-                                    imgClassname={`w-full h-full ${name === "GitHub" && "brightness-[1] invert"}`}
-                                    containerClassName="sm:w-[35px] sm:h-[35px] md:w-[64px] md:h-[64px] sm:rounded-[50%] md:rounded-none"
+                                    imgClassname={`w-full h-full ${name === "GitHub" && "brightness-[1] invert"} sm:rounded-[50%] md:rounded-[8px]`}
+                                    containerClassName="sm:w-[35px] sm:h-[35px] md:w-[64px] md:h-[64px] overflow-hidden"
                                 />
                             ))}
                         </div>
