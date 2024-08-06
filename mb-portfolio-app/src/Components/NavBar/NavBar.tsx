@@ -3,6 +3,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useExtractText } from "@PortfolioApp/hooks";
+import logo from "/public/MB-logo.webp";
+import Image from "next/image";
 
 export const NavBar = () => {
     const path = usePathname();
@@ -16,11 +18,17 @@ export const NavBar = () => {
     return (
         <div className="sticky w-full md:py-[1.75rem] md:px-[1.5rem] sm:p-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] backdrop-blur-[5px] shadow-box-shadow-dark">
             <div className="flex md:flex-row sm:flex-col sm:gap-[0.75rem] items-center justify-between">
-                <Link className="animate-navBarLogo-fade-in" href={"/"}>
-                    <h1 className="rounded-[8px] backdrop-blur-[5px]  py-[0.2rem] px-[0.4rem] md:hover:text-colorLight md:hover:shadow-box-shadow-logo text-navBarInactive font-bold tracking-wide transition-all duration-300 ease-in-out md:text-2xl sm:text-lg">
-                        {keyToText("NAVIGATION.LOGO_TEXT")}
-                    </h1>
-                </Link>
+                <div className="">
+                    <Link className="animate-navBarLogo-fade-in" href={"/"}>
+                        <Image
+                            src={logo}
+                            alt="Logo"
+                            width={64}
+                            height={64}
+                            className="rounded-[10px] border-y-pink-900 md:hover:hover:shadow-box-shadow-logo overflow-hidden transition-all"
+                        />
+                    </Link>
+                </div>
                 <ul
                     className={`flex flex-wrap md:flex-row sm:flex-col sm:items-center gap-4 text-lg text-navBarInactive`}
                 >
