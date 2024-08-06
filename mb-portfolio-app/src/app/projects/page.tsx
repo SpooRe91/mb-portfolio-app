@@ -43,7 +43,8 @@ const ProjectsComponent = () => {
                     </div>
                 )}
                 {!!projectsData.length && (
-                    <div className="grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl mx-auto bg-bg-transparent-black-secondary rounded-[8px]">
+                    <div className="relative bg-bg-transparent-black-main grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl mx-auto rounded-[8px]">
+                        <span className="rounded-[8px] brightness-[0.5] absolute z-[-1] top-0 left-0 w-full h-full bg-projects-secondary-bg bg-transparent bg-fixed bg-cover bg-no-repeat bg-center"></span>
                         {projectsData.map((projectElement, index) => (
                             <ProjectCard key={uuid()} {...projectElement} isMobile={isMobile} index={index} />
                         ))}

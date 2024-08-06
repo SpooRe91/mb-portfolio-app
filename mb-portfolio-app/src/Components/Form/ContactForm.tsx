@@ -18,7 +18,7 @@ export const ContactForm = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <div className="md:max-w-[600px] sm:max-w-[500px] mx-auto w-full md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
+        <div className="md:max-w-[600px] sm:max-w-[500px] w-full md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
             {(status.error || status.notification) && (
                 <Notification
                     {...status}
@@ -31,9 +31,9 @@ export const ContactForm = () => {
             {isLoading && (
                 <div className="absolute left-0 top-0 w-full p-[1rem 0.8rem] min-h-full">
                     <GlobalLoader
-                        loadingText="Preparing the mail pigeon, this may take a little..."
-                        mainClassName="min-h-[365px] p-[1rem] min-w-full rounded-[8px]"
-                        secondaryClassName="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] md:h-[340px] sm:h-[360px]"
+                        loadingText={keyToText("FORM.LOADING_MESSAGE")}
+                        mainClassName="p-[1rem] min-w-full rounded-[8px] absolute h-full"
+                        secondaryClassName="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-full"
                         textClassName="text-colorMedLightBlue"
                     />
                 </div>
@@ -42,7 +42,7 @@ export const ContactForm = () => {
                 onSubmit={handleSubmit}
                 className="space-y-4 sm:p-[1rem] shadow-box-shadow-border-bottom rounded-[8px]"
             >
-                <section className="w-full flex md:flex-row md:gap-[3rem] sm:flex-col text-colorMediumDark">
+                <section className="w-full flex md:flex-row md:gap-[2rem] sm:gap-[1rem] sm:flex-col text-colorMediumDark">
                     <div className="md:w-full ">
                         <label htmlFor="firstName" className="block text-colorDark">
                             {keyToText("FORM.FIRST_NAME_LABEL")}

@@ -13,7 +13,7 @@ export const Footer = () => {
             <h1 className="md:text-3xl sm:text-sm font-bold mb-4">{keyToText("FOOTER.HEADER")}</h1>
             <p className="md:text-lg sm:text-sm text-center">{keyToText("FOOTER.SECONDARY_TEXT")}</p>
 
-            <div className="flex space-x-4 sm:p-[0.2rem] md:p-0">
+            <div className="flex space-x-4 p-[0.5rem]">
                 <Link
                     href="https://github.com/SpooRe91"
                     target="_blank"

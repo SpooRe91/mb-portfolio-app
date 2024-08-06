@@ -1,7 +1,7 @@
 {
     "HOME": {
         "WELCOME_MAIN": "Welcome to my portfolio",
-        "SECONDARY_TEXT": "Here you can find information about my projects, myself and my contact information. Should you have any remarks, questions, suggestions or an offer, please do not hesitate to reach me."
+        "SECONDARY_TEXT": "Here you can find information about my projects, myself and how to contact me. Should you have any remarks, questions, suggestions or an offer, please do not hesitate to reach me."
     },
     "PROJECTS": {
         "LOCAL_LOADING_TEXT": "Fetching my projects, please wait...",
@@ -15,7 +15,7 @@
     },
     "CONTACT": {
         "HEADER": "Contact me",
-        "SEND_EMAIL_TEXT": "You can send me an e-mail via the form below.",
+        "SEND_EMAIL_TEXT": "You can send me an e-mail by using this form.",
         "SEND_EMAIL_AFFIRMATION": "And I will make sure to look into it as soon as possible!"
     },
     "NAVIGATION": {
@@ -27,7 +27,7 @@
     },
     "FOOTER": {
         "HEADER": "Socials",
-        "SECONDARY_TEXT": "I am happy to connect! You can find me on my social media platforms:",
+        "SECONDARY_TEXT": "I am happy to connect! You can find me on:",
         "SOCIAL_GITHUB": "GitHub",
         "SOCIAL_LINKEDIN": "LinkedIn"
     },
@@ -35,7 +35,8 @@
         "FIRST_NAME_LABEL": "First Name",
         "LAST_NAME_LABEL": "Last Name",
         "EMAIL_LABEL": "Email",
-        "MESSAGE_LABEL": "Message"
+        "MESSAGE_LABEL": "Message",
+        "LOADING_MESSAGE": "Transmitting message, this may take a little..."
     },
     "SERVER_ERROR": {
         "HEADER": "SORRY, SEEMS THE SERVER IS HAVING A BAD DAY",

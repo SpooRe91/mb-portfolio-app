@@ -136,23 +136,24 @@ const config: Config = {
             backgroundImage: {
                 "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
                 "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+                "projects-secondary-bg": "url('/backgrounds/portfolio-background.webp')",
             },
             height: {
                 "350px": "350px",
-                "screen-h-md": "calc(100vh - (168px + 94.38px))",
+                "screen-h-md": "calc(100vh - (184px + 94.38px))",
                 "screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
             },
             minHeight: {
                 "bg-image-height": "calc(100vh + 10rem)",
-                "screen-h-md": "calc(100vh - (168px + 94.38px))",
-                "screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
+                "screen-h-md": "calc(100vh - (184px + 94.38px))",
+                "screen-h-sm": "calc(100vh - (160px + 238.38px))",
             },
             maxHeight: {
-                "max-screen-h-md": "calc(100vh - (168px + 94.38px))",
-                "max-screen-h-sm": "calc(100vh - (150.38px + 238.38px))",
+                "max-screen-h-md": "calc(100vh - (184px + 94.38px))",
+                "max-screen-h-sm": "calc(100vh - (160px + 238.38px))",
             },
             dropShadow: {
-                navDropShadow: "0px 0px 20px #e7c9af",
+                navDropShadow: "0px 0px 4px #e7c9af",
                 logoShadow: "2px 1px 1px #966348",
             },
         },

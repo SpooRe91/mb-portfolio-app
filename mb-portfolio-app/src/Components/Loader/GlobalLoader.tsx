@@ -17,7 +17,7 @@ export const GlobalLoader = ({
 }: LoadingProps) => {
     return (
         <div
-            className={`relative z-[10] flex items-center w-full justify-center bg-bg-transparent-black-main ${mainClassName}`}
+            className={`${mainClassName} z-[10] flex items-center w-full justify-center bg-bg-transparent-black-main`}
         >
             <div
                 className={`w-full flex flex-col gap-4 items-center justify-center bg-bg-transparent-black-main sm:p-[1rem] rounded-[8px] ${secondaryClassName}`}

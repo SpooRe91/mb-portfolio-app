@@ -31,7 +31,7 @@ export const ProjectCard = ({ url, img, title, text, content, index, isMobile }:
         shadow-box-shadow-border-bottom 
         bg-bg-transparent-black-tretiary
         md:hover:text-colorMedLightBlue
-        md:hover:bg-bg-transparent-project-hover
+        md:hover:bg-bg-transparent-black-secondary
         md:mx-[5rem]
         transition-all
         `}
