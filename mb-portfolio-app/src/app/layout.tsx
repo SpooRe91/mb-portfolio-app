@@ -5,6 +5,8 @@ import Footer from "@PortfolioApp/Components/Footer/Footer";
 import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
 import Loading from "./loading";
+import Image from "next/image";
+import { mainBodyBg } from "../../public/backgrounds";
 
 export const metadata: Metadata = {
     title: "M.B. Portfolio app",
@@ -19,6 +21,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body>
+                <Image
+                    src={mainBodyBg}
+                    alt="BG IMAGE"
+                    className="w-full min-h-bg-image-height object-cover fixed z-[-1] brightness-[1]"
+                    priority
+                />
                 <Analytics />
                 <NavBar />
                 <Suspense fallback={<Loading />}>{children}</Suspense>

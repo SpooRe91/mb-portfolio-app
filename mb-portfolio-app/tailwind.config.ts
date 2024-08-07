@@ -129,6 +129,7 @@ const config: Config = {
                 "box-shadow-logo": "1px 7px 30px #c8e7ee",
                 "box-shadow-border-bottom": "0px 2px 4px #343737",
                 "box-shadow-border-top": "0px -2px 4px #343737",
+                "box-shadow-top-and-bottom":"0px 2px 4px #343737, 0px -2px 4px #343737"
             },
             fontFamily: {
                 sans: ["JetBrains Mono", "Titillium Web", "PT Sans", "sans-serif"],
