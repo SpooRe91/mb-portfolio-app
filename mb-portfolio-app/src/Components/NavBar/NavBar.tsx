@@ -32,7 +32,7 @@ export const NavBar = () => {
                                 alt="Logo"
                                 width={64}
                                 height={64}
-                                className="rounded-[10px] border-y-pink-900 md:hover:hover:shadow-box-shadow-logo overflow-hidden transition-all"
+                                className="rounded-[10px] md:hover:hover:shadow-box-shadow-logo overflow-hidden transition-all"
                             />
                         </Link>
                     </div>

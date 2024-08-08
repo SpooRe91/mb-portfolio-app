@@ -6,7 +6,8 @@
     "PROJECTS": {
         "LOCAL_LOADING_TEXT": "Fetching my projects, please wait...",
         "MY_PROJECTS": "My projects",
-        "TECHS_I_USE": "most of the technologies I currently use:"
+        "TECHS_I_USE": "most of the technologies I currently use:",
+        "MORE_PORJECTS_ON_GH":"You can also browse my GitHub repositories."
     },
     "ABOUT": {
         "HEADER": "About Me",

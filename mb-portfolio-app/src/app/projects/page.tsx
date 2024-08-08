@@ -1,9 +1,9 @@
 "use client";
 import { LocalLoader, ServerDown, ProjectCard, Notification } from "@PortfolioApp/Components";
 import { useGetViewWidth, useExtractText, useGetProjects } from "@PortfolioApp/hooks";
-import Image from "next/image";
 import { v4 as uuid } from "uuid";
 import { projectsBG } from "../../../public/backgrounds";
+import Image from "next/image";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
@@ -38,8 +38,8 @@ const ProjectsComponent = () => {
                 ) : !projectsData.length ? (
                     <ServerDown />
                 ) : (
-                    <div className="flex md:flex-row md:justify-around sm:flex-col sm:items-center sm:px-3 w-full shadow-box-shadow-dark">
-                        <h1 className="text-4xl px-5 py-8 text-colorMediumDark">
+                    <div className="flex md:flex-row md:justify-around sm:flex-col sm:items-center sm:px-3 w-full shadow-box-shadow-border-bottom bg-bg-transparent-black-secondary">
+                        <h1 className="text-4xl px-5 py-8 text-colorMedLightBlue">
                             {keyToText("PROJECTS.MY_PROJECTS")}
                         </h1>
                     </div>
@@ -54,6 +54,11 @@ const ProjectsComponent = () => {
                         ))}
                     </div>
                 )}
+                <div className="flex md:flex-row md:justify-center sm:flex-col sm:items-center sm:px-3 w-full shadow-box-shadow-border-bottom bg-bg-transparent-black-secondary">
+                    <h3 className="sm:p-[0.5rem] md:p-[1rem] md:text-lg sm:text-sm text-center text-colorMedLightBlue">
+                        {keyToText("PROJECTS.MORE_PORJECTS_ON_GH")}
+                    </h3>
+                </div>
             </div>
         </section>
     );

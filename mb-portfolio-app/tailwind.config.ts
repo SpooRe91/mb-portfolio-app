@@ -129,7 +129,7 @@ const config: Config = {
                 "box-shadow-logo": "1px 7px 30px #c8e7ee",
                 "box-shadow-border-bottom": "0px 2px 4px #343737",
                 "box-shadow-border-top": "0px -2px 4px #343737",
-                "box-shadow-top-and-bottom":"0px 2px 4px #343737, 0px -2px 4px #343737"
+                "box-shadow-top-and-bottom": "0px 2px 4px #343737, 0px -2px 4px #343737",
             },
             fontFamily: {
                 sans: ["JetBrains Mono", "Titillium Web", "PT Sans", "sans-serif"],
@@ -155,7 +155,10 @@ const config: Config = {
             },
             dropShadow: {
                 navDropShadow: "0px 0px 4px #e7c9af",
-                logoShadow: "2px 1px 1px #966348",
+                homeTextShadow: "3px 4px 2px black",
+            },
+            padding: {
+                paddingLeftScrollBar: "calc(-1 * (100vw - 100%))",
             },
         },
     },

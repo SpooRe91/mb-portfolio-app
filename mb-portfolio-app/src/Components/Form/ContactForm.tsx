@@ -2,6 +2,7 @@
 import { useContactForm, useExtractText } from "@PortfolioApp/hooks";
 import GlobalLoader from "../Loader/GlobalLoader";
 import Notification from "../Notification/Notification";
+import Button from "@mui/material/Button";
 
 export const ContactForm = () => {
     const {
@@ -109,13 +110,14 @@ export const ContactForm = () => {
                     {formError.message && <p className="text-red-600">{formError.message}</p>}
                 </div>
                 {!isFormDisabled && (
-                    <button
+                    <Button
                         type="submit"
                         className="w-full py-2 bg-colorMedLightBlue text-white rounded-md hover:bg-colorMediumDark"
                         disabled={isFormDisabled}
+                        variant="contained"
                     >
                         Send
-                    </button>
+                    </Button>
                 )}
             </form>
         </div>

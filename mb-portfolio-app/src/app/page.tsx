@@ -1,33 +1,56 @@
 "use client";
+import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import { useExtractText } from "@PortfolioApp/hooks";
 import { homeBG } from "../../public/backgrounds";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HomePage = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <section className="relative min-h-screen md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center">
-            <Image
-                src={homeBG}
-                alt="BG IMAGE"
-                className="w-full min-h-bg-image-height object-cover fixed z-[-1] brightness-[0.25]"
-                priority
-            />
-            <div
-                className={`animate-homePage-slide-in-top w-full flex flex-col items-center md:backdrop-blur-[5px] justify-center max-w-4xl sm:gap-[0.5rem] md:mx-auto rounded-[8px] h-full relative transition-all`}
+        <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#00000091] to-[#49998538] overflow-hidden">
+            <motion.div
+                className="absolute top-0 left-0 w-full h-full"
+                initial={{ y: "-20%" }}
+                animate={{ y: "0%" }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                style={{ zIndex: -1 }}
             >
-                <h1
-                    className={`animate-homePage-fade-in w-full sm:font-extrabold md:font-normal text-center md:text-4xl md:px-5 md:py-8 sm:text-lg sm:px-3 sm:py-5 text-tech-text-color`}
-                >
-                    {keyToText("HOME.WELCOME_MAIN")}
-                </h1>
-                <p
-                    className={`animate-homePage-fade-in max-w-[40rem] text-center md:text-[1.2rem] md:px-5 md:py-8 sm:text-[0.9rem] sm:px-4 sm:py-4 text-colorDarkMedBlue`}
-                >
+                <Image
+                    src={homeBG}
+                    alt="BG IMAGE"
+                    className="w-full min-h-screen object-cover brightness-75"
+                    priority
+                />
+            </motion.div>
+
+            <motion.div
+                className="text-center max-w-4xl mx-auto px-5 py-16"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+            >
+                <div className="flex items-center justify-center mb-6">
+                    <RocketLaunchIcon className="text-[#dfdfdf] text-6xl mr-4" />
+                    <h1 className="sm:text-2xl md:text-5xl font-extrabold text-colorMedLightBlue drop-shadow-homeTextShadow">
+                        {keyToText("HOME.WELCOME_MAIN")}
+                    </h1>
+                </div>
+                <p className="text-lg text-[#a2c9fc] mb-8 drop-shadow-homeTextShadow">
                     {keyToText("HOME.SECONDARY_TEXT")}
                 </p>
-            </div>
+                <motion.button
+                    className="px-6 py-3 bg-[#1B263B] text-[#E0E1DD] font-bold rounded-full drop-shadow-homeTextShadow hover:bg-[#68948a] transition-all"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <Link href="/projects" passHref>
+                        Get Started
+                    </Link>
+                </motion.button>
+            </motion.div>
         </section>
     );
 };

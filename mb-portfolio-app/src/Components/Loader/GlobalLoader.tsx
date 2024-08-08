@@ -26,7 +26,7 @@ export const GlobalLoader = ({
                 <TextBlock
                     title={loadingText ? loadingText : "Loading..."}
                     titleClassName={`md:text-2xl sm:text-base ${textClassName}`}
-                    className="tracking-widest text-colorMediumDark md:text-3xl sm:text-xl text-center"
+                    className="tracking-widest text-colorMediumDark md:text-3xl sm:text-xl text-center drop-shadow-homeTextShadow"
                 />
             </div>
         </div>

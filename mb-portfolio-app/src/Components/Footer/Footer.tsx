@@ -1,6 +1,6 @@
 "use client";
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import { useGetViewWidth, useExtractText } from "@PortfolioApp/hooks";
+import { useExtractText } from "@PortfolioApp/hooks";
 import Link from "next/link";
 
 export const Footer = () => {

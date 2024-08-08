@@ -34,7 +34,7 @@ const About = () => {
                 priority
             />
             <div className="z-[10] relative flex flex-col items-center text-about-text-color sm:gap-[0.5rem]">
-                <div className="flex flex-wrap gap-5 flex-col align-middle items-center max-w-4xl bg-bg-transparent-black-main p-[1.25rem] rounded-[5px] shadow-box-shadow-border-bottom">
+                <div className="flex flex-wrap gap-5 flex-col align-middle items-center max-w-4xl bg-bg-transparent-black-secondary p-[1.25rem] rounded-[5px] shadow-box-shadow-border-bottom">
                     <h1 className="text-3xl font-bold mb-4 sm:mb-0">{keyToText("ABOUT.HEADER")}</h1>
                     <p className={`text-left md:text-lg sm:text-sm`}>{keyToText("ABOUT.FIRST_PARAGRAPH")}</p>
                     <p className={`text-left md:text-lg sm:text-sm`}>{keyToText("ABOUT.SECOND_PARAGRAPH")}</p>
@@ -43,7 +43,7 @@ const About = () => {
                     <TextBlock
                         title={keyToText("PROJECTS.TECHS_I_USE")}
                         titleClassName="mb-0 sm:text-base md:text-xl"
-                        className="flex flex-col items-center text-center justify-cetetext-block p-2 text-tech-text-color"
+                        className="flex flex-col items-center text-center justify-cetetext-block p-2 text-tech-text-color drop-shadow-homeTextShadow"
                     />
                     <div className="max-w-4xl w-850px w-max-[850px] bg-bg-transparent-black-main rounded-[8px] mb-[15rem] shadow-box-shadow-border-bottom">
                         <div className="flex flex-row flex-wrap p-[1rem] justify-center gap-[1rem] w-full max-w-[750px]">
