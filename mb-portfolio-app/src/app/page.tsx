@@ -21,7 +21,7 @@ const HomePage = () => {
                 <Image
                     src={homeBG}
                     alt="BG IMAGE"
-                    className="w-full min-h-screen object-cover brightness-75"
+                    className="w-full min-h-bg-image-height object-cover top-0 left-0 fixed z-[-1] brightness-[0.5]"
                     priority
                 />
             </motion.div>
