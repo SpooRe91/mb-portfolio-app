@@ -10,39 +10,39 @@ const HomePage = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#00000091] to-[#49998538] overflow-hidden">
+        <section className="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-br overflow-hidden">
             <motion.div
                 className="absolute top-0 left-0 w-full h-full"
-                initial={{ y: "-20%" }}
-                animate={{ y: "0%" }}
-                transition={{ duration: 1, ease: "easeOut" }}
+                initial={{ scale: 1.1, y: "-10%" }}
+                animate={{ scale: 1, y: "0%" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
                 style={{ zIndex: -1 }}
             >
                 <Image
                     src={homeBG}
                     alt="BG IMAGE"
-                    className="w-full min-h-bg-image-height object-cover top-0 left-0 fixed z-[-1] brightness-[0.5]"
+                    className="w-full min-h-screen object-cover fixed brightness-[0.5]"
                     priority
                 />
             </motion.div>
 
             <motion.div
                 className="text-center max-w-4xl mx-auto px-5 py-16"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
             >
                 <div className="flex items-center justify-center mb-6">
                     <RocketLaunchIcon className="text-[#dfdfdf] text-6xl mr-4" />
-                    <h1 className="sm:text-2xl md:text-5xl font-extrabold text-colorMedLightBlue drop-shadow-homeTextShadow">
+                    <h1 className="sm:text-2xl md:text-5xl font-extrabold text-colorMedLightBlue drop-shadow-lg">
                         {keyToText("HOME.WELCOME_MAIN")}
                     </h1>
                 </div>
-                <p className="text-lg text-[#a2c9fc] mb-8 drop-shadow-homeTextShadow">
+                <p className="text-lg text-[#a2c9fc] mb-8 drop-shadow-lg">
                     {keyToText("HOME.SECONDARY_TEXT")}
                 </p>
                 <motion.button
-                    className="px-6 py-3 bg-[#1B263B] text-[#E0E1DD] font-bold rounded-full drop-shadow-homeTextShadow hover:bg-[#68948a] transition-all"
+                    className="px-6 py-3 bg-[#1B263B] text-[#E0E1DD] font-bold rounded-full drop-shadow-lg hover:bg-[#68948a] transition-all"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
