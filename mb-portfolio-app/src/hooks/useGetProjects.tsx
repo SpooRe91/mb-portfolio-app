@@ -93,7 +93,6 @@ export const useGetProjects = (): UseGetProjectsResult => {
                 clearInterval(intervalIdRef.current);
                 controller.abort();
             }
-            console.log("UNMOUNTED");
             controller.abort();
         };
     }, [dataFetch, isLoading, projectsData.length]);

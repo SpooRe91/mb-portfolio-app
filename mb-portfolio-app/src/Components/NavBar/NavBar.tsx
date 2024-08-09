@@ -26,13 +26,12 @@ export const NavBar = () => {
             <div className="flex md:flex-row sm:flex-col sm:gap-[0.75rem] items-center justify-between">
                 {!isMobile && (
                     <div>
-                        <Link className="animate-navBarLogo-fade-in" href={"/"}>
+                        <Link className="animate-navBarLogo-fade-in w-auto h-auto" href={"/"}>
                             <Image
                                 src={logo}
                                 alt="Logo"
                                 width={64}
-                                height={64}
-                                className="rounded-[10px] md:hover:hover:shadow-box-shadow-logo overflow-hidden transition-all"
+                                className="w-auto h-auto rounded-[10px] md:hover:hover:shadow-box-shadow-logo overflow-hidden transition-all"
                             />
                         </Link>
                     </div>
