@@ -1,20 +1,26 @@
-"use client"
+"use client";
 import React from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
 import { Card, TextBlock } from "@PortfolioApp/Components";
 
-type ProjectCardProps = {
+type ProjectType = {
     img: string;
     title: string;
     url: string;
     text: string;
     content: string;
+};
+
+type ProjectCardProps = {
+    projectsData: ProjectType;
     index: number;
     isMobile: boolean;
 };
 
-export const ProjectCard = ({ url, img, title, text, content, index, isMobile }: ProjectCardProps) => {
+export const ProjectCard = ({ projectsData, index, isMobile }: ProjectCardProps) => {
+    const { img, url, title, text, content } = projectsData;
+
     return (
         <div
             className={`flex 
@@ -26,8 +32,7 @@ export const ProjectCard = ({ url, img, title, text, content, index, isMobile }:
         max-w-screen-lg 
         w-full 
         md:min-h-[635px]
-        px-4 
-        py-6 
+        p-[1rem]
         rounded-lg 
         shadow-box-shadow-border-bottom 
         bg-bg-transparent-black-tretiary
@@ -48,7 +53,7 @@ export const ProjectCard = ({ url, img, title, text, content, index, isMobile }:
                 title={title}
                 content={content}
                 url={url}
-                className={`flex flex-col gap-4 items-center text-block text-colorMedLightBlue p-2 w-80 md:contrast-0 hover:contrast-100 transition-all`}
+                className={`flex flex-col gap-4 items-center text-block text-colorMedLightBlue w-80 md:contrast-0 hover:contrast-100 transition-all`}
             >
                 <Link
                     href={url}
