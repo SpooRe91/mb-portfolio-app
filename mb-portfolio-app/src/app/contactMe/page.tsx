@@ -8,7 +8,7 @@ const Contact = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <section className="min-h-screen md:min-h-screen-h-md sm:min-h-screen-h-sm sm:pb-[12rem]">
+        <section className="min-h-screen md:min-h-screen-h-md sm:min-h-screen-h-sm sm:pb-[12rem] sm:pt-[2.5rem] md:pt-[0]">
             <Image
                 src={contactBG}
                 alt="BG IMAGE"

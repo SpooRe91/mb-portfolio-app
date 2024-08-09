@@ -12,7 +12,7 @@ export const NavBar = () => {
     const path = usePathname();
     const { keyToText } = useExtractText();
     const [active, setActive] = useState("");
-    const [showMobileNav, setShowMobileNav] = useState<boolean>(true);
+    const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
     const { isMobile } = useGetViewWidth();
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export const NavBar = () => {
 
     return (
         <div
-            className={`sticky w-full md:py-[1.75rem] md:px-[1.5rem] sm:p-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] backdrop-blur-[5px] shadow-box-shadow-dark transition-all ${isMobile && showMobileNav ? "translate-y-[0]" : "translate-y-[-100%]"} ${!isMobile && "translate-y-[0]"}`}
+            className={`sm:fixed md:sticky w-full md:py-[1.75rem] md:px-[1.5rem] sm:p-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] backdrop-blur-[5px] shadow-box-shadow-dark transition-all ${isMobile && showMobileNav ? "translate-y-[0]" : "translate-y-[-100%]"} ${!isMobile && "translate-y-[0]"}`}
         >
             <div className="flex md:flex-row sm:flex-col sm:gap-[0.75rem] items-center justify-between">
                 {!isMobile && (

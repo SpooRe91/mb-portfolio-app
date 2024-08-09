@@ -148,10 +148,12 @@ const config: Config = {
                 "bg-image-height": "calc(100vh + 10rem)",
                 "screen-h-md": "calc(100vh - (184px + 94.38px))",
                 "screen-h-sm": "calc(100vh - (160px + 238.38px))",
+                "screen-h-sm-noNav": "calc(100vh - 160px)",
             },
             maxHeight: {
                 "max-screen-h-md": "calc(100vh - (184px + 94.38px))",
                 "max-screen-h-sm": "calc(100vh - (160px + 238.38px))",
+                "max-screen-h-sm-noNav": "calc(100vh - 160px)",
             },
             dropShadow: {
                 navDropShadow: "0px 0px 4px #e7c9af",
