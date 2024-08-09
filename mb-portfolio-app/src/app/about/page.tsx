@@ -5,8 +5,6 @@ import { ICON_NAMES_URLS } from "../constants/constants";
 import { icons } from "../../../public/icons/index";
 import { v4 as uuid } from "uuid";
 import { useExtractText } from "@PortfolioApp/hooks";
-import Image from "next/image";
-import { aboutBG } from "../../../public/backgrounds";
 
 type IconList = {
     src: string;
@@ -26,13 +24,7 @@ const About = () => {
     }, []);
 
     return (
-        <section className="relative min-h-screen md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center sm:mr-[1rem] sm:ml-[1rem] md:mr-[1rem] md:ml-[1rem] sm:pt-[4rem] md:pt-[2rem]">
-            <Image
-                src={aboutBG}
-                alt="BG IMAGE"
-                className="w-full min-h-bg-image-height object-cover fixed z-[-1] brightness-[0.5]"
-                priority
-            />
+        <section className="relative md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center sm:mr-[1rem] sm:ml-[1rem] md:mr-[1rem] md:ml-[1rem] sm:pt-[4rem] md:pt-[2rem] pb-[15rem]">
             <div className="z-[10] relative flex flex-col items-center text-about-text-color sm:gap-[0.5rem]">
                 <div className="flex flex-wrap gap-5 flex-col align-middle items-center max-w-4xl bg-bg-transparent-black-secondary p-[1.25rem] rounded-[5px] shadow-box-shadow-border-bottom">
                     <h1 className="text-3xl font-bold mb-4 sm:mb-0">{keyToText("ABOUT.HEADER")}</h1>
@@ -45,7 +37,7 @@ const About = () => {
                         titleClassName="mb-0 sm:text-base md:text-xl"
                         className="flex flex-col items-center text-center justify-cetetext-block p-2 text-tech-text-color drop-shadow-homeTextShadow"
                     />
-                    <div className="max-w-4xl w-850px w-max-[850px] bg-bg-transparent-black-main rounded-[8px] mb-[15rem] shadow-box-shadow-border-bottom">
+                    <div className="max-w-4xl w-850px w-max-[850px] bg-bg-transparent-black-main rounded-[8px] shadow-box-shadow-border-bottom">
                         <div className="flex flex-row flex-wrap p-[1rem] justify-center gap-[1rem] w-full max-w-[750px]">
                             {iconList.map(({ src, name, extUrl }) => (
                                 <IconsContainer

@@ -11,7 +11,7 @@ const ProjectsComponent = () => {
     const { isLoading, projectsData, message, handleClearMessage } = useGetProjects();
 
     return (
-        <section className="relative min-h-screen sm:pt-[5rem] md:pt-[0]">
+        <section className="relative md:min-h-screen-h-md sm:min-h-screen-h-sm sm:pt-[5rem] md:pt-[0] pb-[15rem]">
             {!isMobile && (
                 <Image
                     src={projectsBG}
@@ -20,7 +20,7 @@ const ProjectsComponent = () => {
                     priority
                 />
             )}
-            <div className="flex flex-col items-center gap-24 w-full rounded-lg pb-[15rem]">
+            <div className="flex flex-col items-center gap-24 w-full rounded-lg">
                 {(message.error || message.notification) && (
                     <Notification
                         error={message?.error}
@@ -38,7 +38,7 @@ const ProjectsComponent = () => {
                 ) : !projectsData.length ? (
                     <ServerDown />
                 ) : (
-                    <div className="flex md:flex-row md:justify-around sm:flex-col sm:items-center sm:px-3 w-full shadow-box-shadow-border-bottom bg-bg-transparent-black-secondary">
+                    <div className="flex md:flex-row md:justify-around sm:flex-col sm:items-center sm:px-3 w-full shadow-box-shadow-border-bottom bg-bg-transparent-black-secondary mt-[1rem]">
                         <h1 className="text-4xl px-5 py-8 text-colorMedLightBlue">
                             {keyToText("PROJECTS.MY_PROJECTS")}
                         </h1>
