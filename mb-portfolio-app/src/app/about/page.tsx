@@ -38,7 +38,7 @@ const About = () => {
                         className="flex flex-col items-center text-center justify-cetetext-block p-2 text-tech-text-color drop-shadow-homeTextShadow"
                     />
                     <div className="max-w-4xl w-850px w-max-[850px] bg-bg-transparent-black-main rounded-[8px] shadow-box-shadow-border-bottom">
-                        <div className="flex flex-row flex-wrap p-[1rem] justify-center gap-[1rem] w-full max-w-[750px]">
+                        <div className="flex flex-row flex-wrap p-[1rem] justify-center gap-[1rem] w-full max-w-[750px] [transform-style:preserve-3d] [transform:perspective(1000px)]">
                             {iconList.map(({ src, name, extUrl }) => (
                                 <IconsContainer
                                     key={uuid()}
@@ -46,7 +46,7 @@ const About = () => {
                                     name={name}
                                     extUrl={extUrl}
                                     imgClassname={`w-full h-full ${name === "GitHub" && "brightness-[1] invert"} sm:rounded-[50%] md:rounded-[8px]`}
-                                    containerClassName="sm:w-[35px] sm:h-[35px] md:w-[64px] md:h-[64px] overflow-hidden"
+                                    containerClassName="sm:w-[35px] sm:h-[35px] md:w-[64px] md:h-[64px] overflow-hidden md:hover:[transform:translateZ(20px)] transition-all"
                                 />
                             ))}
                         </div>

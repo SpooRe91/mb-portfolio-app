@@ -1,93 +1,71 @@
 "use client";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useEffect, useState, useMemo } from "react";
 import { useExtractText, useGetViewWidth } from "@PortfolioApp/hooks";
-import logo from "/public/MB-logo.webp";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
+import logo from "/public/MB-logo.webp";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { NAV_BAR_ITEMS } from "@PortfolioApp/app/constants/constants";
 
 export const NavBar = () => {
     const path = usePathname();
     const { keyToText } = useExtractText();
-    const [active, setActive] = useState("");
-    const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
     const { isMobile } = useGetViewWidth();
+    const [active, setActive] = useState(path);
+    const [showMobileNav, setShowMobileNav] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     useEffect(() => {
         setActive(path);
     }, [path]);
 
+    const NavItemsList = useMemo(() => Object.entries(NAV_BAR_ITEMS), []);
+
+    if (!isMounted) return null; // Early return if the component is not mounted
+
+    const isMountedAndMobile = isMounted && isMobile;
+    const translateYClass = isMobile && showMobileNav ? "translate-y-[0]" : "translate-y-[-100%]";
+
     return (
         <div
-            className={`sm:fixed md:sticky w-full md:py-[1.75rem] md:px-[1.5rem] sm:p-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] backdrop-blur-[5px] shadow-box-shadow-dark transition-all ${isMobile && showMobileNav ? "translate-y-[0]" : "translate-y-[-100%]"} ${!isMobile && "translate-y-[0]"}`}
+            className={`sm:fixed md:sticky w-full md:py-[1.75rem] md:px-[1.5rem] sm:p-[1rem] bg-bg-transparent-black-main top-0 left-0 z-[20] backdrop-blur-[5px] shadow-box-shadow-dark transition-all ${translateYClass} ${isMounted && !isMobile && "translate-y-[0]"}`}
         >
             <div className="flex md:flex-row sm:flex-col sm:gap-[0.75rem] items-center justify-between">
-                {!isMobile && (
-                    <div>
-                        <Link className="animate-navBarLogo-fade-in w-auto h-auto" href={"/"}>
-                            <Image
-                                src={logo}
-                                alt="Logo"
-                                width={64}
-                                className="w-auto h-auto rounded-[10px] md:hover:hover:shadow-box-shadow-logo overflow-hidden transition-all"
-                            />
-                        </Link>
-                    </div>
+                {!isMountedAndMobile && (
+                    <Link href="/" className="animate-navBarLogo-fade-in w-auto h-auto">
+                        <Image
+                            src={logo}
+                            alt="Logo"
+                            width={64}
+                            className="w-auto h-auto rounded-[10px] md:hover:hover:shadow-box-shadow-logo md:hover:[transform:translateZ(20px)] overflow-hidden transition-all"
+                        />
+                    </Link>
                 )}
-                {
-                    <ul
-                        className={`flex flex-wrap md:flex-row sm:flex-col sm:items-center gap-4 text-lg text-navBarInactive transition-all sm:mb-[2rem] md:mb-0`}
-                    >
-                        <li className="animate-navBarItem-slide-in-top1">
+                <ul className="flex flex-wrap md:flex-row sm:flex-col sm:items-center gap-4 text-lg text-navBarInactive transition-all sm:mb-[2rem] md:mb-0 md:[transform-style:preserve-3d] md:[transform:perspective(1000px)]">
+                    {NavItemsList.map(([key, value]) => (
+                        <li key={value}>
                             <Link
-                                onClick={() => setShowMobileNav((state) => !state)}
-                                href="/"
-                                passHref
-                                className={`py-[0.25rem] px-[0.5rem] rounded-[8px] hover:text-colorLight transition-all ${active === "/" ? "text-navBarActive shadow-box-shadow-border-bottom" : ""}`}
+                                href={value}
+                                onClick={() => setShowMobileNav(false)}
+                                className={`py-[0.25rem] px-[0.5rem] rounded-[8px] hover:text-colorLight ${active === value ? "text-navBarActive shadow-box-shadow-border-bottom" : ""}`}
                             >
-                                {keyToText("NAVIGATION.HOME_TEXT")}
+                                {keyToText(`NAVIGATION.${key}`)}
                             </Link>
                         </li>
-                        <li className="animate-navBarItem-slide-in-top2">
-                            <Link
-                                onClick={() => setShowMobileNav((state) => !state)}
-                                href="/projects"
-                                passHref
-                                className={`py-[0.25rem] px-[0.5rem] rounded-[8px] hover:text-colorLight transition-all ${active === "/projects" ? "text-navBarActive shadow-box-shadow-border-bottom" : ""}`}
-                            >
-                                {keyToText("NAVIGATION.PROJECTS_TEXT")}
-                            </Link>
-                        </li>
-                        <li className="animate-navBarItem-slide-in-top3">
-                            <Link
-                                onClick={() => setShowMobileNav((state) => !state)}
-                                href="/about"
-                                passHref
-                                className={`py-[0.25rem] px-[0.5rem] rounded-[8px] hover:text-colorLight transition-all ${active === "/about" ? "text-navBarActive shadow-box-shadow-border-bottom" : ""}`}
-                            >
-                                {keyToText("NAVIGATION.ABOUT_TEXT")}
-                            </Link>
-                        </li>
-                        <li className="animate-navBarItem-slide-in-top4">
-                            <Link
-                                onClick={() => setShowMobileNav((state) => !state)}
-                                href="/contactMe"
-                                passHref
-                                className={`py-[0.25rem] px-[0.5rem] rounded-[8px] hover:text-colorLight transition-all ${active === "/contactMe" ? "text-navBarActive shadow-box-shadow-border-bottom" : ""}`}
-                            >
-                                {keyToText("NAVIGATION.CONTACT_TEXT")}
-                            </Link>
-                        </li>
-                    </ul>
-                }
-                {isMobile && (
+                    ))}
+                </ul>
+                {isMountedAndMobile && (
                     <div
-                        className={`active:bg-slate-800 h-[2rem] shadow-box-shadow-top-and-bottom cursor-pointer absolute bottom-0 padding-[0.5rem] transition-all w-full flex justify-center items-center ${!showMobileNav ? "bottom-[-2rem] bg-bg-transparent-black-main" : "bottom-0"}`}
-                        onClick={() => setShowMobileNav((state) => !state)}
+                        className={`active:bg-slate-800 h-[2rem] shadow-box-shadow-top-and-bottom cursor-pointer absolute bottom-0 padding-[0.5rem] transition-all w-full flex justify-center items-center ${showMobileNav ? "bottom-0" : "bottom-[-2rem] bg-bg-transparent-black-main"}`}
+                        onClick={() => setShowMobileNav(!showMobileNav)}
                     >
-                        <span>{isMobile && showMobileNav ? <CloseIcon /> : <MenuIcon />}</span>
+                        {showMobileNav ? <CloseIcon /> : <MenuIcon />}
                     </div>
                 )}
             </div>

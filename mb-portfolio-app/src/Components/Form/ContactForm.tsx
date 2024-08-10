@@ -19,11 +19,11 @@ export const ContactForm = () => {
     const { keyToText } = useExtractText();
 
     return (
-        <div className="md:max-w-[600px] sm:max-w-[500px] w-full md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
+        <div className="relative md:max-w-[600px] sm:max-w-[500px] w-full md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
             {(status.error || status.notification) && (
                 <Notification
                     {...status}
-                    mainClassName="absolute md:top-[0] right-0"
+                    mainClassName="fixed md:top-[0] right-0"
                     secondaryClassname="md:text-[1rem] sm:text-[0.8rem]"
                     handleClearMessage={handleClearMessage}
                     hasAnimation={true}

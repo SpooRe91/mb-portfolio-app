@@ -48,7 +48,7 @@ const ProjectsComponent = () => {
                         error={message?.error}
                         notification={message?.notification}
                         handleClearMessage={handleClearMessage}
-                        mainClassName="z-[99] flex justify-end absolute top-[7rem] right-[2rem]"
+                        mainClassName="z-[99] flex justify-end fixed top-[15rem] right-[2rem]"
                         hasAnimation={true}
                     />
                 )}
@@ -60,9 +60,9 @@ const ProjectsComponent = () => {
                     </div>
                 }
                 {!!projectsData.length && (
-                    <div className="relative bg-bg-transparent-black-main grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl ml-[1rem] mr-[2rem] rounded-[8px]">
+                    <div className="relative [transform-style:preserve-3d] [transform:perspective(1000px)] bg-bg-transparent-black-main grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl ml-[1rem] mr-[2rem] rounded-[8px]">
                         {!isMobile && (
-                            <span className="rounded-[8px] brightness-[0.5] absolute z-[-1] top-0 left-0 w-full h-full bg-projects-secondary-bg bg-transparent bg-fixed bg-cover bg-no-repeat bg-center bg-clip-border"></span>
+                            <span className="rounded-[8px] brightness-[0.25] absolute z-[-1] top-0 left-0 w-full h-full bg-projects-secondary-bg bg-transparent bg-fixed bg-cover bg-no-repeat bg-center bg-clip-border"></span>
                         )}
                         {projectsData.map((projectElement, index) => (
                             <ProjectCard

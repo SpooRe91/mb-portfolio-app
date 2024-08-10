@@ -40,6 +40,7 @@ export const ProjectCard = ({ projectsData, index, isMobile }: ProjectCardProps)
         md:hover:bg-bg-transparent-black-secondary
         md:mx-[5rem]
         transition-all
+        md:hover:[transform:translateZ(15px)]
         `}
         >
             <Card

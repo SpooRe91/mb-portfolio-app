@@ -1,10 +1,16 @@
+"use client"
 export const UTIL_KEY = process.env.NEXT_PUBLIC_UTIL_KEY;
 export const BASE_URL = "https://mb-multi-tool-api.vercel.app/personal";
 export const FORBIDDEN_PATTERNS = [/<script.*?>.*?<\/script>/gi, /javascript:/gi, /<.*?>/g, /\/|\\/g, /:/g];
 export const LETERS_ONLY_REGEX = /^[A-Za-z]+$/;
 export const MAX_RETRIES = 4;
 export const RETRY_DELAY = 1000;
-export const PATHS = ["/", "/projects", "/about", "/contactMe"];
+export const NAV_BAR_ITEMS = {
+    HOME: "/",
+    PROJECTS: "/projects",
+    ABOUT: "/about",
+    CONTACT: "/contactMe",
+};
 export const ICON_NAMES_URLS = [
     { name: "JavaScript", extUrl: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
     { name: "TypeScript", extUrl: "https://www.typescriptlang.org/docs/" },
