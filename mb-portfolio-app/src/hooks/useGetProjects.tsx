@@ -1,14 +1,7 @@
 "use client";
 import { fetchPortfolioData } from "@PortfolioApp/services";
+import { ProjectType } from "@PortfolioApp/types/types";
 import { useEffect, useState, useCallback, useRef } from "react";
-
-type ProjectType = {
-    img: string;
-    title: string;
-    url: string;
-    text: string;
-    content: string;
-};
 
 type NotificationProps = {
     error?: string;
