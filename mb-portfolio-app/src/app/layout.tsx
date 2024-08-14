@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 import Image from "next/image";
 import { mainBodyBg } from "../../public/backgrounds";
+import ClientWrapper from "./clientWrapper";
 
 export const metadata: Metadata = {
     title: "M.B. Portfolio app",
@@ -29,7 +30,9 @@ export default function RootLayout({
                 />
                 <Analytics />
                 <NavBar />
-                <Suspense fallback={<Loading />}>{children}</Suspense>
+                <ClientWrapper>
+                    <Suspense fallback={<Loading />}>{children}</Suspense>
+                </ClientWrapper>
                 <Footer />
             </body>
         </html>

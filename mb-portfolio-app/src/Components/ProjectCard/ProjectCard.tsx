@@ -3,14 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@mui/material";
 import { Card, TextBlock } from "@PortfolioApp/Components";
-
-type ProjectType = {
-    img: string;
-    title: string;
-    url: string;
-    text: string;
-    content: string;
-};
+import { ProjectType } from "@PortfolioApp/types/types";
 
 type ProjectCardProps = {
     projectsData: ProjectType;

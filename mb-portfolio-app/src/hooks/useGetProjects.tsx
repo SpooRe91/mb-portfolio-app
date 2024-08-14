@@ -1,7 +1,10 @@
 "use client";
 import { fetchPortfolioData } from "@PortfolioApp/services";
 import { ProjectType } from "@PortfolioApp/types/types";
-import { useEffect, useState, useCallback, useRef } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { extractAndReturnError } from "@PortfolioApp/app/utils";
+import { v4 as uuid } from "uuid";
 
 type NotificationProps = {
     error?: string;
@@ -10,91 +13,58 @@ type NotificationProps = {
 
 type UseGetProjectsResult = {
     isLoading: boolean;
-    projectsData: ProjectType[];
+    error: Error | null;
+    data: ProjectType[] | undefined;
     message: NotificationProps;
     handleClearMessage: () => void;
 };
-const MAX_FETCH_COUNT = 5;
+
 /**
  * Custom React hook to fetch and manage projects data from a remote API.
  *
  * This hook handles:
+ * - Data fetching
  * - Loading state management
  * - Error handling
- * - Polling and refetching if data fetching fails
- * - Limiting the number of refetch attempts to prevent excessive network requests
  *
  * @returns {UseGetProjectsResult} The state of the data fetching including:
  * - `isLoading` - A boolean indicating if data is currently being fetched.
- * - `projectsData` - An array of project objects retrieved from the API. Each project includes properties like `img`, `title`, `url`, `text`, and `content`.
+ * - `data` - An array of project objects retrieved from the API. Each project includes properties like `img`, `title`, `url`, `text`, and `content`.
  * - `message` - A string containing an error message if an error occurs during data fetching, or `null` if no error is present.
  * - `handleClearMessage` - A function which will clear the message whatever it is, it should be passed to the component receiving the message.
  */
-export const useGetProjects = (): UseGetProjectsResult => {
-    const [projectsData, setProjectsData] = useState<ProjectType[]>([]);
-    const [isLoading, setIsLoading] = useState<boolean>(true);
+
+export const useFetchProjects = (): UseGetProjectsResult => {
     const [message, setMessage] = useState<NotificationProps>({ error: "", notification: "" });
-    const refetchCountRef = useRef<number>(0);
-    const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
 
-    const dataFetch = useCallback(async (signal: AbortSignal) => {
-        if (refetchCountRef.current >= MAX_FETCH_COUNT) {
-            setMessage({ error: "Maximum refetch attempts reached. Please try again later." });
-            setIsLoading(false);
-            if (intervalIdRef.current) {
-                clearInterval(intervalIdRef.current);
-            }
-            return;
-        }
-
-        try {
-            const result = await fetchPortfolioData(signal);
-            if (result) {
-                setProjectsData(result);
-                setIsLoading(false);
-                setMessage({ notification: "Projects fetched, enoy!" });
-                refetchCountRef.current = 0;
-                if (intervalIdRef.current) {
-                    clearInterval(intervalIdRef.current);
-                }
-                return;
-            }
-        } catch (err) {
-            console.error(
-                `Error fetching data, retrying...${!!refetchCountRef.current ? refetchCountRef.current : ""}`,
-                err
-            );
-            refetchCountRef.current += 1;
-        }
-    }, []);
+    const { data, error, isLoading } = useQuery<ProjectType[], Error>({
+        queryKey: ["projects"],
+        queryFn: fetchPortfolioData,
+        retry: 4,
+        staleTime: 1000 * 60 * 5,
+        gcTime: 1000 * 60 * 10,
+        refetchInterval: 1000 * 60 * 60,
+        refetchOnWindowFocus: false,
+    });
 
     useEffect(() => {
-        const controller = new AbortController();
-        const signal = controller.signal;
-        dataFetch(signal);
-
-        intervalIdRef.current = setInterval(() => {
-            if (isLoading || !projectsData.length) {
-                dataFetch(signal);
-            } else {
-                clearInterval(intervalIdRef.current as NodeJS.Timeout);
-            }
-        }, 5000);
-
-        return () => {
-            if (intervalIdRef.current) {
-                clearInterval(intervalIdRef.current);
-                controller.abort();
-            }
-            controller.abort();
-        };
-    }, [dataFetch, isLoading, projectsData.length]);
+        if (error) {
+            setMessage({ error: extractAndReturnError(error), notification: "" });
+        } else if (data) {
+            setMessage({ error: "", notification: "Projects fetched successfully!" });
+        }
+    }, [error, data]);
 
     const handleClearMessage = useCallback(() => {
         setMessage({ error: "", notification: "" });
     }, []);
 
-    return { projectsData, isLoading, message, handleClearMessage };
+    const mappedData: ProjectType[] | undefined = data?.map((el) => ({
+        ...el,
+        id: uuid(),
+    }));
+
+    return { data: mappedData || data, error, isLoading, message, handleClearMessage };
 };
 
-export default useGetProjects;
+export default useFetchProjects;

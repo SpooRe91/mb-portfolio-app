@@ -1,46 +1,16 @@
 import { BASE_URL, UTIL_KEY } from "@PortfolioApp/app/constants/constants";
-import { extractAndReturnError } from "@PortfolioApp/app/utils";
+import { ProjectType } from "@PortfolioApp/types/types";
 import axios from "axios";
-import { z } from "zod";
 
-const ProjectTypeSchema = z.object({
-    img: z.string(),
-    title: z.string(),
-    url: z.string().url(),
-    text: z.string(),
-    content: z.string(),
-});
-
-const ProjectTypeArraySchema = z.array(ProjectTypeSchema);
-
-type ProjectType = z.infer<typeof ProjectTypeSchema>;
-
-export const fetchPortfolioData = async (signal: AbortSignal): Promise<ProjectType[] | null> => {
+export const fetchPortfolioData = async ({ signal }: { signal: AbortSignal }) => {
     if (!UTIL_KEY) {
         throw new Error("NEXT_PUBLIC_UTIL_KEY is not defined in the environment variables.");
     }
-
-    try {
-        const res = await axios.get<ProjectType[]>(`${BASE_URL}/portfolio`, {
-            headers: {
-                "x-util-key": UTIL_KEY,
-            },
-            signal,
-        });
-
-        if (!res.data) {
-            console.error("No data returned from the API.");
-            return null;
-        }
-
-        const validationResult = ProjectTypeArraySchema.safeParse(res.data);
-        if (!validationResult.success) {
-            console.error("Validation error: ", validationResult.error.errors);
-            return null;
-        }
-
-        return validationResult.data;
-    } catch (error) {
-        throw extractAndReturnError(error);
-    }
+    const { data } = await axios.get<ProjectType[]>(`${BASE_URL}/portfolio`, {
+        headers: {
+            "x-util-key": UTIL_KEY,
+        },
+        signal,
+    });
+    return data;
 };

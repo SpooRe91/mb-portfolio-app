@@ -1,5 +1,6 @@
 "use client";
-import { useCallback, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useCallback, useMemo, useState } from "react";
+import { useMutation } from "@tanstack/react-query";
 import { sendFormData } from "@PortfolioApp/services";
 import { fieldValidator, formValidator } from "@PortfolioApp/app/utils";
 import DOMPurify from "dompurify";
@@ -17,13 +18,23 @@ type SendStatus = {
     notification: string;
 };
 
+type UseContactFormResult = {
+    status: SendStatus;
+    isLoading: boolean;
+    formData: FormFieldTypes;
+    formError: FormFieldErrorTypes;
+    isFormDisabled: boolean;
+    handleClearMessage: () => void;
+    handleFormCheck: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    handleChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    handleSubmit: (e: FormEvent) => void;
+};
 /**
  * Custom hook to manage contact form state and handle submission.
  * @returns {object} - The contact form state and handlers.
  */
-export const useContactForm = () => {
+export const useContactForm = (): UseContactFormResult => {
     const [status, setStatus] = useState<SendStatus>({ error: "", notification: "" });
-    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [formData, setFormData] = useState<FormFieldTypes>({
         firstName: "",
         lastName: "",
@@ -36,11 +47,6 @@ export const useContactForm = () => {
         email: "",
         message: "",
     });
-
-    const isFormDisabled = useMemo(
-        () => !!Object.values(formError).find((el) => el.length) || isLoading,
-        [formError, isLoading]
-    );
 
     const handleClearMessage = useCallback(() => {
         setStatus({ error: "", notification: "" });
@@ -84,7 +90,23 @@ export const useContactForm = () => {
         });
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const mutation = useMutation({
+        mutationFn: sendFormData,
+        onSuccess: () => {
+            setStatus({ ...status, notification: "E-mail sent successfully!" });
+            setFormData({ firstName: "", lastName: "", email: "", message: "" });
+        },
+        onError: (error: any) => {
+            setStatus({ ...status, error: error.message || "Failed to send email." });
+        },
+    });
+
+    const isFormDisabled = useMemo(
+        () => !!Object.values(formError).find((el) => el.length) || mutation.isPending,
+        [formError, mutation.isPending]
+    );
+
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (isFormDisabled) {
             return;
@@ -96,25 +118,12 @@ export const useContactForm = () => {
             return;
         }
 
-        try {
-            setIsLoading(true);
-            const res = await sendFormData(formData);
-
-            if (!res) {
-                return;
-            }
-            setStatus({ ...status, notification: "E-mail sent successfully!" });
-            setFormData({ firstName: "", lastName: "", email: "", message: "" });
-        } catch (error) {
-            setStatus({ ...status, error: error as string });
-        } finally {
-            setIsLoading(false);
-        }
+        mutation.mutate(formData);
     };
 
     return {
         status,
-        isLoading,
+        isLoading: mutation.isPending,
         formData,
         formError,
         isFormDisabled,

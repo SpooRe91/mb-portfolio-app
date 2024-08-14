@@ -1,14 +1,13 @@
 "use client";
 import { LocalLoader, ServerDown, ProjectCard, Notification } from "@PortfolioApp/Components";
-import { useGetViewWidth, useExtractText, useGetProjects } from "@PortfolioApp/hooks";
-import { v4 as uuid } from "uuid";
+import { useGetViewWidth, useExtractText, useFetchProjects } from "@PortfolioApp/hooks";
 import { projectsBG } from "../../../public/backgrounds";
 import Image from "next/image";
 
 const ProjectsComponent = () => {
     const { isMobile } = useGetViewWidth();
     const { keyToText } = useExtractText();
-    const { isLoading, projectsData, message, handleClearMessage } = useGetProjects();
+    const { data, isLoading, message, handleClearMessage } = useFetchProjects();
 
     if (isLoading) {
         return (
@@ -19,7 +18,7 @@ const ProjectsComponent = () => {
         );
     }
 
-    if (!isLoading && !projectsData.length) {
+    if (!isLoading && !data) {
         return (
             <>
                 <ServerDown />
@@ -59,14 +58,14 @@ const ProjectsComponent = () => {
                         </h1>
                     </div>
                 }
-                {!!projectsData.length && (
+                { !!data?.length && (
                     <div className="relative [transform-style:preserve-3d] [transform:perspective(1000px)] bg-bg-transparent-black-main grid items-center place-items-center grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-8 max-w-screen-xl ml-[1rem] mr-[2rem] rounded-[8px]">
                         {!isMobile && (
                             <span className="rounded-[8px] brightness-[0.25] absolute z-[-1] top-0 left-0 w-full h-full bg-projects-secondary-bg bg-transparent bg-fixed bg-cover bg-no-repeat bg-center bg-clip-border"></span>
                         )}
-                        {projectsData.map((projectElement, index) => (
+                        {data.map((projectElement, index) => (
                             <ProjectCard
-                                key={uuid()}
+                                key={projectElement?.id}
                                 projectsData={projectElement}
                                 isMobile={isMobile}
                                 index={index}

@@ -23,7 +23,6 @@ export const extractAndReturnError = (error: any): string => {
                 return parseErrors[0]?.message;
             }
         } catch (parseError) {
-            // If JSON.parse fails, return the original error message
             return error.message;
         }
     }
