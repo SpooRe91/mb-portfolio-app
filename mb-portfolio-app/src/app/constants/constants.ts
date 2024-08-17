@@ -1,4 +1,4 @@
-"use client"
+"use client";
 export const UTIL_KEY = process.env.NEXT_PUBLIC_UTIL_KEY;
 export const BASE_URL = "https://mb-multi-tool-api.vercel.app/personal";
 export const FORBIDDEN_PATTERNS = [/<script.*?>.*?<\/script>/gi, /javascript:/gi, /<.*?>/g, /\/|\\/g, /:/g];
@@ -30,4 +30,13 @@ export const ICON_NAMES_URLS = [
     { name: "Git", extUrl: "https://git-scm.com/doc" },
     { name: "GitHub", extUrl: "https://docs.github.com/en" },
     { name: "Gitlab", extUrl: "https://docs.gitlab.com/ee/" },
+];
+
+export const HOME_PAGE_CARD_TITLES = [
+    "FULL_STACK_DEVELOPMENT",
+    "CREATIVE_PROBLEM_SOLVING",
+    "USER_CENTERED_DESIGN",
+    "CONTINUOUS_LEARNING",
+    "COLLABORATION_TEAMWORK",
+    "PROFESSIONAL_GROWTH",
 ];

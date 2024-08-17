@@ -28,9 +28,9 @@ export const ProjectCard = ({ projectsData, index, isMobile }: ProjectCardProps)
         p-[1rem]
         rounded-lg 
         shadow-box-shadow-border-bottom 
-        bg-bg-transparent-black-tretiary
+        bg-bg-transparent-black-secondary
         md:hover:text-colorMedLightBlue
-        md:hover:bg-bg-transparent-black-secondary
+        md:hover:bg-bg-transparent-project-hover
         md:mx-[5rem]
         transition-all
         md:hover:[transform:translateZ(15px)]
@@ -41,7 +41,7 @@ export const ProjectCard = ({ projectsData, index, isMobile }: ProjectCardProps)
                 imgWidth={350}
                 text={text}
                 className={"w-[250px] h-[250px]"}
-                textClassName="w-full"
+                textClassName="w-full drop-shadow-homeTextShadow"
             />
             <TextBlock
                 title={title}

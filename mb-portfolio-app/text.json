@@ -1,7 +1,31 @@
 {
     "HOME": {
         "WELCOME_MAIN": "Welcome to my portfolio",
-        "SECONDARY_TEXT": "Here you can find information about my projects, myself and how to contact me. Should you have any remarks, questions, suggestions or an offer, please do not hesitate to reach me."
+        "SECONDARY_TEXT": "Here you can find information about my projects, myself and how to contact me. Should you have any remarks, questions, suggestions or an offer, please do not hesitate to reach me.",
+        "FULL_STACK_DEVELOPMENT": {
+            "TITLE": "Full-Stack Development",
+            "TEXT": "I specialize in building robust web applications from front-end to back-end using technologies like React, Node.js, and Next.js."
+        },
+        "CREATIVE_PROBLEM_SOLVING": {
+            "TITLE": "Creative Problem Solving",
+            "TEXT": "My passion lies in finding innovative solutions to complex challenges."
+        },
+        "USER_CENTERED_DESIGN": {
+            "TITLE": "User-Centered Design",
+            "TEXT": "I believe in designing with the user in mind, focusing on creating intuitive and engaging user experiences."
+        },
+        "CONTINUOUS_LEARNING": {
+            "TITLE": "Continuous Learning",
+            "TEXT": "Always eager to learn new technologies and techniques, I aim to stay up to date with the evolving tech landscape."
+        },
+        "COLLABORATION_TEAMWORK": {
+            "TITLE": "Collaboration & Teamwork",
+            "TEXT": "I thrive in collaborative environments, valuing open communication and shared goals to drive project success."
+        },
+        "PROFESSIONAL_GROWTH": {
+            "TITLE": "Professional Growth",
+            "TEXT": "My journey is focused on continuous improvement, seeking opportunities that challenge and expand my skillset."
+        }
     },
     "PROJECTS": {
         "LOCAL_LOADING_TEXT": "Fetching my projects, please wait...",
