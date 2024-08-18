@@ -1,6 +1,6 @@
 'use client';
-import { TextBlock, ContactForm } from '@PortfolioApp/Components';
-import { useExtractText } from '@PortfolioApp/hooks';
+import { TextBlock, ContactForm } from '@Common/Components';
+import { useExtractText } from '@PortfolioApp/common/hooks';
 import { contactBG } from '../../../public/backgrounds';
 import Image from 'next/image';
 

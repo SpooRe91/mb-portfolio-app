@@ -1,12 +1,12 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { TextCard } from '@PortfolioApp/Components';
-import { useExtractText } from '@PortfolioApp/hooks';
+import { TextCard } from '@Common/Components';
+import { useExtractText } from '@PortfolioApp/common/hooks';
 import { homeBG } from '../../public/backgrounds';
 import { motion } from 'framer-motion';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import { HOME_PAGE_CARD_TITLES } from '@PortfolioApp/app/constants/constants';
+import { HOME_PAGE_CARD_TITLES } from '@PortfolioApp/common/constants/constants';
 
 const HomePage = () => {
 	const { keyToText } = useExtractText();

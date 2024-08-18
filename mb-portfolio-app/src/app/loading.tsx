@@ -1,5 +1,4 @@
-import GlobalLoader from '@PortfolioApp/Components/Loader/GlobalLoader';
-import React from 'react';
+import { GlobalLoader } from '@Common/Components/';
 
 const Loading = () => {
 	return (
