@@ -3,6 +3,8 @@ import { useContactForm, useExtractText } from "@PortfolioApp/hooks";
 import GlobalLoader from "../Loader/GlobalLoader";
 import Notification from "../Notification/Notification";
 import Button from "@mui/material/Button";
+import { FormInput } from "@PortfolioApp/Components";
+import { useMemo } from "react";
 
 export const ContactForm = () => {
     const {
@@ -16,7 +18,10 @@ export const ContactForm = () => {
         handleChange,
         handleSubmit,
     } = useContactForm();
+
     const { keyToText } = useExtractText();
+
+    const incorrectInputMessage = useMemo(() => <p className="text-red-600">{"Invalid input!"}</p>, []);
 
     return (
         <div className="relative md:max-w-[600px] sm:max-w-[500px] w-full md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
@@ -35,7 +40,7 @@ export const ContactForm = () => {
                         loadingText={keyToText("FORM.LOADING_MESSAGE")}
                         mainClassName="p-[1rem] min-w-full rounded-[8px] absolute h-full"
                         secondaryClassName="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] h-full"
-                        textClassName="text-colorMedLightBlue"
+                        textClassName="text-colorMedLightBlue sm:text-base md:text-xl"
                     />
                 </div>
             )}
@@ -44,70 +49,77 @@ export const ContactForm = () => {
                 className="space-y-4 sm:p-[1rem] shadow-box-shadow-border-bottom rounded-[8px]"
             >
                 <section className="w-full flex md:flex-row md:gap-[2rem] sm:gap-[1rem] sm:flex-col text-colorMediumDark">
-                    <div className="md:w-full ">
+                    <div className="md:w-full">
                         <label htmlFor="firstName" className="block text-colorDark">
                             {keyToText("FORM.FIRST_NAME_LABEL")}
                         </label>
-                        <input
-                            type="text"
+                        <FormInput
                             id="firstName"
                             name="firstName"
                             value={formData?.firstName}
-                            onChange={handleChange}
-                            onBlur={handleFormCheck}
-                            className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
+                            onChange={(e) => {
+                                handleChange(e);
+                                handleFormCheck(e);
+                            }}
+                            error={formError.firstName}
                             required
                         />
-                        {formError.firstName && <p className="text-red-600">{formError.firstName}</p>}
+                        {formError.firstName && incorrectInputMessage}
                     </div>
                     <div className="w-full sm:w-max-[550px]">
                         <label htmlFor="lastName" className="block text-colorDark">
                             {keyToText("FORM.LAST_NAME_LABEL")}
                         </label>
-                        <input
-                            type="text"
+                        <FormInput
                             id="lastName"
                             name="lastName"
                             value={formData?.lastName}
-                            onChange={handleChange}
-                            onBlur={handleFormCheck}
-                            className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
+                            onChange={(e) => {
+                                handleChange(e);
+                                handleFormCheck(e);
+                            }}
+                            error={formError.lastName}
                             required
                         />
-                        {formError.lastName && <p className="text-red-600">{formError.lastName}</p>}
+                        {formError.lastName && incorrectInputMessage}
                     </div>
                 </section>
                 <div>
                     <label htmlFor="email" className="block text-colorDark">
                         {keyToText("FORM.EMAIL_LABEL")}
                     </label>
-                    <input
-                        type="email"
+                    <FormInput
                         id="email"
                         name="email"
                         value={formData?.email}
-                        onChange={handleChange}
-                        onBlur={handleFormCheck}
-                        className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
+                        onChange={(e) => {
+                            handleChange(e);
+                            handleFormCheck(e);
+                        }}
+                        error={formError.email}
+                        type="email"
                         pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                         required
                     />
-                    {formError.email && <p className="text-red-600">{formError.email}</p>}
+                    {formError.email && incorrectInputMessage}
                 </div>
                 <div>
                     <label htmlFor="message" className="block text-colorDark">
                         {keyToText("FORM.MESSAGE_LABEL")}
                     </label>
-                    <textarea
+                    <FormInput
                         id="message"
                         name="message"
                         value={formData?.message}
-                        onChange={handleChange}
-                        onBlur={handleFormCheck}
-                        className="mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50"
+                        onChange={(e) => {
+                            handleChange(e);
+                            handleFormCheck(e);
+                        }}
+                        error={formError.message}
+                        as="textarea"
                         required
                     />
-                    {formError.message && <p className="text-red-600">{formError.message}</p>}
+                    {formError.message && incorrectInputMessage}
                 </div>
                 {!isFormDisabled && (
                     <Button

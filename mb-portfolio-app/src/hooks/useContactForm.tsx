@@ -7,10 +7,10 @@ import DOMPurify from "dompurify";
 import { FormFieldTypes } from "@PortfolioApp/app/zod/Schemas";
 
 type FormFieldErrorTypes = {
-    firstName: string;
-    lastName: string;
-    email: string;
-    message: string;
+    firstName: boolean;
+    lastName: boolean;
+    email: boolean;
+    message: boolean;
 };
 
 type SendStatus = {
@@ -42,10 +42,10 @@ export const useContactForm = (): UseContactFormResult => {
         message: "",
     });
     const [formError, setFormError] = useState<FormFieldErrorTypes>({
-        firstName: "",
-        lastName: "",
-        email: "",
-        message: "",
+        firstName: false,
+        lastName: false,
+        email: false,
+        message: false,
     });
 
     const handleClearMessage = useCallback(() => {
@@ -54,26 +54,28 @@ export const useContactForm = (): UseContactFormResult => {
 
     const handleFormCheck = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        const isInvalid = fieldValidator(value);
-
         const sanitizedValue = DOMPurify.sanitize(value);
 
-        if (isInvalid) {
-            setFormError({
-                ...formError,
-                [name]: "Invalid entry! Please amend!",
-            });
-        } else {
-            setFormError({
-                ...formError,
-                [name]: "",
-            });
+        const isInvalid = fieldValidator(sanitizedValue);
+
+        if (name === "email" && value) {
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            setFormError((prevErrors) => ({
+                ...prevErrors,
+                [name]: !emailPattern.test(sanitizedValue),
+            }));
+            return;
         }
 
-        setFormData({
-            ...formData,
+        setFormError((prevErrors) => ({
+            ...prevErrors,
+            [name]: isInvalid,
+        }));
+
+        setFormData((prevData) => ({
+            ...prevData,
             [name]: sanitizedValue,
-        });
+        }));
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -86,7 +88,7 @@ export const useContactForm = (): UseContactFormResult => {
 
         setFormError({
             ...formError,
-            [name]: "",
+            [name]: false,
         });
     };
 
@@ -102,7 +104,7 @@ export const useContactForm = (): UseContactFormResult => {
     });
 
     const isFormDisabled = useMemo(
-        () => !!Object.values(formError).find((el) => el.length) || mutation.isPending,
+        () => !!Object.values(formError).find((el) => !!el) || mutation.isPending,
         [formError, mutation.isPending]
     );
 

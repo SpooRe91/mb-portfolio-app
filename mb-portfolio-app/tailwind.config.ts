@@ -120,6 +120,12 @@ const config: Config = {
                 "tech-text-color": "#c8e7ee",
                 "about-text-color": "#DAD3BE",
                 "input-field-bg": "#63888957",
+                success: "#4CAF50",
+                error: "#F44336",
+                warning: "#FFEB3B",
+            },
+            ringWidth: {
+                3: "3px",
             },
             boxShadow: {
                 "box-shadow-main": "0px 8px 20px -4px #968676",

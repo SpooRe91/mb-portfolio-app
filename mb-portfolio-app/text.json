@@ -61,7 +61,7 @@
         "LAST_NAME_LABEL": "Last Name",
         "EMAIL_LABEL": "Email",
         "MESSAGE_LABEL": "Message",
-        "LOADING_MESSAGE": "Transmitting message, this may take a little..."
+        "LOADING_MESSAGE": "Transmitting message, please wait..."
     },
     "SERVER_ERROR": {
         "HEADER": "SORRY, SEEMS THE SERVER IS HAVING A BAD DAY",

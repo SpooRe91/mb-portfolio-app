@@ -10,3 +10,4 @@ export * from "@PortfolioApp/Components/ProjectCard/ProjectCard";
 export * from "@PortfolioApp/Components/ServerDown/ServerDown";
 export * from "@PortfolioApp/Components/TextBlock/TextBlock";
 export * from "@PortfolioApp/Components/TextCard/TextCard";
+export * from "@PortfolioApp/Components/FormInput/FormInput";
