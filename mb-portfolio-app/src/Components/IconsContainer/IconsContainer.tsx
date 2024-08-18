@@ -1,13 +1,13 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 type IconContainerProps = {
-    src: string;
-    name?: string;
-    extUrl?: string;
-    containerClassName?: string;
-    imgClassname?: string;
-    linkClassName?: string;
+	src: string;
+	name?: string;
+	extUrl?: string;
+	containerClassName?: string;
+	imgClassname?: string;
+	linkClassName?: string;
 };
 
 /**
@@ -37,24 +37,41 @@ type IconContainerProps = {
  * To wrap the `<Image>` element in a `<Link>` element, provide the `extUrl` prop.
  */
 export const IconsContainer = ({
-    src,
-    name,
-    extUrl,
-    containerClassName,
-    imgClassname,
-    linkClassName,
+	src,
+	name,
+	extUrl,
+	containerClassName,
+	imgClassname,
+	linkClassName,
 }: IconContainerProps) => {
-    return (
-        <div className={`${containerClassName}`}>
-            {extUrl ? (
-                <Link href={extUrl} target="_blank" rel="noreferrer noopener" className={`${linkClassName}`}>
-                    <Image title={name} src={src} alt={name || ""} className={`${imgClassname}`} priority />
-                </Link>
-            ) : (
-                <Image title={name} src={src} alt={name || ""} className={`${imgClassname}`} priority />
-            )}
-        </div>
-    );
+	return (
+		<div className={`${containerClassName}`}>
+			{extUrl ? (
+				<Link
+					href={extUrl}
+					target="_blank"
+					rel="noreferrer noopener"
+					className={`${linkClassName}`}
+				>
+					<Image
+						title={name}
+						src={src}
+						alt={name || ''}
+						className={`${imgClassname}`}
+						priority
+					/>
+				</Link>
+			) : (
+				<Image
+					title={name}
+					src={src}
+					alt={name || ''}
+					className={`${imgClassname}`}
+					priority
+				/>
+			)}
+		</div>
+	);
 };
 
 export default IconsContainer;

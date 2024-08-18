@@ -1,13 +1,13 @@
-import Alert from "@mui/material/Alert";
-import { useEffect, useState } from "react";
+import Alert from '@mui/material/Alert';
+import { useEffect, useState } from 'react';
 
 type NotificationProps = {
-    error?: string;
-    notification?: string;
-    mainClassName?: string;
-    secondaryClassname?: string;
-    hasAnimation?: boolean;
-    handleClearMessage?: () => void;
+	error?: string;
+	notification?: string;
+	mainClassName?: string;
+	secondaryClassname?: string;
+	hasAnimation?: boolean;
+	handleClearMessage?: () => void;
 };
 
 /**
@@ -43,47 +43,49 @@ type NotificationProps = {
   </div>`
  */
 export const Notification = ({
-    error,
-    notification,
-    handleClearMessage,
-    hasAnimation = false,
-    mainClassName,
-    secondaryClassname,
+	error,
+	notification,
+	handleClearMessage,
+	hasAnimation = false,
+	mainClassName,
+	secondaryClassname,
 }: NotificationProps) => {
-    const [currentMessage, setCurrentMessage] = useState<string>(error || notification || "");
-    const [isVisible, setIsVisible] = useState<boolean>(true);
+	const [currentMessage, setCurrentMessage] = useState<string>(
+		error || notification || ''
+	);
+	const [isVisible, setIsVisible] = useState<boolean>(true);
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            if (hasAnimation) {
-                setIsVisible(false);
-                setTimeout(() => {
-                    if (handleClearMessage) {
-                        handleClearMessage();
-                    }
-                }, 250); // Duration of the animation
-            } else {
-                setCurrentMessage("");
-                if (handleClearMessage) {
-                    handleClearMessage();
-                }
-            }
-        }, 4000); // Duration before starting the hide process
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			if (hasAnimation) {
+				setIsVisible(false);
+				setTimeout(() => {
+					if (handleClearMessage) {
+						handleClearMessage();
+					}
+				}, 250); // Duration of the animation
+			} else {
+				setCurrentMessage('');
+				if (handleClearMessage) {
+					handleClearMessage();
+				}
+			}
+		}, 4000); // Duration before starting the hide process
 
-        return () => clearTimeout(timeout);
-    }, [handleClearMessage, hasAnimation]);
+		return () => clearTimeout(timeout);
+	}, [handleClearMessage, hasAnimation]);
 
-    return (
-        <div className={`${mainClassName}`}>
-            <Alert
-                style={{ fontSize: "1rem" }}
-                severity={error ? "error" : "success"}
-                className={`${secondaryClassname} ${isVisible ? "" : hasAnimation ? "animate-slide-out-fade-out" : ""} ${!isVisible ? "" : hasAnimation ? "animate-slide-in-fade-in" : ""}`}
-            >
-                <>{currentMessage}</>
-            </Alert>
-        </div>
-    );
+	return (
+		<div className={`${mainClassName}`}>
+			<Alert
+				style={{ fontSize: '1rem' }}
+				severity={error ? 'error' : 'success'}
+				className={`${secondaryClassname} ${isVisible ? '' : hasAnimation ? 'animate-slide-out-fade-out' : ''} ${!isVisible ? '' : hasAnimation ? 'animate-slide-in-fade-in' : ''}`}
+			>
+				<>{currentMessage}</>
+			</Alert>
+		</div>
+	);
 };
 
 export default Notification;

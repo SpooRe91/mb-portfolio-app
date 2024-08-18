@@ -1,22 +1,22 @@
-"use client";
-import { fetchPortfolioData } from "@PortfolioApp/services";
-import { ProjectType } from "@PortfolioApp/types/types";
-import { useEffect, useState, useCallback } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { extractAndReturnError } from "@PortfolioApp/app/utils";
-import { v4 as uuid } from "uuid";
+'use client';
+import { fetchPortfolioData } from '@PortfolioApp/services';
+import { ProjectType } from '@PortfolioApp/types/types';
+import { useEffect, useState, useCallback } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { extractAndReturnError } from '@PortfolioApp/app/utils';
+import { v4 as uuid } from 'uuid';
 
 type NotificationProps = {
-    error?: string;
-    notification?: string;
+	error?: string;
+	notification?: string;
 };
 
 type UseGetProjectsResult = {
-    isLoading: boolean;
-    error: Error | null;
-    data: ProjectType[] | undefined;
-    message: NotificationProps;
-    handleClearMessage: () => void;
+	isLoading: boolean;
+	error: Error | null;
+	data: ProjectType[] | undefined;
+	message: NotificationProps;
+	handleClearMessage: () => void;
 };
 
 /**
@@ -35,36 +35,51 @@ type UseGetProjectsResult = {
  */
 
 export const useFetchProjects = (): UseGetProjectsResult => {
-    const [message, setMessage] = useState<NotificationProps>({ error: "", notification: "" });
+	const [message, setMessage] = useState<NotificationProps>({
+		error: '',
+		notification: '',
+	});
 
-    const { data, error, isLoading } = useQuery<ProjectType[], Error>({
-        queryKey: ["projects"],
-        queryFn: fetchPortfolioData,
-        retry: 4,
-        staleTime: 1000 * 60 * 5,
-        gcTime: 1000 * 60 * 10,
-        refetchInterval: 1000 * 60 * 60,
-        refetchOnWindowFocus: false,
-    });
+	const { data, error, isLoading } = useQuery<ProjectType[], Error>({
+		queryKey: ['projects'],
+		queryFn: fetchPortfolioData,
+		retry: 4,
+		staleTime: 1000 * 60 * 5,
+		gcTime: 1000 * 60 * 10,
+		refetchInterval: 1000 * 60 * 60,
+		refetchOnWindowFocus: false,
+	});
 
-    useEffect(() => {
-        if (error) {
-            setMessage({ error: extractAndReturnError(error), notification: "" });
-        } else if (data) {
-            setMessage({ error: "", notification: "Projects fetched successfully!" });
-        }
-    }, [error, data]);
+	useEffect(() => {
+		if (error) {
+			setMessage({
+				error: extractAndReturnError(error),
+				notification: '',
+			});
+		} else if (data) {
+			setMessage({
+				error: '',
+				notification: 'Projects fetched successfully!',
+			});
+		}
+	}, [error, data]);
 
-    const handleClearMessage = useCallback(() => {
-        setMessage({ error: "", notification: "" });
-    }, []);
+	const handleClearMessage = useCallback(() => {
+		setMessage({ error: '', notification: '' });
+	}, []);
 
-    const mappedData: ProjectType[] | undefined = data?.map((el) => ({
-        ...el,
-        id: uuid(),
-    }));
+	const mappedData: ProjectType[] | undefined = data?.map(el => ({
+		...el,
+		id: uuid(),
+	}));
 
-    return { data: mappedData || data, error, isLoading, message, handleClearMessage };
+	return {
+		data: mappedData || data,
+		error,
+		isLoading,
+		message,
+		handleClearMessage,
+	};
 };
 
 export default useFetchProjects;

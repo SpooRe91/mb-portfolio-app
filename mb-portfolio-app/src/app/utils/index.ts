@@ -1,2 +1,2 @@
-export * from "@PortfolioApp/app/utils/formUtils";
-export * from "@PortfolioApp/app/utils/generalUtils";
+export * from '@PortfolioApp/app/utils/formUtils';
+export * from '@PortfolioApp/app/utils/generalUtils';

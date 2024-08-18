@@ -1,11 +1,11 @@
-"use client";
-import CircularProgress from "@mui/material/CircularProgress";
-import { TextBlock } from "@PortfolioApp/Components";
+'use client';
+import CircularProgress from '@mui/material/CircularProgress';
+import { TextBlock } from '@PortfolioApp/Components';
 
 type LoadingProps = {
-    loadingText?: string;
-    mainClassName?: string;
-    textClassName?: string;
+	loadingText?: string;
+	mainClassName?: string;
+	textClassName?: string;
 };
 
 /**
@@ -25,17 +25,21 @@ type LoadingProps = {
  *   />
 </div>`
  */
-export const LocalLoader = ({ loadingText, mainClassName, textClassName }: LoadingProps) => {
-    return (
-        <div className={`${mainClassName}`}>
-            <CircularProgress color="inherit" className="text-colorMediumDark" />
-            <TextBlock
-                title={loadingText ? loadingText : "Loading..."}
-                titleClassName={`md:text-2xl sm:text-base ${textClassName}`}
-                className="tracking-widest text-colorMediumDark md:text-3xl sm:text-xl text-center drop-shadow-homeTextShadow"
-            />
-        </div>
-    );
+export const LocalLoader = ({
+	loadingText,
+	mainClassName,
+	textClassName,
+}: LoadingProps) => {
+	return (
+		<div className={`${mainClassName}`}>
+			<CircularProgress color="inherit" className="text-colorMediumDark" />
+			<TextBlock
+				title={loadingText ? loadingText : 'Loading...'}
+				titleClassName={`md:text-2xl sm:text-base ${textClassName}`}
+				className="text-center tracking-widest text-colorMediumDark drop-shadow-homeTextShadow sm:text-xl md:text-3xl"
+			/>
+		</div>
+	);
 };
 
 export default LocalLoader;

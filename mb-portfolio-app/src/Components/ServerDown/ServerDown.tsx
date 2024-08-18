@@ -1,21 +1,21 @@
-"use client";
-import { TextBlock } from "@PortfolioApp/Components";
-import { useExtractText } from "@PortfolioApp/hooks";
+'use client';
+import { TextBlock } from '@PortfolioApp/Components';
+import { useExtractText } from '@PortfolioApp/hooks';
 
 export const ServerDown = () => {
-    const { keyToText } = useExtractText();
+	const { keyToText } = useExtractText();
 
-    return (
-        <div className="flex flex-col items-center gap-1 max-w- w-full bg-bg-transparent-black-main shadow-box-shadow-dark">
-            <h1 className="text-center md:text-4xl sm:text-xl px-5 py-8 text-colorMediumDark">
-                {keyToText("SERVER_ERROR.HEADER")}
-            </h1>
-            <TextBlock
-                title={keyToText("SERVER_ERROR.SECONDARY_TEXT")}
-                className="flex flex-col gap-4 items-center text-center justify-cetetext-block p-2 text-tech-text-color"
-            ></TextBlock>
-        </div>
-    );
+	return (
+		<div className="max-w- flex w-full flex-col items-center gap-1 bg-bg-transparent-black-main shadow-box-shadow-dark">
+			<h1 className="px-5 py-8 text-center text-colorMediumDark sm:text-xl md:text-4xl">
+				{keyToText('SERVER_ERROR.HEADER')}
+			</h1>
+			<TextBlock
+				title={keyToText('SERVER_ERROR.SECONDARY_TEXT')}
+				className="justify-cetetext-block flex flex-col items-center gap-4 p-2 text-center text-tech-text-color"
+			></TextBlock>
+		</div>
+	);
 };
 
 export default ServerDown;

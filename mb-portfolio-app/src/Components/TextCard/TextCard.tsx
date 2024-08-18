@@ -1,9 +1,9 @@
 type TextCardProps = {
-    title: string;
-    text: string;
-    titleClassName?: string;
-    textClassName?: string;
-    containerClassName?: string;
+	title: string;
+	text: string;
+	titleClassName?: string;
+	textClassName?: string;
+	containerClassName?: string;
 };
 /**
  * A reusable component that displays a card with a title and text.
@@ -18,17 +18,17 @@ type TextCardProps = {
  * @returns {React.Element} The rendered component.
  */
 export const TextCard = ({
-    title,
-    text,
-    titleClassName,
-    textClassName,
-    containerClassName,
+	title,
+	text,
+	titleClassName,
+	textClassName,
+	containerClassName,
 }: TextCardProps) => {
-    return (
-        <div className={containerClassName}>
-            <h2 className={titleClassName}>{title}</h2>
-            <p className={textClassName}>{text}</p>
-        </div>
-    );
+	return (
+		<div className={containerClassName}>
+			<h2 className={titleClassName}>{title}</h2>
+			<p className={textClassName}>{text}</p>
+		</div>
+	);
 };
 export default TextCard;

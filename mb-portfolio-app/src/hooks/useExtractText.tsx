@@ -1,25 +1,25 @@
-import textData from "../../text.json";
+import textData from '../../text.json';
 
 type JsonValue = string | number | boolean | JsonObject | JsonArray;
 interface JsonObject {
-    [key: string]: JsonValue;
+	[key: string]: JsonValue;
 }
 interface JsonArray extends Array<JsonValue> {}
 
 export const useExtractText = () => {
-    const keyToText = (key: string): string | undefined => {
-        const keys = key.split(".");
+	const keyToText = (key: string): string | undefined => {
+		const keys = key.split('.');
 
-        let result: any = textData;
-        for (const k of keys) {
-            result = result?.[k];
-            if (result === undefined) {
-                return undefined;
-            }
-        }
-        return result;
-    };
+		let result: any = textData;
+		for (const k of keys) {
+			result = result?.[k];
+			if (result === undefined) {
+				return undefined;
+			}
+		}
+		return result;
+	};
 
-    return { keyToText };
+	return { keyToText };
 };
 export default useExtractText;
