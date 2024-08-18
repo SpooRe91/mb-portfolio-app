@@ -1,5 +1,4 @@
-import { BASE_URL, UTIL_KEY } from '@PortfolioApp/common/constants/constants';
-import { ProjectType } from '@PortfolioApp/common/types/types';
+import { BASE_URL, UTIL_KEY, ProjectType } from '@CommonImports';
 import axios from 'axios';
 
 export const fetchPortfolioData = async ({

@@ -1,13 +1,11 @@
 'use client';
+import { Menu, Close } from '@UI';
+import { NAV_BAR_ITEMS, useExtractText, useGetViewWidth } from '@CommonImports';
 import { useEffect, useState, useMemo } from 'react';
-import { useExtractText, useGetViewWidth } from '@Common/hooks';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '/public/MB-logo.webp';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import { NAV_BAR_ITEMS } from '@Common/constants/constants';
 
 export const NavBar = () => {
 	const path = usePathname();
@@ -66,7 +64,7 @@ export const NavBar = () => {
 						className={`padding-[0.5rem] absolute bottom-0 flex h-[2rem] w-full cursor-pointer items-center justify-center shadow-box-shadow-top-and-bottom transition-all active:bg-slate-800 ${showMobileNav ? 'bottom-0' : 'bottom-[-2rem] bg-bg-transparent-black-main'}`}
 						onClick={() => setShowMobileNav(!showMobileNav)}
 					>
-						{showMobileNav ? <CloseIcon /> : <MenuIcon />}
+						{showMobileNav ? <Close /> : <Menu />}
 					</div>
 				)}
 			</div>

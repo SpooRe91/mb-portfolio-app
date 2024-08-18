@@ -2,9 +2,9 @@ import {
 	BASE_URL,
 	MAX_RETRIES,
 	RETRY_DELAY,
-} from '@PortfolioApp/common/constants/constants';
-import { extractAndReturnError } from '@PortfolioApp/common/utils';
-import { FormFieldTypes } from '@PortfolioApp/common/zod/Schemas';
+	extractAndReturnError,
+	FormFieldTypes,
+} from '@CommonImports';
 import axios from 'axios';
 
 export const sendFormData = async (

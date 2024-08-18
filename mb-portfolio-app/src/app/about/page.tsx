@@ -1,10 +1,13 @@
 'use client';
-import { TextBlock, IconsContainer } from '@Common/Components';
+import {
+	TextBlock,
+	IconsContainer,
+	useExtractText,
+	ICON_NAMES_URLS,
+} from '@CommonImports';
 import { useMemo } from 'react';
-import { ICON_NAMES_URLS } from '../../common/constants/constants';
 import { icons } from '../../../public/icons/index';
 import { v4 as uuid } from 'uuid';
-import { useExtractText } from '@PortfolioApp/common/hooks';
 
 type IconList = {
 	src: string;

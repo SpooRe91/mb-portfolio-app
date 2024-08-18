@@ -1,12 +1,14 @@
 'use client';
+import {
+	TextCard,
+	HOME_PAGE_CARD_TITLES,
+	useExtractText,
+} from '@CommonImports';
+import { RocketLaunch } from '@UI';
 import Image from 'next/image';
 import Link from 'next/link';
-import { TextCard } from '@Common/Components';
-import { useExtractText } from '@PortfolioApp/common/hooks';
 import { homeBG } from '../../public/backgrounds';
 import { motion } from 'framer-motion';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import { HOME_PAGE_CARD_TITLES } from '@PortfolioApp/common/constants/constants';
 
 const HomePage = () => {
 	const { keyToText } = useExtractText();
@@ -35,7 +37,7 @@ const HomePage = () => {
 				transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
 			>
 				<div className="mb-6 flex items-center justify-center sm:flex-wrap md:flex-nowrap">
-					<RocketLaunchIcon className="mr-4 text-[#dfdfdf] sm:text-2xl md:text-5xl" />
+					<RocketLaunch className="mr-4 text-[#dfdfdf] sm:text-2xl md:text-5xl" />
 					<h1
 						className="font-extrabold text-transparent sm:text-2xl md:text-5xl"
 						style={{

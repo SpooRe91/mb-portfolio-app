@@ -1,5 +1,5 @@
 'use client';
-import useExtractText from '@PortfolioApp/common/hooks/useExtractText';
+import { useExtractText } from '@Common/index';
 import Image from 'next/image';
 import Link from 'next/link';
 import image from '../../public/404_confused.webp';

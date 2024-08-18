@@ -1,9 +1,8 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { Button } from '@mui/material';
-import { Card, TextBlock } from '@Common/Components';
-import { ProjectType } from '@Common/types/types';
+import { Button } from '@UI';
+import { Card, TextBlock, ProjectType } from '@CommonImports';
 
 type ProjectCardProps = {
 	projectsData: ProjectType;

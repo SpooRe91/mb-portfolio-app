@@ -1,6 +1,5 @@
 'use client';
-import { TextBlock } from '@Common/Components';
-import { useExtractText } from '@Common/hooks';
+import { TextBlock, useExtractText } from '@CommonImports';
 
 export const ServerDown = () => {
 	const { keyToText } = useExtractText();

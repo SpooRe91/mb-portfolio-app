@@ -21,9 +21,11 @@
 			}
 		],
 		"paths": {
-			"@PortfolioApp/*": ["./src/*"],
-			"styles/*": ["./styles/*"],
-			"@Common/*": ["./src/common/*"]
+			"@PortfolioApp/*": ["src/*"],
+			"styles/*": ["styles/*"],
+			"@Common/*": ["src/common/*"],
+			"@CommonImports": ["src/common/index"],
+			"@UI": ["src/UI/index"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

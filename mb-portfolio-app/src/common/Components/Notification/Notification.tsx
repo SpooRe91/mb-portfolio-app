@@ -1,5 +1,5 @@
 'use client';
-import Alert from '@mui/material/Alert';
+import { Alert } from '@UI';
 import { useEffect, useState } from 'react';
 
 type NotificationProps = {

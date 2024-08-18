@@ -1,7 +1,12 @@
 'use client';
-import { useContactForm, useExtractText } from '@Common/hooks';
-import Button from '@mui/material/Button';
-import { FormInput, GlobalLoader, Notification } from '@Common/Components';
+import {
+	FormInput,
+	GlobalLoader,
+	Notification,
+	useContactForm,
+	useExtractText,
+} from '@CommonImports';
+import { Button } from '@UI';
 import { useMemo } from 'react';
 
 export const ContactForm = () => {
@@ -19,14 +24,9 @@ export const ContactForm = () => {
 
 	const { keyToText } = useExtractText();
 
-	const incorrectInputMessage = useMemo(() => {
-		console.log('ERROR MEMO COMP');
-		return <p className="p-[0.25rem] text-red-600">{'Invalid input!'}</p>;
-	}, []);
-
 	return (
 		<div className="relative w-full rounded-lg bg-bg-transparent-black-tretriary shadow-md backdrop-blur-[5px] sm:max-w-[500px] md:max-w-[600px] md:p-0">
-			{(status.error || status.notification) && (
+			{status.error || status.notification ? (
 				<Notification
 					{...status}
 					mainClassName="fixed md:top-[0] right-0"
@@ -34,7 +34,7 @@ export const ContactForm = () => {
 					handleClearMessage={handleClearMessage}
 					hasAnimation={true}
 				/>
-			)}
+			) : null}
 			{isLoading && (
 				<div className="p-[1rem 0.8rem] absolute left-0 top-0 min-h-full w-full">
 					<GlobalLoader
@@ -65,7 +65,9 @@ export const ContactForm = () => {
 							error={formError.firstName}
 							required
 						/>
-						{formError.firstName && incorrectInputMessage}
+						{formError.firstName && (
+							<p className="p-[0.25rem] text-red-600">{'Invalid input!'}</p>
+						)}
 					</div>
 					<div className="sm:w-max-[550px] w-full">
 						<label htmlFor="lastName" className="block text-colorDark">
@@ -82,7 +84,9 @@ export const ContactForm = () => {
 							error={formError.lastName}
 							required
 						/>
-						{formError.lastName && incorrectInputMessage}
+						{formError.lastName && (
+							<p className="p-[0.25rem] text-red-600">{'Invalid input!'}</p>
+						)}
 					</div>
 				</section>
 				<div>
@@ -102,7 +106,9 @@ export const ContactForm = () => {
 						pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 						required
 					/>
-					{formError.email && incorrectInputMessage}
+					{formError.email && (
+						<p className="p-[0.25rem] text-red-600">{'Invalid input!'}</p>
+					)}
 				</div>
 				<div>
 					<label htmlFor="message" className="block text-colorDark">
@@ -120,7 +126,9 @@ export const ContactForm = () => {
 						as="textarea"
 						required
 					/>
-					{formError.message && incorrectInputMessage}
+					{formError.message && (
+						<p className="p-[0.25rem] text-red-600">{'Invalid input!'}</p>
+					)}
 				</div>
 				{!isFormDisabled && (
 					<Button

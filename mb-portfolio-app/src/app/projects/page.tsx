@@ -4,12 +4,10 @@ import {
 	ServerDown,
 	ProjectCard,
 	Notification,
-} from '@Common/Components';
-import {
 	useGetViewWidth,
 	useExtractText,
 	useFetchProjects,
-} from '@PortfolioApp/common/hooks';
+} from '@CommonImports';
 import { projectsBG } from '../../../public/backgrounds';
 import Image from 'next/image';
 

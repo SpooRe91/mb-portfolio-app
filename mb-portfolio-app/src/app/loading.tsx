@@ -1,4 +1,4 @@
-import { GlobalLoader } from '@Common/Components/';
+import { GlobalLoader } from '@Common/Components';
 
 const Loading = () => {
 	return (
