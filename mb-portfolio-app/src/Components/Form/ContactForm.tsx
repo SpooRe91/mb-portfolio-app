@@ -21,7 +21,7 @@ export const ContactForm = () => {
 
     const { keyToText } = useExtractText();
 
-    const incorrectInputMessage = useMemo(() => <p className="text-red-600">{"Invalid input!"}</p>, []);
+    const incorrectInputMessage = useMemo(() => <p className="text-red-600 p-[0.25rem]">{"Invalid input!"}</p>, []);
 
     return (
         <div className="relative md:max-w-[600px] sm:max-w-[500px] w-full md:p-0 bg-bg-transparent-black-tretriary backdrop-blur-[5px] rounded-lg shadow-md">
