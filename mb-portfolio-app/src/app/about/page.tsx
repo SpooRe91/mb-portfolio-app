@@ -1,6 +1,5 @@
 'use client';
 import {
-	TextBlock,
 	IconsContainer,
 	useExtractText,
 	ICON_NAMES_URLS,
@@ -8,6 +7,7 @@ import {
 import { useMemo } from 'react';
 import { icons } from '../../../public/icons/index';
 import { v4 as uuid } from 'uuid';
+import { TextBlock } from '@UI';
 
 type IconList = {
 	src: string;

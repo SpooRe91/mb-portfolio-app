@@ -1,6 +1,5 @@
 'use client';
-import { CircularProgress } from '@UI';
-import { TextBlock } from '@CommonImports';
+import { CircularProgress, TextBlock } from '@UI';
 
 type LoadingProps = {
 	loadingText?: string;

@@ -8,6 +8,4 @@ export * from './NavBar/NavBar';
 export * from './Notification/Notification';
 export * from './ProjectCard/ProjectCard';
 export * from './ServerDown/ServerDown';
-export * from './TextBlock/TextBlock';
-export * from './TextCard/TextCard';
 export * from './FormInput/FormInput';

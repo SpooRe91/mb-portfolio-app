@@ -1,10 +1,6 @@
 'use client';
-import {
-	TextCard,
-	HOME_PAGE_CARD_TITLES,
-	useExtractText,
-} from '@CommonImports';
-import { RocketLaunch } from '@UI';
+import { HOME_PAGE_CARD_TITLES, useExtractText } from '@CommonImports';
+import { RocketLaunch, TextCard } from '@UI';
 import Image from 'next/image';
 import Link from 'next/link';
 import { homeBG } from '../../public/backgrounds';

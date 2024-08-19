@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
-import { Button } from '@UI';
-import { Card, TextBlock, ProjectType } from '@CommonImports';
+import { Button, TextBlock } from '@UI';
+import { Card, ProjectType } from '@CommonImports';
 
 type ProjectCardProps = {
 	projectsData: ProjectType;

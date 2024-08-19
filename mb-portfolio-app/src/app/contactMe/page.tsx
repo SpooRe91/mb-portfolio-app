@@ -1,7 +1,8 @@
 'use client';
-import { TextBlock, ContactForm, useExtractText } from '@CommonImports';
+import { ContactForm, useExtractText } from '@CommonImports';
 import { contactBG } from '../../../public/backgrounds';
 import Image from 'next/image';
+import { TextBlock } from '@UI';
 
 const Contact = () => {
 	const { keyToText } = useExtractText();

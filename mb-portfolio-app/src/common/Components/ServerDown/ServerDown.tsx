@@ -1,5 +1,6 @@
 'use client';
-import { TextBlock, useExtractText } from '@CommonImports';
+import { useExtractText } from '@CommonImports';
+import { TextBlock } from '@UI';
 
 export const ServerDown = () => {
 	const { keyToText } = useExtractText();
