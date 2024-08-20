@@ -4,6 +4,7 @@ import { RocketLaunch, TextCard } from '@UI';
 import Image from 'next/image';
 import Link from 'next/link';
 import { homeBG } from '../../public/backgrounds';
+import { cardImages } from '../../public/homePageCardImages';
 import { motion } from 'framer-motion';
 
 const HomePage = () => {
@@ -27,7 +28,7 @@ const HomePage = () => {
 			</motion.div>
 
 			<motion.div
-				className="mx-auto max-w-4xl px-[1rem] text-center"
+				className="mx-auto max-w-6xl px-[1rem] text-center"
 				initial={{ opacity: 0, y: 30 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
@@ -59,20 +60,39 @@ const HomePage = () => {
 						Get Started
 					</Link>
 				</motion.button>
-
-				<div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+			</motion.div>
+			<motion.div
+				className="mx-auto max-w-full px-[1rem] text-center"
+				initial={{ opacity: 0, y: 30 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+			>
+				<div className="mt-12 grid grid-cols-1 gap-[5rem] md:grid-cols-1 lg:grid-cols-1">
 					{HOME_PAGE_CARD_TITLES.map((key, i) => (
 						<div
 							key={i}
-							className="rounded-lg bg-[#1B263B] p-4 text-[#a2c9fc] shadow-lg drop-shadow-homeTextShadow"
+							className={`flex flex-col items-center gap-[1rem] rounded-lg bg-bg-transparent-black-secondary p-4 text-[#a2c9fc] shadow-box-shadow-border-bottom md:flex-row ${
+								i % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+							}`}
 						>
-							<p>{keyToText(key)}</p>
-							<TextCard
-								title={keyToText(`HOME.${key}.TITLE`) as string}
-								text={keyToText(`HOME.${key}.TEXT`) as string}
-								titleClassName="font-bold mb-2 text-colorDarkMedBlue drop-shadow-homeTextShadow sm:text-[1rem] md:text-[1.25rem]"
-								textClassName="text-[#a2c9fc] drop-shadow-homeTextShadow sm:text-[0.85rem] md:text-[1rem]"
-							/>
+							<div className="h-[10rem] w-full flex-shrink-0 md:w-1/2">
+								<Image
+									src={cardImages[key]}
+									alt={key}
+									className="h-full w-full rounded-lg object-cover"
+								/>
+							</div>
+
+							{/* Text Section */}
+							<div className="md:ml-4 md:mr-4 md:w-1/2">
+								<p>{keyToText(key)}</p>
+								<TextCard
+									title={keyToText(`HOME.${key}.TITLE`) as string}
+									text={keyToText(`HOME.${key}.TEXT`) as string}
+									titleClassName="font-bold mb-2 text-colorDarkMedBlue drop-shadow-homeTextShadow sm:text-[1rem] md:text-[1.25rem]"
+									textClassName="text-[#a2c9fc] drop-shadow-homeTextShadow sm:text-[0.85rem] md:text-[1rem]"
+								/>
+							</div>
 						</div>
 					))}
 				</div>
