@@ -75,11 +75,11 @@ const HomePage = () => {
 								i % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
 							}`}
 						>
-							<div className="h-[10rem] w-full flex-shrink-0 md:w-1/2">
+							<div className="h-[7em] w-full flex-shrink-0 md:w-1/2">
 								<Image
 									src={cardImages[key]}
 									alt={key}
-									className="h-full w-full rounded-lg object-cover"
+									className="h-full w-full rounded-lg object-cover brightness-[0.75]"
 								/>
 							</div>
 
@@ -89,8 +89,8 @@ const HomePage = () => {
 								<TextCard
 									title={keyToText(`HOME.${key}.TITLE`) as string}
 									text={keyToText(`HOME.${key}.TEXT`) as string}
-									titleClassName="font-bold mb-2 text-colorDarkMedBlue drop-shadow-homeTextShadow sm:text-[1rem] md:text-[1.25rem]"
-									textClassName="text-[#a2c9fc] drop-shadow-homeTextShadow sm:text-[0.85rem] md:text-[1rem]"
+									titleClassName="font-bold mb-2 text-colorDarkMedBlue drop-shadow-homeTextShadow sm:text-[1rem] md:text-[1.5rem]"
+									textClassName="text-[#a2c9fc] drop-shadow-homeTextShadow sm:text-[1rem] md:text-[1.2rem]"
 								/>
 							</div>
 						</div>
