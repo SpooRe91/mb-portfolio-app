@@ -67,19 +67,19 @@ const HomePage = () => {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
 			>
-				<div className="mt-12 grid grid-cols-1 gap-[5rem] md:grid-cols-1 lg:grid-cols-1">
+				<div className="mt-12 grid grid-cols-1 gap-[15rem] md:grid-cols-1 lg:grid-cols-1">
 					{HOME_PAGE_CARD_TITLES.map((key, i) => (
 						<div
 							key={i}
-							className={`flex flex-col items-center gap-[1rem] rounded-lg bg-bg-transparent-black-secondary p-4 text-[#a2c9fc] shadow-box-shadow-border-bottom md:flex-row ${
+							className={`flex flex-col items-center gap-[1rem] rounded-[12px] bg-bg-transparent-black-secondary p-4 text-[#a2c9fc] md:flex-row ${
 								i % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
 							}`}
 						>
-							<div className="h-[11rem] w-full flex-shrink-0 md:w-1/2">
+							<div className="h-[15rem] w-full flex-shrink-0 md:w-1/2">
 								<Image
 									src={cardImages[key]}
 									alt={key}
-									className="h-full max-h-[11rem] w-full rounded-lg object-cover brightness-[0.75]"
+									className="h-full max-h-[15rem] w-full rounded-lg object-cover brightness-[0.75]"
 								/>
 							</div>
 
