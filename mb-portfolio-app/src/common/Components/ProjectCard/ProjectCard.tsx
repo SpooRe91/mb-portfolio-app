@@ -32,7 +32,7 @@ export const ProjectCard = ({
 				title={title}
 				content={content}
 				url={url}
-				className={`text-block flex w-80 flex-col items-center gap-4 text-colorMedLightBlue transition-all hover:contrast-100 md:contrast-0`}
+				className={`flex w-80 flex-col items-center gap-4 text-colorMedLightBlue transition-all`}
 			>
 				<Link
 					href={url}
