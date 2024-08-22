@@ -53,7 +53,7 @@ const ProjectsComponent = () => {
 					error={message?.error}
 					notification={message?.notification}
 					handleClearMessage={handleClearMessage}
-					mainClassName="z-[99] flex justify-end absolute top-[10rem] right-[2rem]"
+					mainClassName="z-[99] flex justify-end absolute sm:top-[15rem] md:top-[10rem] right-[2rem]"
 					hasAnimation={true}
 				/>
 			)}
