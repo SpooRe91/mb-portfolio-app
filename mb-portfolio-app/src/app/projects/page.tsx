@@ -66,18 +66,20 @@ const ProjectsComponent = () => {
 					</div>
 				}
 				{!!data?.length && (
-					<div className="relative ml-[1rem] mr-[2rem] grid max-w-screen-xl grid-cols-1 place-items-center items-center gap-8 rounded-[8px] bg-bg-transparent-black-main p-8 [transform-style:preserve-3d] [transform:perspective(1000px)] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+					<div className="relative ml-[1rem] mr-[2rem] rounded-[8px] bg-projects-secondary-bg bg-cover bg-fixed bg-clip-border bg-center bg-no-repeat">
 						{!isMobile && (
-							<span className="absolute left-0 top-0 z-[-1] h-full w-full rounded-[8px] bg-transparent bg-projects-secondary-bg bg-cover bg-fixed bg-clip-border bg-center bg-no-repeat brightness-[0.25]"></span>
+							<span className="absolute left-0 top-0 z-[-1] h-full w-full rounded-[8px] bg-transparent brightness-[0.25]"></span>
 						)}
-						{data.map((projectElement, index) => (
-							<ProjectCard
-								key={projectElement?.id}
-								projectsData={projectElement}
-								isMobile={isMobile}
-								index={index}
-							/>
-						))}
+						<div className="grid h-full w-full max-w-screen-xl grid-cols-1 place-items-center items-center gap-8 rounded-[8px] bg-bg-transparent-black-secondary p-[1.5rem] [transform-style:preserve-3d] [transform:perspective(1000px)] sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+							{data.map((projectElement, index) => (
+								<ProjectCard
+									key={projectElement?.id}
+									projectsData={projectElement}
+									isMobile={isMobile}
+									index={index}
+								/>
+							))}
+						</div>
 					</div>
 				)}
 				{!isLoading && (
