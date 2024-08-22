@@ -48,18 +48,14 @@ const HomePage = () => {
 				<p className="mb-8 text-lg text-[#a2c9fc] drop-shadow-homeTextShadow sm:text-[0.85rem] md:text-[1rem]">
 					{keyToText('HOME.SECONDARY_TEXT')}
 				</p>
-				<motion.button
-					className="rounded-full bg-[#1B263B] px-6 py-3 font-bold text-[#E0E1DD] drop-shadow-homeTextShadow transition-all hover:bg-[#68948a]"
-					whileHover={{ scale: 1.05 }}
-					whileTap={{ scale: 0.95 }}
-				>
+				<button className="rounded-full bg-[#1B263B] px-6 py-3 font-bold text-[#E0E1DD] drop-shadow-homeTextShadow transition-all hover:bg-[#68948a]">
 					<Link
 						className="drop-shadow-homeTextShadow sm:text-[0.85rem] md:text-[1rem]"
 						href="/projects"
 					>
 						Get Started
 					</Link>
-				</motion.button>
+				</button>
 			</motion.div>
 			<motion.div
 				className="mx-auto max-w-full px-[1rem] text-center"

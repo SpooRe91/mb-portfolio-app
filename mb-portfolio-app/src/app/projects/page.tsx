@@ -48,16 +48,16 @@ const ProjectsComponent = () => {
 					priority
 				/>
 			)}
-			<div className="flex w-full flex-col items-center gap-24 rounded-lg">
-				{(message.error || message.notification) && (
-					<Notification
-						error={message?.error}
-						notification={message?.notification}
-						handleClearMessage={handleClearMessage}
-						mainClassName="z-[99] flex justify-end fixed top-[15rem] right-[2rem]"
-						hasAnimation={true}
-					/>
-				)}
+			{(message.error || message.notification) && (
+				<Notification
+					error={message?.error}
+					notification={message?.notification}
+					handleClearMessage={handleClearMessage}
+					mainClassName="z-[99] flex justify-end absolute top-[10rem] right-[2rem]"
+					hasAnimation={true}
+				/>
+			)}
+			<div className="relative flex w-full flex-col items-center gap-24 rounded-lg">
 				{
 					<div className="mt-[1rem] flex w-full bg-bg-transparent-black-secondary shadow-box-shadow-border-bottom sm:flex-col sm:items-center sm:px-3 md:flex-row md:justify-around">
 						<h1 className="px-5 py-8 text-4xl text-colorMedLightBlue">
