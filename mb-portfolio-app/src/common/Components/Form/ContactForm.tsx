@@ -8,7 +8,6 @@ import {
 	useExtractText,
 } from '@CommonImports';
 import { Button } from '@UI';
-import { useMemo } from 'react';
 
 export const ContactForm = () => {
 	const {
@@ -127,6 +126,7 @@ export const ContactForm = () => {
 						as="textarea"
 						maxLength={1000}
 						required
+						spellCheck={true}
 					/>
 					<p
 						className={`text-left ${formData.message.length === MAX_MESSAGE_LENGTH ? 'text-error' : 'text-success'}`}

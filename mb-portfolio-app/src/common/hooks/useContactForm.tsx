@@ -1,10 +1,13 @@
 'use client';
 import { ChangeEvent, FormEvent, useCallback, useMemo, useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
-import { sendFormData } from '@PortfolioApp/common/services';
-import { fieldValidator, formValidator } from '@PortfolioApp/common/utils';
 import DOMPurify from 'dompurify';
-import { FormFieldTypes } from '@PortfolioApp/common/zod/Schemas';
+import {
+	sendFormData,
+	FormFieldTypes,
+	formValidator,
+	fieldValidator,
+} from '@CommonImports';
 
 type FormFieldErrorTypes = {
 	firstName: boolean;
