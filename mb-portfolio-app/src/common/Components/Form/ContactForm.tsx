@@ -2,6 +2,7 @@
 import {
 	FormInput,
 	GlobalLoader,
+	MAX_MESSAGE_LENGTH,
 	Notification,
 	useContactForm,
 	useExtractText,
@@ -124,8 +125,12 @@ export const ContactForm = () => {
 						}}
 						error={formError.message}
 						as="textarea"
+						maxLength={1000}
 						required
 					/>
+					<p
+						className={`text-left ${formData.message.length === MAX_MESSAGE_LENGTH ? 'text-error' : 'text-success'}`}
+					>{`${formData.message.length}/${MAX_MESSAGE_LENGTH}`}</p>
 					{formError.message && (
 						<p className="p-[0.25rem] text-red-600">{'Invalid input!'}</p>
 					)}

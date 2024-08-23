@@ -10,6 +10,7 @@ export const FORBIDDEN_PATTERNS = [
 export const LETERS_ONLY_REGEX = /^[A-Za-z]+$/;
 export const MAX_RETRIES = 4;
 export const RETRY_DELAY = 1000;
+export const MAX_MESSAGE_LENGTH = 1000;
 export const NAV_BAR_ITEMS = {
 	HOME: '/',
 	PROJECTS: '/projects',

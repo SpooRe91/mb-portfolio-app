@@ -16,6 +16,7 @@ type FormInputProps = {
 	type?: string;
 	as?: 'input' | 'textarea';
 	pattern?: string;
+	maxLength?: number;
 };
 
 export const FormInput = ({
@@ -30,6 +31,7 @@ export const FormInput = ({
 	required = false,
 	type = 'text',
 	as = 'input',
+	maxLength,
 }: FormInputProps) => {
 	const inputClasses = `mt-1 p-2 w-full border border-colorMediumDark bg-input-field-bg rounded-md shadow-box-shadow-dark text-slate-50 focus-visible:outline-none focus-within:outline-none
     ${error ? 'border-error ring-error ring-2' : ''}
@@ -47,6 +49,7 @@ export const FormInput = ({
 			type={type}
 			className={inputClasses}
 			pattern={pattern}
+			maxLength={maxLength}
 		/>
 	) : (
 		<textarea
@@ -58,6 +61,7 @@ export const FormInput = ({
 			placeholder={placeholder}
 			required={required}
 			className={inputClasses}
+			maxLength={maxLength}
 		/>
 	);
 };
