@@ -21,7 +21,7 @@ const Contact = () => {
 						{keyToText('CONTACT.HEADER')}
 					</h1>
 					<TextBlock
-						className="p-[0.8rem] text-center text-colorMediumDark"
+						className="p-[0.8rem] text-left text-colorMediumDark"
 						titleClassName="sm:text-base md:text-xl"
 						title={keyToText('CONTACT.SEND_EMAIL_TEXT')}
 						content={keyToText('CONTACT.SEND_EMAIL_AFFIRMATION')}
