@@ -35,8 +35,15 @@
 	},
 	"ABOUT": {
 		"HEADER": "About Me",
+		"HEADER_WHO_I_AM": "Who I am",
+		"HEADER_EXP_SKILLS": "Experience & Skills",
+		"HEADER_APPROACH": "My Approach",
 		"FIRST_PARAGRAPH": "Hello, I am Martin Bogdanov, a Web Developer primarily focused on Front-end development. I also enjoy working on Full Stack projects. My expertise includes JavaScript and TypeScript, complemented by a diverse set of technologies such as React, Next, Tailwind, SASS, GraphQL, NodeJS, Express, REST APIs, MongoDB, and more.",
-		"SECOND_PARAGRAPH": "My journey in web development is driven by a commitment to critical thinking, dedication, and problem-solving, all of which allow me to tackle challenges and deliver successful outcomes. I am always enthusiastic about learning new technologies and advancing my career as a Front-end or Full-stack developer. Let us connect and explore opportunities to collaborate!"
+		"SECOND_PARAGRAPH": "My journey in web development is driven by a commitment to critical thinking, dedication, and problem-solving, all of which allow me to tackle challenges and deliver successful outcomes.",
+		"EXPERIENCE_SKILL_1": "I have dedicated a substantial amount of time in web development, with hands-on experience across a wide range of front-end and back-end technologies. From building responsive UIs to developing complex APIs, I continuously strive to improve my technical abilities.",
+		"EXPERIENCE_SKILL_2": "My focus is on creating seamless, performanant applications that enhance user experience.",
+		"APPROACH_1": "My approach to development revolves around efficiency and innovation. I prioritize understanding client needs and tailoring solutions to solve specific challenges, with an emphasis on scalability and long-term success.",
+		"APPROACH_2": "I’m passionate about exploring new technologies and applying them in ways that bring significant value to my projects. Continuous learning is at the heart of how I stay up-to-date with industry trends."
 	},
 	"CONTACT": {
 		"HEADER": "Contact me",

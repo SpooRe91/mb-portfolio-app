@@ -1,6 +1,6 @@
 type TextCardProps = {
 	title: string;
-	text: string;
+	text: string | undefined;
 	titleClassName?: string;
 	textClassName?: string;
 	containerClassName?: string;

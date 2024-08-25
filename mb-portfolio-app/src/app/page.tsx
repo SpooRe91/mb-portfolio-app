@@ -63,7 +63,7 @@ const HomePage = () => {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
 			>
-				<div className="mt-12 grid grid-cols-1 gap-[15rem] md:grid-cols-1 lg:grid-cols-1">
+				<div className="mt-12 grid grid-cols-1 sm:gap-[10rem] md:grid-cols-1 md:gap-[15rem] lg:grid-cols-1">
 					{HOME_PAGE_CARD_TITLES.map((key, i) => (
 						<div
 							key={i}
