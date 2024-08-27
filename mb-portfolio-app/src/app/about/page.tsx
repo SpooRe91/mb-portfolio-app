@@ -14,6 +14,7 @@ import {
 	Build,
 	Psychology,
 	KeyboardArrowDown,
+	TextBlock,
 } from '@UI';
 
 const About = () => {
@@ -163,6 +164,11 @@ const About = () => {
 						</div>
 					</div>
 					<div className="w-4xl max-w-4xl rounded-[8px] bg-bg-transparent-black-main shadow-box-shadow-border-bottom">
+						<TextBlock
+							title={keyToText('PROJECTS.TECHS_I_USE')}
+							titleClassName="mb-0 sm:text-base md:text-xl"
+							className="flex flex-col items-center justify-center p-2 text-center text-tech-text-color drop-shadow-homeTextShadow"
+						/>
 						<div className="flex w-full max-w-[750px] flex-row flex-wrap justify-center gap-[1rem] p-[1rem] [transform-style:preserve-3d] [transform:perspective(1000px)]">
 							{iconList.map(({ src, name, extUrl }, index) => (
 								<div
