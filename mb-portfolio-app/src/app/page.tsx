@@ -63,15 +63,13 @@ const HomePage = () => {
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
 			>
-				<div className="mt-12 grid grid-cols-1 sm:gap-[10rem] md:grid-cols-1 md:gap-[15rem] lg:grid-cols-1">
+				<div className="mt-12 grid sm:grid-cols-1 sm:gap-[10rem] md:grid-cols-2 md:gap-[2rem] lg:grid-cols-3">
 					{HOME_PAGE_CARD_TITLES.map((key, i) => (
 						<div
 							key={i}
-							className={`flex flex-col items-center gap-[1rem] rounded-[12px] bg-bg-transparent-black-secondary p-4 text-[#a2c9fc] md:flex-row ${
-								i % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-							}`}
+							className={`flex flex-col items-center gap-[1rem] rounded-[12px] bg-bg-transparent-black-secondary p-4 text-[#a2c9fc]`}
 						>
-							<div className="h-[11rem] w-full flex-shrink-0 md:w-1/2">
+							<div className="h-[11rem] w-full flex-shrink-0 md:w-full">
 								<Image
 									src={cardImages[key]}
 									alt={key}
@@ -79,7 +77,7 @@ const HomePage = () => {
 								/>
 							</div>
 
-							<div className="md:ml-4 md:mr-4 md:w-1/2">
+							<div className="md:ml-4 md:mr-4 md:w-full">
 								<p>{keyToText(key)}</p>
 								<TextCard
 									title={keyToText(`HOME.${key}.TITLE`) as string}
