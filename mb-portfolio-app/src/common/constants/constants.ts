@@ -16,6 +16,7 @@ export const NAV_BAR_ITEMS = {
 	PROJECTS: '/projects',
 	ABOUT: '/about',
 	CONTACT: '/contactMe',
+	RESUME: '/resume',
 };
 export const ICON_NAMES_URLS = [
 	{

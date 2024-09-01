@@ -55,7 +55,8 @@
 		"HOME": "Home",
 		"PROJECTS": "Projects",
 		"ABOUT": "About",
-		"CONTACT": "Contact"
+		"CONTACT": "Contact",
+		"RESUME": "Resume"
 	},
 	"FOOTER": {
 		"HEADER": "Socials",
@@ -78,5 +79,61 @@
 		"404": "404",
 		"NOT_FOUND_TEXT": "Are you lost?",
 		"BACK_TO_HOME": "Go Back Home"
+	},
+	"RESUME": {
+		"NAME": "Martin Bogdanov",
+		"TITLE": "JavaScript Web Developer",
+		"LOCATION": "Bulgaria",
+		"PORTFOLIO_LINK": "Portfolio",
+		"LINKEDIN_LINK": "LinkedIn",
+		"GITHUB_LINK": "GitHub",
+		"WORK_EXPERIENCE": "Work Experience",
+		"JUNIOR_FRONTEND_TITLE": "Junior Front-End Developer",
+		"JUNIOR_FRONTEND_DESC": "OpenTag | 09/2023 - 04/2024, Bulgaria",
+		"JUNIOR_FRONTEND_RESPONSIBILITIES": [
+			"Created reusable components and features with React, TypeScript, styled components, SASS.",
+			"Updated custom library documentation using Storybook.",
+			"Added and updated queries, mutations, resolvers in two gateways with Apollo GraphQL.",
+			"Fixed bugs and participated in code reviews and planning.",
+			"Acquired experience with Next Router, Figma, LaunchDarkly, Kubernetes, Google Console, Jira, Confluence.",
+			"Worked in an Agile environment."
+		],
+		"PAYMENT_TEAM_SUPERVISOR_TITLE": "Payment Team Supervisor",
+		"PAYMENT_TEAM_SUPERVISOR_DESC": "Transfermate Global Payments | 12/2020 - 09/2023, Bulgaria",
+		"PAYMENT_TEAM_SUPERVISOR_RESPONSIBILITIES": [
+			"Managed queries and teammates professionally.",
+			"Handled payments with different banking institutions using their online platforms.",
+			"Worked with CRM software, updating client data in a dynamic environment."
+		],
+		"CUSTOMER_SERVICE_TITLE": "Customer Service Representative",
+		"CUSTOMER_SERVICE_DESC": "Transfermate Global Payments | 06/2016 - 06/2018, Bulgaria",
+		"CUSTOMER_SERVICE_RESPONSIBILITIES": [
+			"Prioritized and delegated potential payment issues or queries.",
+			"Organized daily tasks and coordinated projects with developers and managers."
+		],
+		"EDUCATION": "Education",
+		"JAVASCRIPT_WEB_DEV_TITLE": "JavaScript Web Developer",
+		"JAVASCRIPT_WEB_DEV_DESC": "Software University (SoftUni) | 03/2021 - 11/2022, Sofia, Bulgaria",
+		"HOTEL_MANAGEMENT_TITLE": "Bachelor of Hotel and Restaurant Management",
+		"HOTEL_MANAGEMENT_DESC": "College of Tourism Varna | 10/2018 - 01/2021, Varna, Bulgaria",
+		"TECHNICAL_SKILLS": "Technical Skills",
+		"TECHNICAL_SKILLS_LIST": [
+			"JavaScript & TypeScript",
+			"React JS",
+			"NextJS",
+			"HTML5, CSS, SASS, Tailwind, UI/UX",
+			"Apollo GraphQL",
+			"Redux",
+			"Vite, Webpack",
+			"Express JS, Node JS",
+			"REST APIs",
+			"SQL/noSQL Databases",
+			"Cypress, Jest, React TL, Vitest",
+			"GIT, GitHub, GitLab",
+			"Agile & Scrum",
+			"Jira, Confluence"
+		],
+		"CERTIFICATES": "Certificates & Recommendations",
+		"LANGUAGES": "Languages"
 	}
 }

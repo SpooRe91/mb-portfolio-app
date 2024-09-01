@@ -7,12 +7,12 @@ interface JsonObject {
 interface JsonArray extends Array<JsonValue> {}
 
 export const useExtractText = () => {
-	const keyToText = (key: string): string | undefined => {
+	const keyToText = (key: string): JsonValue | undefined => {
 		const keys = key.split('.');
 
-		let result: any = textData;
+		let result: JsonValue | undefined = textData;
 		for (const k of keys) {
-			result = result?.[k];
+			result = (result as JsonObject)?.[k];
 			if (result === undefined) {
 				return undefined;
 			}

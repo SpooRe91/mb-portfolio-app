@@ -15,14 +15,14 @@ const NotFoundPage = () => {
 				placeholder="blur"
 			/>
 			<h1 className="mb-4 text-6xl font-bold sm:text-center sm:text-4xl md:text-6xl">
-				{keyToText('NOT_FOUND.404')}
+				{keyToText('NOT_FOUND.404') as string}
 			</h1>
 			<p className="mb-8 text-2xl sm:text-center sm:text-base md:text-2xl">
-				{keyToText('NOT_FOUND.NOT_FOUND_TEXT')}
+				{keyToText('NOT_FOUND.NOT_FOUND_TEXT') as string}
 			</p>
 			<Link href="/">
 				<p className="rounded-md bg-colorMedLightBlue px-4 py-2 text-licorice shadow-lg transition-all duration-300 hover:bg-greenHover">
-					{keyToText('NOT_FOUND.BACK_TO_HOME')}
+					{keyToText('NOT_FOUND.BACK_TO_HOME') as string}
 				</p>
 			</Link>
 		</div>

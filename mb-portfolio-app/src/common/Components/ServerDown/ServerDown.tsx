@@ -8,10 +8,10 @@ export const ServerDown = () => {
 	return (
 		<div className="max-w- flex w-full flex-col items-center gap-1 bg-bg-transparent-black-main shadow-box-shadow-dark">
 			<h1 className="px-5 py-8 text-center text-colorMediumDark sm:text-xl md:text-4xl">
-				{keyToText('SERVER_ERROR.HEADER')}
+				{keyToText('SERVER_ERROR.HEADER') as string}
 			</h1>
 			<TextBlock
-				title={keyToText('SERVER_ERROR.SECONDARY_TEXT')}
+				title={keyToText('SERVER_ERROR.SECONDARY_TEXT') as string}
 				className="justify-cetetext-block flex flex-col items-center gap-4 p-2 text-center text-tech-text-color"
 			></TextBlock>
 		</div>

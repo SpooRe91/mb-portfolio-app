@@ -53,7 +53,7 @@ const About = () => {
 			>
 				<div className="flex flex-col items-center gap-5 p-[1.25rem]">
 					<h1 className="mb-4 text-3xl font-bold text-colorMediumLight">
-						{keyToText('ABOUT.HEADER')}
+						{keyToText('ABOUT.HEADER') as string}
 					</h1>
 					<div className="mb-6 w-full max-w-4xl rounded-lg bg-bg-transparent-black-secondary shadow-box-shadow-secondary transition-all md:hover:shadow-box-shadow-top-and-bottom">
 						<div
@@ -62,7 +62,7 @@ const About = () => {
 						>
 							<AccountCircle fontSize="large" />
 							<h2 className="text-xl font-semibold text-colorDark sm:text-[1rem] md:text-[1.25rem]">
-								{keyToText('ABOUT.HEADER_WHO_I_AM')}
+								{keyToText('ABOUT.HEADER_WHO_I_AM') as string}
 							</h2>
 							<button className="text-blue-500 hover:underline">
 								<KeyboardArrowDown
@@ -76,14 +76,14 @@ const About = () => {
 							<div className="p-4">
 								<TextCard
 									title=""
-									text={keyToText('ABOUT.FIRST_PARAGRAPH')}
+									text={keyToText('ABOUT.FIRST_PARAGRAPH') as string}
 									titleClassName="text-colorDark"
 									textClassName="text-colorMediumDark"
 									containerClassName="bg-bg-transparent-black-secondary rounded-lg shadow-box-shadow-secondary mb-4 p-[1rem]"
 								/>
 								<TextCard
 									title=""
-									text={keyToText('ABOUT.SECOND_PARAGRAPH')}
+									text={keyToText('ABOUT.SECOND_PARAGRAPH') as string}
 									titleClassName="text-colorDark"
 									textClassName="text-colorMediumDark"
 									containerClassName="bg-bg-transparent-black-secondary rounded-lg shadow-box-shadow-secondary p-[1rem]"
@@ -98,7 +98,7 @@ const About = () => {
 						>
 							<Build fontSize="large" />
 							<h2 className="text-xl font-semibold text-colorDark sm:text-[1rem] md:text-[1.25rem]">
-								{keyToText('ABOUT.HEADER_EXP_SKILLS')}
+								{keyToText('ABOUT.HEADER_EXP_SKILLS') as string}
 							</h2>
 							<button className="text-blue-500">
 								<KeyboardArrowDown
@@ -112,14 +112,14 @@ const About = () => {
 							<div className="p-4">
 								<TextCard
 									title=""
-									text={keyToText('ABOUT.EXPERIENCE_SKILL_1')}
+									text={keyToText('ABOUT.EXPERIENCE_SKILL_1') as string}
 									titleClassName="text-colorDark"
 									textClassName="text-colorMediumDark"
 									containerClassName="bg-bg-transparent-black-secondary rounded-lg shadow-box-shadow-secondary mb-4 p-[1rem]"
 								/>
 								<TextCard
 									title=""
-									text={keyToText('ABOUT.EXPERIENCE_SKILL_2')}
+									text={keyToText('ABOUT.EXPERIENCE_SKILL_2') as string}
 									titleClassName="text-colorDark"
 									textClassName="text-colorMediumDark"
 									containerClassName="bg-bg-transparent-black-secondary rounded-lg shadow-box-shadow-secondary p-[1rem]"
@@ -134,7 +134,7 @@ const About = () => {
 						>
 							<Psychology fontSize="large" />
 							<h2 className="text-xl font-semibold text-colorDark sm:text-[1rem] md:text-[1.25rem]">
-								{keyToText('ABOUT.HEADER_APPROACH')}
+								{keyToText('ABOUT.HEADER_APPROACH') as string}
 							</h2>
 							<button className="text-blue-500 hover:underline">
 								<KeyboardArrowDown
@@ -148,14 +148,14 @@ const About = () => {
 							<div className="p-4">
 								<TextCard
 									title=""
-									text={keyToText('ABOUT.APPROACH_1')}
+									text={keyToText('ABOUT.APPROACH_1') as string}
 									titleClassName="text-colorDark"
 									textClassName="text-colorMediumDark"
 									containerClassName="bg-bg-transparent-black-secondary rounded-lg shadow-box-shadow-secondary mb-4 p-[1rem]"
 								/>
 								<TextCard
 									title=""
-									text={keyToText('ABOUT.APPROACH_2')}
+									text={keyToText('ABOUT.APPROACH_2') as string}
 									titleClassName="text-colorDark"
 									textClassName="text-colorMediumDark"
 									containerClassName="bg-bg-transparent-black-secondary rounded-lg shadow-box-shadow-secondary p-[1rem]"
@@ -165,7 +165,7 @@ const About = () => {
 					</div>
 					<div className="w-4xl max-w-4xl rounded-[8px] bg-bg-transparent-black-main shadow-box-shadow-border-bottom">
 						<TextBlock
-							title={keyToText('PROJECTS.TECHS_I_USE')}
+							title={keyToText('PROJECTS.TECHS_I_USE') as string}
 							titleClassName="mb-0 sm:text-base md:text-xl"
 							className="flex flex-col items-center justify-center p-2 text-center text-tech-text-color drop-shadow-homeTextShadow"
 						/>

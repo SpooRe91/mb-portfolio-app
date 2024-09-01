@@ -42,11 +42,11 @@ const HomePage = () => {
 								'1px 1px 1px #000000, 2px 2px 10px #5ab099, 2px 2px 10px #5ab099, 2px 2px 0px #5eb79f',
 						}}
 					>
-						{keyToText('HOME.WELCOME_MAIN')}
+						{keyToText('HOME.WELCOME_MAIN') as string}
 					</h1>
 				</div>
 				<p className="mb-8 text-lg text-[#a2c9fc] drop-shadow-homeTextShadow sm:text-[0.85rem] md:text-[1rem]">
-					{keyToText('HOME.SECONDARY_TEXT')}
+					{keyToText('HOME.SECONDARY_TEXT') as string}
 				</p>
 				<button className="rounded-full bg-[#1B263B] px-6 py-3 font-bold text-[#E0E1DD] drop-shadow-homeTextShadow transition-all hover:bg-[#68948a]">
 					<Link
@@ -78,7 +78,7 @@ const HomePage = () => {
 							</div>
 
 							<div className="md:ml-4 md:mr-4 md:w-full">
-								<p>{keyToText(key)}</p>
+								<p>{keyToText(key) as string}</p>
 								<TextCard
 									title={keyToText(`HOME.${key}.TITLE`) as string}
 									text={keyToText(`HOME.${key}.TEXT`) as string}

@@ -25,7 +25,7 @@ export const NavBar = () => {
 
 	const NavItemsList = useMemo(() => Object.entries(NAV_BAR_ITEMS), []);
 
-	if (!isMounted) return null; // Early return if the component is not mounted
+	if (!isMounted) return null;
 
 	const isMountedAndMobile = isMounted && isMobile;
 	const translateYClass =
@@ -43,6 +43,7 @@ export const NavBar = () => {
 							alt="Logo"
 							width={64}
 							className="h-auto w-auto overflow-hidden rounded-[10px] transition-all md:hover:hover:shadow-box-shadow-logo md:hover:[transform:translateZ(20px)]"
+							priority
 						/>
 					</Link>
 				)}
@@ -54,7 +55,7 @@ export const NavBar = () => {
 								onClick={() => setShowMobileNav(false)}
 								className={`rounded-[8px] px-[0.5rem] py-[0.25rem] hover:text-colorLight ${active === value ? 'text-navBarActive shadow-box-shadow-border-bottom' : ''}`}
 							>
-								{keyToText(`NAVIGATION.${key}`)}
+								{keyToText(`NAVIGATION.${key}`) as string}
 							</Link>
 						</li>
 					))}

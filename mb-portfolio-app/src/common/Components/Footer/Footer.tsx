@@ -11,10 +11,10 @@ export const Footer = () => {
 			className={`border-t-[1px solid kobicha] absolute bottom-0 left-0 z-[10] m-auto mx-[auto] flex w-full flex-col items-center bg-bg-transparent-black-secondary px-4 py-8 text-colorMediumDark shadow-box-shadow-border-top`}
 		>
 			<h1 className="mb-4 font-bold sm:text-sm md:text-3xl">
-				{keyToText('FOOTER.HEADER')}
+				{keyToText('FOOTER.HEADER') as string}
 			</h1>
 			<p className="text-center sm:text-sm md:text-lg">
-				{keyToText('FOOTER.SECONDARY_TEXT')}
+				{keyToText('FOOTER.SECONDARY_TEXT') as string}
 			</p>
 
 			<div className="flex space-x-4 p-[0.5rem]">
@@ -24,7 +24,7 @@ export const Footer = () => {
 					rel="noopener noreferrer"
 					className="flex items-center gap-1 text-colorMediumLight transition-colors hover:text-rawUmber"
 				>
-					<GitHub /> <p>{keyToText('FOOTER.SOCIAL_GITHUB')}</p>
+					<GitHub /> <p>{keyToText('FOOTER.SOCIAL_GITHUB') as string}</p>
 				</Link>
 				<Link
 					href="https://www.linkedin.com/in/mbogdanov9110/"
@@ -32,7 +32,7 @@ export const Footer = () => {
 					rel="noopener noreferrer"
 					className="flex items-center gap-1 text-colorMediumLight transition-colors hover:text-rawUmber"
 				>
-					<LinkedIn /> <p>{keyToText('FOOTER.SOCIAL_LINKEDIN')}</p>
+					<LinkedIn /> <p>{keyToText('FOOTER.SOCIAL_LINKEDIN') as string}</p>
 				</Link>
 			</div>
 		</section>

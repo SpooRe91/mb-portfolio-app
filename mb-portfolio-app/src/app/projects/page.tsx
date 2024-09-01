@@ -20,7 +20,7 @@ const ProjectsComponent = () => {
 		return (
 			<LocalLoader
 				mainClassName="md:min-h-screen-h-md sm:min-h-screen-h-sm flex flex-col items-center justify-center"
-				loadingText={keyToText('PROJECTS.LOCAL_LOADING_TEXT')}
+				loadingText={keyToText('PROJECTS.LOCAL_LOADING_TEXT') as string}
 			/>
 		);
 	}
@@ -31,7 +31,7 @@ const ProjectsComponent = () => {
 				<ServerDown />
 				<div className="flex w-full bg-bg-transparent-black-secondary shadow-box-shadow-border-bottom sm:flex-col sm:items-center sm:px-3 md:flex-row md:justify-center">
 					<h3 className="text-center text-colorMedLightBlue sm:p-[0.5rem] sm:text-sm md:p-[1rem] md:text-lg">
-						{keyToText('PROJECTS.MORE_PORJECTS_ON_GH')}
+						{keyToText('PROJECTS.MORE_PORJECTS_ON_GH') as string}
 					</h3>
 				</div>
 			</>
@@ -61,7 +61,7 @@ const ProjectsComponent = () => {
 				{
 					<div className="mt-[1rem] flex w-full bg-bg-transparent-black-secondary shadow-box-shadow-border-bottom sm:flex-col sm:items-center sm:px-3 md:flex-row md:justify-around">
 						<h1 className="px-5 py-8 text-4xl text-colorMedLightBlue">
-							{keyToText('PROJECTS.MY_PROJECTS')}
+							{keyToText('PROJECTS.MY_PROJECTS') as string}
 						</h1>
 					</div>
 				}
@@ -85,7 +85,7 @@ const ProjectsComponent = () => {
 				{!isLoading && (
 					<div className="flex w-full bg-bg-transparent-black-secondary shadow-box-shadow-border-bottom sm:flex-col sm:items-center sm:px-3 md:flex-row md:justify-center">
 						<h3 className="text-center text-colorMedLightBlue sm:p-[0.5rem] sm:text-sm md:p-[1rem] md:text-lg">
-							{keyToText('PROJECTS.MORE_PORJECTS_ON_GH')}
+							{keyToText('PROJECTS.MORE_PORJECTS_ON_GH') as string}
 						</h3>
 					</div>
 				)}
